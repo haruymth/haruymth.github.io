@@ -1,0 +1,53 @@
+h1 {
+  color:#ffffff;
+}
+
+.title {
+  background-color:#4d97ff;/*Scratchの色*/
+  margin:10px;
+  padding:10px;
+  margin-left:30px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+html , body {
+  margin:0px;
+  background-color:#f0f8ff;
+  font-family:"Arial","メイリオ";
+}
+
+h2 {
+  margin-top:20px;
+  padding-top:5px;
+  margin-left:30px;
+  padding:10px;
+  padding-left:10px;
+  border-left: solid 5px #4d97ff;
+  color:#000000;
+  border-radius:2px;
+  font-size:20px;
+  
+}
+
+.honbun {
+  margin-left:40px;
+  padding:5px;
+  text-decoration:none;
+}
+  
+.danraku {
+  margin-left:15px;
+}
+
+a {
+  text-decoration:none;
+  color:#4169e1;
+  font-weight:600;
+}
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
