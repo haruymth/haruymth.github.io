@@ -66,5 +66,5 @@ li {
 }
 
 .nav {
-float:left;
+  display: inline-block;
 }
