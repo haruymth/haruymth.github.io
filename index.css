@@ -4,11 +4,9 @@ h1 {
 
 .title {
   background-color:#4d97ff;/*Scratchの色*/
-  margin:10px;
   padding:10px;
   margin-left:30px;
-  border-radius:10px;
-  text-align:center;
+  text-align:left
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
 
@@ -46,8 +44,3 @@ a {
   color:#4169e1;
   font-weight:600;
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
