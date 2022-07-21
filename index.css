@@ -46,6 +46,10 @@ h2 {
   color:#000000;
 }
 
+a {
+  text-decoration:none;
+}
+
 .header {
   display: inline-block;
   width:100%;
@@ -61,6 +65,4 @@ h2 {
   list-style:none;
 }
 
-a {
-  text-decoration:none;
-}
+
