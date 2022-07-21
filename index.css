@@ -46,12 +46,9 @@ h2 {
   color:#000000;
 }
 
-a {
-  text-decoration:none;
-}
-
 .header {
-  display: inline-block;
+  text-decoration:none;
+  /*display: inline-block;
   width:100%;
   margin:0px;
   background-color:#4d97ff;/*Scratchの色*/
@@ -62,7 +59,5 @@ a {
   margin-top:0px;
   text-align:left;
   font-weight:600;
-  list-style:none;
+  list-style:none;*/
 }
-
-
