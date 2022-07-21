@@ -46,6 +46,10 @@ h2 {
   color:#000000;
 }
 
+li {
+  list-style:none;
+
+}
 .header {
   text-decoration:none;
   display: inline-block;
@@ -54,5 +58,4 @@ h2 {
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
   color:#ffffff;
   text-align:left;
-  list-style:none;
 }
