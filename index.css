@@ -71,6 +71,7 @@ li {
   background-color:#4d97ff;/*Scratchの色*/
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
   color:#ffffff;
+  margin-bottom:30px;
 }
 
 a {
