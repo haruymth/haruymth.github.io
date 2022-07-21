@@ -50,14 +50,9 @@ h2 {
   text-decoration:none;
   display: inline-block;
   width:100%;
-  margin:0px;
   background-color:#4d97ff;/*Scratchの色*/
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
   color:#ffffff;
-  padding:10px;
-  margin-bottom:30px;
-  margin-top:0px;
   text-align:left;
-  font-weight:600;
   list-style:none;
 }
