@@ -6,7 +6,7 @@ h1 {
   background-color:#4d97ff;/*Scratchの色*/
   padding:10px;
   margin-left:30px;
-  text-align:left
+  text-align:left;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
 
