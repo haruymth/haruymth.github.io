@@ -5,7 +5,7 @@ h1 {
 .title {
   background-color:#4d97ff;/*Scratchの色*/
   padding:10px;
-  margin-left:0px;
+  margin:0px;
   text-align:left;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
