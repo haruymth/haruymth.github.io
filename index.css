@@ -54,3 +54,9 @@ h2 {
   text-align:center;
   color:#ffffff;
 }
+
+li {
+  color:#ffffff;
+  font-weight:600;
+  padding:10px;
+}
