@@ -48,7 +48,7 @@ h2 {
 }
 
 
-.nav {
+#header {
   text-decoration:none;
   display:flex;
   width:100%;
