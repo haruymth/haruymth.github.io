@@ -56,9 +56,10 @@ h2 {
 }
 
 li {
+  text-decoration:none;
   color:#ffffff;
   font-weight:600;
   padding:10px;
   list-style:none;
-  float:left;
+  display: inline-block;
 }
