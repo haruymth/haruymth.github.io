@@ -3,10 +3,7 @@ h1 {
 }
 
 .title {
-  padding:10px;
-  margin:0px;
-  margin-top:0px;
-  text-align:left;
+ 
   
 }
 
@@ -56,12 +53,9 @@ h2 {
 }
 
 li {
-  text-decoration:none;
   color:#ffffff;
   font-weight:600;
-  padding:10px;
   list-style:none;
-  display: inline-block;
 }
 
 .header {
@@ -71,7 +65,10 @@ li {
   background-color:#4d97ff;/*Scratchの色*/
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
   color:#ffffff;
+  padding:10px;
   margin-bottom:30px;
+  margin-top:0px;
+  text-align:left;
 }
 
 a {
