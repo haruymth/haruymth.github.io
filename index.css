@@ -109,7 +109,9 @@ ul {
   margin:5px;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .3);
   text-align:center;
-  background-color:#ffffff;
+  background-color:#000000;
+  width:138px;
+  color:#ffffff;
 }
 
 img#png {
