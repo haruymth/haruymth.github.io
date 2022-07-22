@@ -1,9 +1,6 @@
-h1 {
-  color:#ffffff;
-}
-
 html , body {
   margin:0px;
+  margin-top:0px;
   background-color:#f0f8ff;
   font-family:"Arial","メイリオ";
 }
@@ -54,6 +51,7 @@ h2 {
   font-weight:600;
   padding-right: 10px;
   padding-left: 10px;
+  margin-top:0px;
 }
 
 #header {
