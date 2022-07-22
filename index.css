@@ -1,8 +1,13 @@
-html , body {
+html {
   margin:0px;
   margin-top:0px;
   background-color:#f0f8ff;
   font-family:"Arial","メイリオ";
+}
+
+body {
+  margin-top:0px;
+  margin:0px;
 }
 
 h2 {
