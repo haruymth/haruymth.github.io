@@ -59,6 +59,17 @@ h2 {
   margin-top:0px;
 }
 
+.nav a:hover {
+  text-decoration:none;
+  color:#ffffff;
+  text-align:center;
+  font-weight:600;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top:0px;
+  background-color:#4588e5;
+}
+
 #header {
   width:100%;
   background-color:#4d97ff;/*Scratchの色*/
