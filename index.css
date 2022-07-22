@@ -67,23 +67,9 @@ h2 {
   font-weight:600;
   padding-right: 10px;
   padding-left: 10px;
-  margin-top:0px;
+  margin-top:20px;
   padding-bottom:10px;
   background-color:#4d97ff;
-  padding-top:10px;
-}
-
-.nav2 a:hover {
-  text-decoration:none;
-  color:#ffffff;
-  text-align:center;
-  font-weight:600;
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-top:0px;
-  padding-bottom:10px;
-  background-color:#4588e5;
-  padding-top:10px;
 }
 
 #header {
@@ -91,8 +77,8 @@ h2 {
   background-color:#4d97ff;/*Scratchの色*/
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .3);
   margin-top:0px;
-  padding: 10px;
-  padding-left:30px;
+  padding-bottom: 10px;
+  padding-left:20px;
   padding-top: 10px;
 }
 
