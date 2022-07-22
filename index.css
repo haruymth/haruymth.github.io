@@ -103,3 +103,10 @@ li {
 ul {
   display: flex;
 }
+
+.pbox {
+  padding:10px;
+  margin:5px;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .3);
+  text-align:center;
+}
