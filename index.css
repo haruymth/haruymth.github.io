@@ -94,7 +94,10 @@ h2 {
   padding-top: 10px;
 }
 
+li {
+  list-style:none;
+}
+
 ul {
   display: flex;
-  list-style:none;
 }
