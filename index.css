@@ -59,7 +59,7 @@ h2 {
   margin-top:0px;
 }
 
-.nav a:hover {
+.nav2 {
   text-decoration:none;
   color:#ffffff;
   text-align:center;
@@ -67,6 +67,19 @@ h2 {
   padding-right: 10px;
   padding-left: 10px;
   margin-top:0px;
+  padding-bottom:10px;
+  background-color:#4d97ff;
+}
+
+.nav2 a:hover {
+  text-decoration:none;
+  color:#ffffff;
+  text-align:center;
+  font-weight:600;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top:0px;
+  padding-bottom:10px;
   background-color:#4588e5;
 }
 
@@ -78,5 +91,4 @@ h2 {
   padding: 10px;
   padding-left:30px;
   padding-top: 10px;
-  padding-bottom: 10px;
 }
