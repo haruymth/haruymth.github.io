@@ -15,4 +15,4 @@ function getAge(year, month, day){
 
 var myAge = function getAge(2009,3,1);
 
-document.getElementById("age").value = "日本在住"+myAge+"才";
+document.getElementById("age").textContent = "日本在住"+myAge+"才";
