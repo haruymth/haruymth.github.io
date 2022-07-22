@@ -62,10 +62,10 @@ h2 {
 #header {
   width:100%;
   background-color:#4d97ff;/*Scratchの色*/
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  /*box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);*/
   margin-top:0px;
   padding: 10px;
   padding-left:30px;
-  padding-top: 40px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
