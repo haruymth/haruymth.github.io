@@ -1,29 +1,13 @@
-//生年月日
-const birthday = {
-    year: 2009,
-    month: 3,
-    date: 1
-  };
-
-function getAge(birthday){
-
-    //今日
-    var today = new Date();
+const birthdate = "2020/2/29";
  
-    //今年の誕生日
-    var thisYearsBirthday = new Date(today.getFullYear(), birthday.month-1, birthday.date);
- 
-    //年齢
-    var age = today.getFullYear() - birthday.year;
-
-    if(today < thisYearsBirthday){
-        //今年まだ誕生日が来ていない
-        age--;
-    }
-
-    return age;
+const ageCalculation = ( birthDate , nowDate ) => {
+    const age = nowDate.getFullYear() - birthDate.getFullYear();
+    const thisYearsBirthday  = new Date( nowDate.getFullYear() , birthDate.getMonth() , birthDate.getDate() );
+    return age + ( thisYearsBirthday.getTime() > nowDate.getTime() ? -1 : 0 );
 }
-
-console.log(getAge(birthday));
-
-document.getElementById("age").innerText=getAge(birthday);
+ 
+const age = ageCalculation( new Date(birthdate) , new Date() );
+ 
+console.log( age + "歳" );
+ 
+document.getElementById("age").innerText="日本在住"+age+"歳";
