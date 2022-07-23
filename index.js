@@ -1,4 +1,4 @@
-const birthdate = "2020/2/29";
+const birthdate = "2009/3/1";
  
 const ageCalculation = ( birthDate , nowDate ) => {
     const age = nowDate.getFullYear() - birthDate.getFullYear();
@@ -10,4 +10,4 @@ const age = ageCalculation( new Date(birthdate) , new Date() );
  
 console.log( age + "歳" );
  
-document.getElementById("age").innerText="日本在住"+age+"歳";
+document.getElementById("age").innerText="・日本在住"+age+"歳";
