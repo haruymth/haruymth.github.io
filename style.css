@@ -118,3 +118,13 @@ ul {
 img#png {
   margin-top:5px;
 }
+
+#program-field {
+  background-color:#000000;
+  border-radius:5px;
+  padding:5px;
+  color:#ffffff;
+  margin-left:50px;
+  margin-top:30px;
+  font-size:10px;
+}
