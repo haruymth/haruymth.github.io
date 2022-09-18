@@ -1,7 +1,7 @@
 html {
   margin:0px;
   margin-top:0px;
-  background-color:#f0f8ff;
+  background-color:#f4f6f7;
   font-family:'Noto Sans JP', sans-serif;
   font-weight:200;
   padding-bottom:100px;
@@ -18,20 +18,17 @@ h2 {
   margin-left:30px;
   padding:10px;
   padding-left:10px;
-  border-left: solid 5px #4d97ff;
+  border-left: solid 5px #86938A;
   color:#000000;
   border-radius:2px;
   font-size:20px;
 }
 
-.honbun {
-  margin-left:40px;
+main {
+  margin-left:50px;
   padding:5px;
   text-decoration:none;
-}
-  
-.danraku {
-  margin-left:15px;
+  text-indent: 1rem;
 }
 
 .link {
@@ -73,25 +70,14 @@ h2 {
   color:#ffffff;
   text-align:center;
   font-weight:600;
-  background-color:#4d97ff;
   vertical-align: middle;
   padding:20px;
 }
 
-.nav:hover{
-  text-decoration:none;
-  color:#ffffff;
-  text-align:center;
-  font-weight:600;
-  background-color:#4588e5;
-  vertical-align: middle;
-  padding:20px;
-}
-
-#header {
+header {
   width:100%;
-  background-color:#4d97ff;/*Scratchの色*/
-  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .3);
+  background-color:#51BEBE;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
   margin-top:0px;
   padding-left:20px;
   padding-top:1px;
@@ -119,10 +105,10 @@ img#png {
   margin-top:5px;
 }
 
-#program-field {
+pre {
   background-color:#000000;
   border-radius:5px;
-  padding:5px;
+  padding:10px;
   color:#ffffff;
   margin-left:50px;
   margin-top:30px;
