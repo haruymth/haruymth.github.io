@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Ubuntu+Mono&display=swap');
+
 html {
   margin:0px;
   margin-top:0px;
   background-color:#f4f6f7;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-weight:200;
 }
 
@@ -103,4 +104,5 @@ pre {
   margin-left:50px;
   margin-top:30px;
   font-size:10px;
+  font-family: 'Ubuntu Mono', monospace;
 }
