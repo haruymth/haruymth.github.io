@@ -12,5 +12,4 @@ footer.innerHTML = (`
 	<footer style="text-align:center; background-color:#233648;color:#ffffff;margin-top:60px;padding:5px;bottom:0;">
 		© 2022 yamaguchi03
 	</footer>
-</html>
 `);
