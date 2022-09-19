@@ -7,10 +7,3 @@ header.innerHTML = `
 				<li> <a href="https://haru-ymth.github.io/others" class="nav">その他</a> </li>
 		</ul>
 	</header>`;
-var footer = document.getElementById("footer");
-footer.innerHTML =`
-	<footer style="text-align:center; background-color:#233648;color:#ffffff;margin:0px;margin-top:60px;padding:5px;bottom:0;">
-		© 2022 yamaguchi03
-	</footer>
-`;
-
