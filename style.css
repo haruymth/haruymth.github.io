@@ -35,13 +35,13 @@ main {
 
 .link {
   text-decoration:none;
-  color:#86938A;
+  color:#FFF7D6;
   font-weight:600;
 }
 
 .link:hover {
   text-decoration:underline;
-  color:#86938A;
+  color:#FFF7D6;
   font-weight:600;
 }
 
