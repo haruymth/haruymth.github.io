@@ -109,7 +109,10 @@ header{
 }
 
 #icon {
-  top:60px;
+  position: absolute;
+  top:15px;
+  left:55px;
+  
 }
 
 .code {
