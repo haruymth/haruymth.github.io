@@ -7,3 +7,4 @@ header.innerHTML = `
 				<li> <a href="https://haru-ymth.github.io/others" class="nav">その他</a> </li>
 		</ul>
 	</header>`;
+
