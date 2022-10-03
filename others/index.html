@@ -11,48 +11,11 @@
 	  <div id="header"></div>
 	<body>
 	<h2>Scratchの傾向の何P何位か調べるプログラム（JavaScript)</h2>	
-		<div class="code"><span><code>async function calKei() {
-    const projectId = prompt(&quot;調べたいプロジェクトIDを入力&quot;);
-    const saidai = 10000;
-    let offset = 0;
-    let page = 0;
-    let rank = 0;
-    let ok = 0;
-    while(ok==0){
-        const res = await fetch(&quot;https://api.scratch.mit.edu/explore/projects?limit=16&amp;offset=&quot;+offset+&quot;&amp;language=ja&amp;mode=trending&amp;q=*&quot;);
-        const users = await res.text();
-        let idList = users.split(&quot;\&quot;id\&quot;&quot;);
-        let i = 2;
-        while(i&lt;idList.length){
-            idList.splice(i,1);
-            if(i&lt;idList.length){
-                idList.splice(i,1);
-            }
-            i += 1;
-        }
-        idList.splice(0,1);
-        i = 0;
-        while(i&lt;idList.length){
-            idList[i] = idList[i].slice(1,10);
-            i += 1;
-        }
-    if(idList.includes(projectId)){
-        rank = offset + idList.indexOf(projectId) + 1;
-        page = Math.floor(rank/16) + 1;
-        rank = rank%16;
-        ok = 1;
-    }
-    if(offset&gt;=saidai){
-        rank =&quot;None&quot;;
-        page =&quot;None&quot;;
-        break;
-    }
-    offset += 16;
-    console.log(`全ページ合わせて${offset}位まで調べました`);
-    }
-    console.log(`=====結果====\n${page}ページ目、${rank}位にありました。`)
-  };
-  calKei();</code></span></div>
+		<div class="code"><iframe
+  src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=javascript&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=async%2520function%2520calKei%28%29%2520%257B%250A%2520%2520%2520%2520const%2520projectId%2520%253D%2520prompt%28%2522%25E8%25AA%25BF%25E3%2581%25B9%25E3%2581%259F%25E3%2581%2584%25E3%2583%2597%25E3%2583%25AD%25E3%2582%25B8%25E3%2582%25A7%25E3%2582%25AF%25E3%2583%2588ID%25E3%2582%2592%25E5%2585%25A5%25E5%258A%259B%2522%29%253B%250A%2520%2520%2520%2520const%2520saidai%2520%253D%252010000%253B%250A%2520%2520%2520%2520let%2520offset%2520%253D%25200%253B%250A%2520%2520%2520%2520let%2520page%2520%253D%25200%253B%250A%2520%2520%2520%2520let%2520rank%2520%253D%25200%253B%250A%2520%2520%2520%2520let%2520ok%2520%253D%25200%253B%250A%2520%2520%2520%2520while%28ok%253D%253D0%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520const%2520res%2520%253D%2520await%2520fetch%28%2522https%253A%252F%252Fapi.scratch.mit.edu%252Fexplore%252Fprojects%253Flimit%253D16%2526offset%253D%2522%252Boffset%252B%2522%2526language%253Dja%2526mode%253Dtrending%2526q%253D*%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520const%2520users%2520%253D%2520await%2520res.text%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520let%2520idList%2520%253D%2520users.split%28%2522%255C%2522id%255C%2522%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520let%2520i%2520%253D%25202%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520while%28i%253CidList.length%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520idList.splice%28i%252C1%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%28i%253CidList.length%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520idList.splice%28i%252C1%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520i%2520%252B%253D%25201%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520idList.splice%280%252C1%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520i%2520%253D%25200%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520while%28i%253CidList.length%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520idList%255Bi%255D%2520%253D%2520idList%255Bi%255D.slice%281%252C10%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520i%2520%252B%253D%25201%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520if%28idList.includes%28projectId%29%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520rank%2520%253D%2520offset%2520%252B%2520idList.indexOf%28projectId%29%2520%252B%25201%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520page%2520%253D%2520Math.floor%28rank%252F16%29%2520%252B%25201%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520rank%2520%253D%2520rank%252516%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520ok%2520%253D%25201%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520if%28offset%253E%253Dsaidai%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520rank%2520%253D%2522None%2522%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520page%2520%253D%2522None%2522%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520break%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520offset%2520%252B%253D%252016%253B%250A%2520%2520%2520%2520console.log%28%2560%25E5%2585%25A8%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8%25E5%2590%2588%25E3%2582%258F%25E3%2581%259B%25E3%2581%25A6%2524%257Boffset%257D%25E4%25BD%258D%25E3%2581%25BE%25E3%2581%25A7%25E8%25AA%25BF%25E3%2581%25B9%25E3%2581%25BE%25E3%2581%2597%25E3%2581%259F%2560%29%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520console.log%28%2560%253D%253D%253D%253D%253D%25E7%25B5%2590%25E6%259E%259C%253D%253D%253D%253D%255Cn%2524%257Bpage%257D%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8%25E7%259B%25AE%25E3%2580%2581%2524%257Brank%257D%25E4%25BD%258D%25E3%2581%25AB%25E3%2581%2582%25E3%2582%258A%25E3%2581%25BE%25E3%2581%2597%25E3%2581%259F%25E3%2580%2582%2560%29%250A%2520%2520%257D%253B%250A%2520%2520calKei%28%29%253B"
+  style="width: 1024px; height: 986px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe></div>
 		<main><br>Scratch.mit.edu内でコンソールにて実行してください。<br>二次配布はしてもいいですけど自作発言はやめてください。 </main>
 		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ（JavaScript)</h2>	
 		<div class="code"><iframe
