@@ -134,6 +134,7 @@ a.button{
   color:#233648;
   font-weight:600;
   background-color:#FFF7D6;
+  margin-left:40px;
 }
 
 a.button:hover{
@@ -142,5 +143,6 @@ a.button:hover{
   color:#233648;
   font-weight:600;
   background-color:#FFF7D6;
-  opacity: ;
+  opacity:0.8;
+  margin-left:40px;
 }
