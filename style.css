@@ -124,6 +124,7 @@ header{
   background-color:#000000;
   border-radius:5px;
   padding:7px;
+  cursor: pointer;
 }
 
 a.button{
