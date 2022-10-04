@@ -11,7 +11,9 @@
 	<script>
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
-	scripts.select();
+	element.value=scripts.innerHTML;
+	document.body.appendChild(element);
+	element.select();
 	document.execCommand('copy');
 	alert("copied!");
 }
