@@ -9,10 +9,11 @@
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
   </head>
 	<script>
-		function copyScripts(scripts){
-    scripts.select();
-    document.execCommand('copy');
-    alert("copied!");
+function copyScripts(scripts){
+	var element = document.createElement("textarea");
+	scripts.select();
+	document.execCommand('copy');
+	alert("copied!");
 }
 	</script>
 	  <div id="header"></div>
