@@ -1,1 +1,97 @@
+<html>
+  <head>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
+	  <title>
+	  	その他
+	  </title>
+	  <meta charset="utf-8"> 
+	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
+  </head>
+	  <div id="header"></div>
+	<body>
+	<h2>Scratchの傾向の何P何位か調べるプログラム（JavaScript)</h2>	
+		<div class="code">
+			<code>async function calKei() {
+    const projectId = prompt(&quot;調べたいプロジェクトIDを入力&quot;);
+    const saidai = 10000;
+    let offset = 0;
+    let page = 0;
+    let rank = 0;
+    let ok = 0;
+    while(ok==0){
+        const res = await fetch(`https://api.scratch.mit.edu/explore/projects?limit=16&offset=${offset}&language=ja&mode=trending&q=*`);
+        const users = await res.text();
+        let idList = users.split(&quot;\&quot;id\&quot;&quot;);
+        let i = 2;
+        while(i&lt;idList.length){
+            idList.splice(i,1);
+            if(i&lt;idList.length){
+                idList.splice(i,1);
+            }
+            i += 1;
+        }
+        idList.splice(0,1);
+        i = 0;
+        while(i&lt;idList.length){
+            idList[i] = idList[i].slice(1,10);
+            i += 1;
+        }
+    if(idList.includes(projectId)){
+        rank = offset + idList.indexOf(projectId) + 1;
+        page = Math.floor(rank/16) + 1;
+        rank = rank%16;
+        ok = 1;
+    }
+    if(offset&gt;=saidai){
+        rank =&quot;None&quot;;
+        page =&quot;None&quot;;
+        break;
+    }
+    offset += 16;
+    console.log(`全ページ合わせて${offset}位まで調べました`);
+    }
+    console.log(`=====結果====\n${page}ページ目、${rank}位にありました。`)
+  };
+        calKei();</code>
+		</div>
+		<main><br>Scratch.mit.edu内でコンソールにて実行してください。<br>二次配布はしてもいいですけど自作発言はやめてください。 </main>
+		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ（JavaScript)</h2>	
+		<div class="code">
+      <code>
+      let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
+let offset=0;
+let res;
+let studioarr =[];
+for(offset=0;offset&lt;pr;offset=offset+16){
+res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).text());
+let arr = res.split(&quot;{\&quot;id\&quot;:&quot;);
+arr.splice(0, 1);
+for(let i=1;i&lt;8;i++){
+    arr.splice(i,1)
+}
+for(i=0;i&lt;8;i++){
+    arr[i] = &quot;&quot;+arr[i].split(&quot;,\&quot;title\&quot;&quot;)[0];
+}
+for(i=0;i&lt;8;i++){
+    studioarr.push(arr[i]);
+}
+}
+let projectid = prompt(&quot;入れたいプロジェクトIDを入れろ。&quot;);
+const sessiontoken = (await(await fetch(&quot;/session/&quot;,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).json()).user.token;
+console.log(&quot;今からなんでもスタジオに入れていくぞ&quot;);
+for(i=0;i&lt;studioarr.length;i++){
+    fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{
+      &quot;headers&quot;: {
+        &quot;x-token&quot;: sessiontoken
+      },
+      &quot;method&quot;: &quot;POST&quot;
+    });
+}
+console.log(&quot;入れ終わったぞ&quot;);</code>
+		</div>
+		<main><br>Scratch.mit.edu内でコンソールにて実行してください。<br>二次配布はしてもいいですけど自作発言はやめてください。 </main>
+    <script src="https://haru-ymth.github.io/include.js"></script>
+	</body>
+</html>
 
