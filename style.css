@@ -123,6 +123,8 @@ header{
   font-size:10px;
   white-space: pre;
   background-color:#000000;
+  border-radius:5px;
+  padding:7px;
 }
 
 code{
