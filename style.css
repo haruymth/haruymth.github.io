@@ -44,7 +44,7 @@ a:hover {
   font-weight:600;
 }
 
-#footer {
+footer {
   margin-top:50px;
   margin-bottom:0px;
   margin-right:0px;
@@ -73,6 +73,16 @@ a.nav {
   font-weight:600;
   vertical-align: middle;
   padding:20px;
+}
+
+a.nav:hover {
+  text-decoration:none;
+  color:#ffffff;
+  text-align:center;
+  font-weight:600;
+  vertical-align: middle;
+  padding:20px;
+  background-color:#3b8a8a;
 }
 
 li {
