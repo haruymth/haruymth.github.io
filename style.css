@@ -129,9 +129,9 @@ header{
 a.button{
   border-radius:5px;
   text-decoration:none;
-  color:#233648;
+  color:#ffffff;
   font-weight:600;
-  background-color:#FFF7D6;
+  background-color:#51BEBE;
   margin:5px;
   padding:5px;
 }
@@ -139,9 +139,9 @@ a.button{
 a.button:hover{
   border-radius:5px;
   text-decoration:none;
-  color:#233648;
+  color:#ffffff;
   font-weight:600;
-  background-color:#FFF7D6;
+  background-color:#51BEBE;
   opacity:0.8;
   margin:5px;
   padding:5px;
