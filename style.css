@@ -135,6 +135,8 @@ a.button{
   font-weight:600;
   background-color:#FFF7D6;
   margin-left:40px;
+  margin:5px;
+  padding:5px;
 }
 
 a.button:hover{
@@ -145,4 +147,6 @@ a.button:hover{
   background-color:#FFF7D6;
   opacity:0.8;
   margin-left:40px;
+  margin:5px;
+  padding:5px;
 }
