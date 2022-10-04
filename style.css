@@ -33,13 +33,13 @@ main {
   text-decoration:none;
 }
 
-.link {
+a {
   text-decoration:none;
   color:#FFF7D6;
   font-weight:600;
 }
 
-.link:hover {
+a:hover {
   text-decoration:underline;
   color:#FFF7D6;
   font-weight:600;
@@ -67,7 +67,7 @@ main {
   padding:20px;
 }
 
-.nav {
+a.nav {
   text-decoration:none;
   color:#ffffff;
   text-align:center;
