@@ -127,3 +127,20 @@ header{
   border-radius:5px;
   padding:7px;
 }
+
+a.button{
+  border-radius:5px;
+  text-decoration:none;
+  color:#233648;
+  font-weight:600;
+  background-color:#FFF7D6;
+}
+
+a.button:hover{
+  border-radius:5px;
+  text-decoration:none;
+  color:#233648;
+  font-weight:600;
+  background-color:#FFF7D6;
+  opacity: ;
+}
