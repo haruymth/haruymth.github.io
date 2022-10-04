@@ -116,7 +116,7 @@ header{
   
 }
 
-code{
+.code{
   font-family: 'Ubuntu Mono', monospace;
   color:#ffffff;
   margin-left:40px;
