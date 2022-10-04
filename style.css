@@ -132,8 +132,8 @@ a.button{
   color:#ffffff;
   font-weight:600;
   background-color:#51BEBE;
-  margin:10px;
-  padding:5px;
+  margin-top:30px;
+  padding:10px;
   user-select: none;
 }
 
@@ -143,8 +143,8 @@ a.button:hover{
   color:#ffffff;
   font-weight:600;
   background-color:#51BEBE;
-  opacity:0.8;
-  margin-top:20px;
+  margin-top:30px;
   padding:10px;
   user-select: none;
+  opacity:0.8;
 }
