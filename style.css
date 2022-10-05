@@ -127,7 +127,7 @@ header{
   cursor: pointer;
 }
 
-p.button{
+button.button{
   border-radius:5px;
   text-decoration:none;
   color:#ffffff;
@@ -136,9 +136,10 @@ p.button{
   margin-top:30px;
   padding:10px;
   user-select: none;
+  border:none;
 }
 
-p.button:hover{
+button.button:hover{
   border-radius:5px;
   text-decoration:none;
   color:#ffffff;
