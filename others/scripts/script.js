@@ -5,8 +5,7 @@ for(let i=0;i<code.length;i++){
   button.setAttribute("onclick","copyScripts(this.previousElementSibling);");
   button.innerHTML="Copy";
 	code[i].after(button);
-}
-//.previousElementSibling
+}};
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
 	element.value=scripts.textContent;
@@ -16,4 +15,4 @@ function copyScripts(scripts){
 	document.body.removeChild(element)
 	alert("Copied!");
 }
-			};
+			
