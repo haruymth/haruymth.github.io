@@ -133,7 +133,7 @@ button.button{
   color:#ffffff;
   font-weight:600;
   background-color:#51BEBE;
-  margin-top:30px;
+  margin-top:15px;
   padding:10px;
   user-select: none;
   border:none;
@@ -146,7 +146,7 @@ button.button:hover{
   color:#ffffff;
   font-weight:600;
   background-color:#51BEBE;
-  margin-top:30px;
+  margin-top:15px;
   padding:10px;
   user-select: none;
   opacity:0.8;
