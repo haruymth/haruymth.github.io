@@ -9,6 +9,13 @@
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
   </head>
 	<script>
+		var code=document.getElementsByClassName("code");
+for(let i=0;i<code.length;i++){
+	var button=document.createElement("a");
+	button.id="button";
+	button.onclick="copyScripts(this.previousElementSibling);"
+	code[i].after(button);
+}
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
 	element.value=scripts.innerHTML;
