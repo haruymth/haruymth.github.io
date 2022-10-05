@@ -23,7 +23,8 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element)
-	alert("Copied!");
+	scripts.nextElementSibling.innerHTML="Copied!";
+	setTimeout(function(){scripts.nextElementSibling.innerHTML="Copy"},1000);
 }</script>
   </head>
 	<body>
