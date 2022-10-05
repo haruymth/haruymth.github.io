@@ -1,4 +1,4 @@
-var code=document.getElementsByClassName("code");
+window.onload=function(){var code=document.getElementsByClassName("code");
 for(let i=0;i<code.length;i++){
 	var button=document.createElement("button");
   button.setAttribute("class","button");
@@ -16,3 +16,4 @@ function copyScripts(scripts){
 	document.body.removeChild(element)
 	alert("Copied!");
 }
+			};
