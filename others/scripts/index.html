@@ -1,34 +1,15 @@
 <html>
   <head>
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
-	  <title>
-	  	Scripts
-	  </title>
-	  <meta charset="utf-8"> 
-	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/others/scripts/script.js"></script>
+	<script src="https://haru-ymth.github.io/include.js"></script>
+	<link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
+	<title>
+		Scripts
+	</title>
+	<meta charset="utf-8"> 
+	<link rel="icon" href="https://haru-ymth.github.io/favicon.png">
   </head>
-	<script>
-		var code=document.getElementsByClassName("code");
-for(let i=0;i<code.length;i++){
-	var button=document.createElement("button");
-  button.setAttribute("class","button");
-  button.setAttribute("onclick","copyScripts(this.previousElementSibling);");
-  button.innerHTML="Copy";
-	code[i].after(button);
-}
-//.previousElementSibling
-function copyScripts(scripts){
-	var element = document.createElement("textarea");
-	element.value=scripts.textContent;
-	document.body.appendChild(element);
-	element.select();
-	document.execCommand('copy');
-	document.body.removeChild(element)
-	alert("Copied!");
-}
-	</script>
-	  <div id="header"></div>
 	<body>
 	<h2>Scratchの傾向の何P何位か調べるプログラム（JavaScript)</h2>	
     <div class="code">async function calKei() {
@@ -108,6 +89,5 @@ for(i=0;i&lt;studioarr.length;i++){
 console.log(&quot;入れ終わったぞ&quot;);</div>
 	
 		<main><br>Scratch.mit.edu内でコンソールにて実行してください。<br>二次配布はしてもいいですけど自作発言はやめてください。 </main>
-    <script src="https://haru-ymth.github.io/include.js"></script>
 	</body>
 </html>
