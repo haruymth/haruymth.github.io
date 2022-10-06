@@ -21,14 +21,20 @@
         </div>
     </main>
 	<script>
-        let data=(await(await fetch(`https://scratchdb.lefty.one/v3/user/info/yamaguchi03`)).json());
+  async function displayStatus(){
+        const res = await fetch(`https://scratchdb.lefty.one/v3/user/info/yamaguchi03`);
+        const data = await res.json();
         let followers=data["statistics"]["followers"];
         let views=data["statistics"]["views"];
         let followerRank=data["statistics"]["ranks"]["country"]["followers"];
         document.getElementById("status").innerHTML=`
         フォロワー： ${followers} 人<br>
         総参照数： ${views} 回<br>
-        日本フォロワー順位： ${followerRank} 位`;
+        日本フォロワー順位： ${followerRank} 位
+        <br>※このステータスはScratchDBを使用しています。`;
+        }
+document.getElementById("status").innerHTML=`ScratchDBを読み込み中...`;
+displayStatus();
 	</script>
 	</body>
 </html>
