@@ -11,9 +11,7 @@
   </head>
 <body>
 	<h2>
-        <a href="https://scratch.mit.edu/users/yamaguchi03/">
-            yamaguchi03
-        </a>
+        haru-ymth ( yamaguchi03 )
 	</h2>
 <main>
     プログラミングが好きな13歳です。
@@ -21,9 +19,9 @@
     <br>
     今は、HTML、CSS、JavaScript、Python、Scratchをやっています。
     <br>
-    でもなんかHTMLって、プログラム言語じゃないらしいんですよ。
+    でもなんかHTMLって、正確にはプログラム言語じゃないらしいんですよ。
     <br>
-    チューリング完全を満たしてないとかかんとかでよくわかんないんですけどね。
+    チューリング完全を満たしてないとかかんとかってよくわかんないんですけどね。
     <br>
     でもなんか「HTML + CSS」でようやくチューリング完全を満たすそうです。
 </main>
@@ -33,6 +31,38 @@
     <main>
         <div id="status"></div>
     </main>
+        <h2>
+            関連リンク
+        </h2>
+    <div id="elem">
+        <div class="ele">
+            <a href="https://twitter.com/haru_ymth">
+                <img src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png" width="90" height="90"></a>
+                <br>haru_ymth
+            
+        </div>
+        <div class="ele">
+            <a href="https://scratch.mit.edu/users/yamaguchi03">
+                <img src="https://www.smartkidsclubtt.com/wp-content/uploads/2020/07/scracth-logo.png" width="90" height="90"></a>
+                <br>yamaguchi03
+            
+        </div>
+        <div class="ele">
+            <a href="https://github.com/haru-ymth">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png?w=360" width="90" height="90"></a>
+                <br>haru-ymth
+            
+        </div>
+    </div>
+        <style>
+            #elem {
+                display:flex;
+            }
+            .ele{
+              text-align:center;
+              margin:10px;
+            }
+        </style>
 	<script>
   async function displayStatus(){
         const res = await fetch(`https://scratchdb.lefty.one/v3/user/info/yamaguchi03`);
@@ -46,7 +76,7 @@
         日本フォロワー順位： ${followerRank} 位
         <br>※このステータスはScratchDBを使用しています。`;
         }
-document.getElementById("status").innerHTML=`ScratchDBを読み込み中...`;
+document.getElementById("status").innerHTML=`ステータスを読み込み中...`;
 displayStatus();
 	</script>
 	</body>
