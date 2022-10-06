@@ -16,10 +16,19 @@
         </a>
 	</h2>
     <main>
-        サイトを少し変えました。
-        <br>
-        なんかGitHubがごちゃごちゃしてたので整理のついでに変えました。（ついでどころの規模じゃないんだけどね）
+        <div id="status">
+
+        </div>
     </main>
-	
+	<script>
+        let data=(await(await fetch(`https://scratchdb.lefty.one/v3/user/info/yamaguchi03`)).json());
+        let followers=data[0]["statistics"]["followers"];
+        let views=data[0]["statistics"]["views"];
+        let followerRank=data[0]["statistics"]["ranks"]["country"]["followers"];
+        document.getElementById("status").innerHTML=`
+        フォロワー： ${followers} 人<br>
+        総参照数： ${views} 回<br>
+        日本フォロワー順位： ${followerRank} 位`;
+	</script>
 	</body>
 </html>
