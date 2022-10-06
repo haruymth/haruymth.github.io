@@ -12,4 +12,4 @@ footer.innerHTML=`
 var head=document.getElementsByTagName("head")[0];
 head.before(header);
 var body=document.getElementsByTagName("body")[0];
-body.after(footer);
+body.appendChild(footer);
