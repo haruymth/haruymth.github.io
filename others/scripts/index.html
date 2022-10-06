@@ -1,21 +1,25 @@
 <html>
   <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  	<script src="https://haru-ymth.github.io/include.js"></script>
+  <script src="https://haru-ymth.github.io/include.js"></script>
 	<link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
 	<title>
 		Scripts
 	</title>
 	<meta charset="utf-8"> 
 	<link rel="icon" href="https://haru-ymth.github.io/favicon.png">
-	<script>window.onload=function(){var code=document.getElementsByClassName("code");
+	<script>
+    window.addEventListener('load', function(){
+var code=document.getElementsByClassName("code");
 for(let i=0;i<code.length;i++){
 	var button=document.createElement("button");
   button.setAttribute("class","button");
   button.setAttribute("onclick","copyScripts(this.previousElementSibling);");
   button.innerHTML="Copy";
 	code[i].after(button);
-}};
+};
+});
+
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
 	element.value=scripts.textContent;
@@ -25,7 +29,10 @@ function copyScripts(scripts){
 	document.body.removeChild(element)
 	scripts.nextElementSibling.innerHTML="Copied!";
 	setTimeout(function(){scripts.nextElementSibling.innerHTML="Copy"},1000);
-}</script>
+};
+
+
+</script>
   </head>
 	<body>
 	<h2>Scratchの傾向の何P何位か調べるプログラム（JavaScript)</h2>	
