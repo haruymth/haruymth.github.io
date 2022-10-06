@@ -1,4 +1,4 @@
-var header = document.createElement("header");
+window.onload=function(){var header = document.createElement("header");
 header.innerHTML = `
 		<ul>
 				<li> <a href="https://haru-ymth.github.io/" class="nav"><img src="https://haru-ymth.github.io/favicon.png" width="35px" height="35px" id="icon"></a> </li>
@@ -13,3 +13,4 @@ var head=document.getElementsByTagName("head")[0];
 head.before(header);
 var body=document.getElementsByTagName("body")[0];
 body.appendChild(footer);
+			};
