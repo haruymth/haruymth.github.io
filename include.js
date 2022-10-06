@@ -11,6 +11,6 @@ footer.innerHTML=`
 `;
 var head=document.getElementsByTagName("head")[0];
 head.before(header);
-var body=document.getElementsByTagName("body")[0];
-body.appendChild(footer);
+var html=document.getElementsByTagName("html")[0];
+html.appendChild(footer);
 			};
