@@ -175,11 +175,11 @@ a:hover {
 }
   .code{
   font-family: 'Ubuntu Mono', monospace;
-  color:#ffffff;
+  color:#f4f6f7;
   margin-top:30px;
   font-size:10px;
   white-space: pre;
-  background-color:#000000;
+  background-color:#233648;
   border-radius:10px;
   padding:7px;
   overflow-wrap: break-word;
