@@ -7,22 +7,21 @@ html {
 }
 
 body {
-  background-color:#233648;
+  background-color:#f4f6f7;
   margin-top:0px;
   margin:0px;
   padding-top:80px;
   padding-left:40px;
   font-weight:200;
-  color:#f4f6f7;
+  color:#233648;
 }
-
 h2 {
   margin-top:40px;
   padding-top:5px;
   padding:10px;
   padding-left:10px;
   border-left: solid 5px #51BEBE;
-  color:#f4f6f7;
+  color:#233648;
   border-radius:2px;
   font-size:20px;
 }
@@ -34,13 +33,13 @@ main {
 
 a {
   text-decoration:none;
-  color:#FFF7D6;
+  color:#4b749c;
   font-weight:600;
 }
 
 a:hover {
   text-decoration:underline;
-  color:#FFF7D6;
+  color:#4b749c;
   font-weight:600;
 }
 
@@ -75,21 +74,12 @@ a.nav {
   padding:20px;
 }
 
-li {
+li.nav {
   list-style:none;
 }
 
-ul {
+ul#headerul {
   display: flex;
-}
-
-.pbox {
-  padding:10px;
-  margin:5px;
-  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .3);
-  text-align:center;
-  background-color:#000000;
-  color:#ffffff;
 }
 
 img#png {
@@ -117,11 +107,11 @@ header{
 
 .code{
   font-family: 'Ubuntu Mono', monospace;
-  color:#ffffff;
+  color:#f4f6f7;
   margin-top:30px;
   font-size:10px;
   white-space: pre;
-  background-color:#000000;
+  background-color:#233648;
   border-radius:10px;
   padding:7px;
   overflow-wrap: break-word;
@@ -151,4 +141,47 @@ button.button:hover{
   user-select: none;
   opacity:0.8;
   cursor: pointer;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color:#233648;
+    margin-top:0px;
+    margin:0px;
+    padding-top:80px;
+    padding-left:40px;
+    font-weight:200;
+    color:#f4f6f7;
+  }
+  h2 {
+    margin-top:40px;
+    padding-top:5px;
+    padding:10px;
+    padding-left:10px;
+    border-left: solid 5px #51BEBE;
+    color:#f4f6f7;
+    border-radius:2px;
+    font-size:20px;
+  }
+  a {
+  text-decoration:none;
+  color:#FFF7D6;
+  font-weight:600;
+}
+
+a:hover {
+  text-decoration:underline;
+  color:#FFF7D6;
+  font-weight:600;
+}
+  .code{
+  font-family: 'Ubuntu Mono', monospace;
+  color:#ffffff;
+  margin-top:30px;
+  font-size:10px;
+  white-space: pre;
+  background-color:#000000;
+  border-radius:10px;
+  padding:7px;
+  overflow-wrap: break-word;
+}
 }
