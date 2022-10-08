@@ -65,7 +65,7 @@ let lightOrDark=getCookieValue("haruymththeme");
         script.addEventListener('load', function() {
         
           // ここにjQueryの記述をする
-          $(function() {
+          
             function themeSet(mode){
               if(mode=="dark"){
               $("body").css(
@@ -147,7 +147,7 @@ let lightOrDark=getCookieValue("haruymththeme");
             };
           })
         
-        })
+        
         document.head.appendChild(script)
 
 			 });
