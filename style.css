@@ -149,46 +149,11 @@ button.button:hover{
   opacity:0.8;
   cursor: pointer;
 }
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color:#233648;
-    margin-top:0px;
-    margin:0px;
-    padding-top:80px;
-    padding-left:40px;
-    font-weight:200;
-    color:#f4f6f7;
-  }
-  h2 {
-    margin-top:40px;
-    padding-top:5px;
-    padding:10px;
-    padding-left:10px;
-    border-left: solid 5px #51BEBE;
-    color:#f4f6f7;
-    border-radius:2px;
-    font-size:20px;
-  }
-  a {
-  text-decoration:none;
-  color:#FFF7D6;
-  font-weight:600;
+#theme{
+  text-align:right;
+    margin-bottom:25px;
+     cursor: pointer;
+     width:100%;
+     margin-top:50px;
 }
 
-a:hover {
-  text-decoration:underline;
-  color:#FFF7D6;
-  font-weight:600;
-}
-  .code{
-  font-family: 'Ubuntu Mono', monospace;
-  color:#233648;
-  margin-top:30px;
-  font-size:10px;
-  white-space: pre;
-  background-color:#f4f6f7;
-  border-radius:10px;
-  padding:7px;
-  overflow-wrap: break-word;
-}
-}
