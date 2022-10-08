@@ -24,7 +24,8 @@ let lightOrDark="light";
 $("#theme").css(
     {"text-align":"right",
     "margin-bottom":"10px",
-    "margin-right":"10px"
+    "margin-right":"10px",
+     "cursor": "pointer"
     });
 function themeSet(mode){
 	if(mode=="dark"){
