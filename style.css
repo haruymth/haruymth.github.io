@@ -156,3 +156,4 @@ button.button:hover{
      margin-top:50px;
 }
 #_lod{cursor: pointer;}
+#sidebartoggle{display: flex;justify-content: flex-end;}
