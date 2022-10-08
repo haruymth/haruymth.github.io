@@ -22,12 +22,11 @@ theme.innerHTML=`
 footer.before(theme);
 let lightOrDark="light";
 $("#theme").css(
-    {"text-align":"center",
+    {"text-align":"right",
     "margin-bottom":"10px",
     "margin-right":"10px",
      "cursor": "pointer",
-     "right":"0px",
-     "bottom":"0px"
+     "width":"100%"
     });
 function themeSet(mode){
 	if(mode=="dark"){
