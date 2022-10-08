@@ -8,7 +8,7 @@ function getCookieValue(key){
     for (let cookie of cookies) {
         var cookiesArray = cookie.split('='); 
         if (cookiesArray[0].trim() == key.trim()) { 
-            return cookiesArray[1];  // (key[0],value[1])
+            return cookiesArray[1];
         }
     }
     return '';
@@ -46,7 +46,7 @@ function getCookieValue(key){
     for (let cookie of cookies) {
         var cookiesArray = cookie.split('='); 
         if (cookiesArray[0].trim() == key.trim()) { 
-            return cookiesArray[1];  // (key[0],value[1])
+            return cookiesArray[1]; 
         }
     }
     return '';
@@ -56,7 +56,6 @@ document.cookie="haruymththeme=light;path=/";
 }
 let lightOrDark=getCookieValue("haruymththeme");
 
-			 window.addEventListener('DOMContentLoaded', function(){
         var head = document.getElementsByTagName('head')
         var script = document.createElement('script')
         //ここで任意のjQueryを読み込ませる
@@ -65,7 +64,6 @@ let lightOrDark=getCookieValue("haruymththeme");
         script.addEventListener('load', function() {
         
           // ここにjQueryの記述をする
-          
             function themeSet(mode){
               if(mode=="dark"){
               $("body").css(
@@ -136,6 +134,7 @@ let lightOrDark=getCookieValue("haruymththeme");
               "padding":"20px",
             });
             }
+            lightOrDark="dark";
             themeSet(lightOrDark);
             theme.onclick=function(){
               if(lightOrDark=="light"){
@@ -150,5 +149,5 @@ let lightOrDark=getCookieValue("haruymththeme");
         
         document.head.appendChild(script)
 
-			 });
+			 
 };
