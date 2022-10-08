@@ -25,7 +25,7 @@ $("#theme").css(
     {"text-align":"center",
     "margin-bottom":"10px",
     "margin-right":"10px",
-     "cursor": "pointer"
+     "cursor": "pointer",
      "right":"0px",
      "bottom":"0px"
     });
