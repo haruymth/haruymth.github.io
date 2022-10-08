@@ -38,7 +38,7 @@ html.appendChild(footer);
 var theme=document.createElement("div");
 theme.setAttribute("id","theme");
 theme.innerHTML=`
-<img id="_lod" src="/imgs/lightnow.png" width="40" height="40">
+<img id="_lod" src="https://haru-ymth.github.io/imgs/lightnow.png" width="40" height="40">
 `;
 footer.insertBefore(theme,footer.firstChild);
 function getCookieValue(key){
@@ -88,7 +88,7 @@ let lightOrDark=getCookieValue("haruymththeme");
                 });
               lightOrDark="dark";
                 theme.innerHTML=`
-                    <img src="/imgs/${lightOrDark}now.png" width="25" height="25">`;
+                    <img id="_lod" src="https://haru-ymth.github.io/imgs/${lightOrDark}now.png" width="40" height="40">`;
                 document.cookie=`haruymththeme=${lightOrDark};path=/;max-age=315360000`;
               }
               if(mode=="light"){
@@ -114,7 +114,7 @@ let lightOrDark=getCookieValue("haruymththeme");
                 });
               lightOrDark="light";
                 theme.innerHTML=`
-                    <img src="/imgs/${lightOrDark}now.png" width="25" height="25">`;
+                    <img id="_lod" src="https://haru-ymth.github.io/imgs/${lightOrDark}now.png" width="40" height="40">`;
                 document.cookie=`haruymththeme=${lightOrDark};path=/;max-age=315360000`;
               }
               $("a.nav").css({
@@ -141,12 +141,7 @@ let lightOrDark=getCookieValue("haruymththeme");
               }else{
               themeSet("light");
               }
-              
             };
           })
-        
-        
-        document.head.appendChild(script)
-
-			 
+        document.head.appendChild(script);
 };
