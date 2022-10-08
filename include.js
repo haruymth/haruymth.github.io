@@ -58,7 +58,7 @@ if(getCookieValue("haruymththeme")==""){
 document.cookie="haruymththeme=light;path=/";
 }
 let lightOrDark=getCookieValue("haruymththeme");
-window.addEventListener('DOMContentLoaded', function(){
+//window.addEventListener('DOMContentLoaded', function(){
 
 function themeSet(mode){
 	if(mode=="dark"){
@@ -139,5 +139,5 @@ theme.onclick=function(){
 	}
 	
 };
-	});
+//	});
 };
