@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background-color:#f4f6f7;
+  background-color: #f4f6f7;
   margin-top:0px;
   margin:0px;
   padding-top:80px;
@@ -47,12 +47,13 @@ a:hover {
   margin-bottom:0px;
   margin-right:0px;
   margin-left:0px;
-  background-color:969BA4;
+  background-color:#969BA4;
   text-align:center;
   color:#ffffff;
   width:100%;
   padding-top:10px;
   padding-bottom:10px;
+  margin-top:100px;
 }
 .title {
   text-decoration:none;
@@ -114,11 +115,11 @@ header{
 
 .code{
   font-family: 'Ubuntu Mono', monospace;
-  color:#f4f6f7;
+  color:#233648;
   margin-top:30px;
   font-size:10px;
   white-space: pre;
-  background-color:#233648;
+  background-color:#ffffff;
   border-radius:10px;
   padding:7px;
   overflow-wrap: break-word;
@@ -140,7 +141,7 @@ button.button{
 button.button:hover{
   border-radius:5px;
   text-decoration:none;
-  color:#ffffff;
+  color:#f4f6f7;
   font-weight:600;
   background-color:#51BEBE;
   margin-top:15px;
@@ -149,11 +150,24 @@ button.button:hover{
   opacity:0.8;
   cursor: pointer;
 }
-#theme{
-  text-align:right;
-    margin-bottom:25px;
-     width:100%;
-     margin-top:50px;
-}
-#_lod{cursor: pointer;}
 #sidebartoggle{margin: 0 0 0 auto;}
+
+@media (prefers-color-scheme: dark) {
+  body{
+    background-color:#233648;
+    color:#f4f6f7;
+  }
+  h2{
+    color:#f4f6f7;
+  }
+  a{
+    color:#fff7D6
+  }
+  a:hover{
+    color:#fff7D6;
+  }
+  .code{
+    color:#f4f6f7;
+    background-color:#314b63;
+  }
+}
