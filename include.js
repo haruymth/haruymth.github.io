@@ -1,5 +1,5 @@
 const head = document.head;
-head.insertAdjacentHTML('afterBegin', `	
+head.insertAdjacentHTML('afterBegin', `
 	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
 	  <meta charset="utf-8"> 
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">`);
@@ -135,7 +135,8 @@ let lightOrDark=getCookieValue("haruymththeme");
             });
             }
             themeSet(lightOrDark);
-            theme.onclick=function(){
+            var a =theme.firstElementChild;
+            a.onclick=function(){
               if(lightOrDark=="light"){
               themeSet("dark");
               }else{
