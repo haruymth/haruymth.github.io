@@ -26,7 +26,7 @@ let lightOrDark="light";
 $("#theme").css(
     {"text-align":"right",
     "margin-bottom":"40px",
-    "margin-right":"40px",
+    "padding-right":"40px",
      "cursor": "pointer",
      "width":"100%",
      "margin-top":"50px"
