@@ -17,7 +17,7 @@ html.appendChild(footer);
 var theme=document.createElement("a");
 theme.setAttribute("id","theme");
 theme.innerHTML=`
-<img src="/imgs/lightnow.png/" width="25" height="25">
+<img src="/imgs/lightnow.png" width="25" height="25">
 `;
 footer.before(theme);
 let lightOrDark="light";
