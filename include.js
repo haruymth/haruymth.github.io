@@ -7,24 +7,26 @@ header.innerHTML = `
 		</ul>`;
 var footer=document.createElement("footer");
 footer.innerHTML=`
+<div>
 &copy;&nbsp;2022&nbsp;yamaguchi03
+</div>
 `;
 var head=document.getElementsByTagName("head")[0];
 head.before(header);
 var html=document.getElementsByTagName("html")[0];
 html.appendChild(footer);
 			
-var theme=document.createElement("a");
+var theme=document.createElement("div");
 theme.setAttribute("id","theme");
 theme.innerHTML=`
-<img src="/imgs/lightnow.png" width="25" height="25">
+<img src="/imgs/lightnow.png" width="40" height="40">
 `;
-footer.before(theme);
+footer.insertBefore(theme,footer.firstChild);
 let lightOrDark="light";
 $("#theme").css(
     {"text-align":"right",
-    "margin-bottom":"10px",
-    "margin-right":"10px",
+    "margin-bottom":"40px",
+    "margin-right":"40px",
      "cursor": "pointer",
      "width":"100%"
     });
