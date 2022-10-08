@@ -22,7 +22,20 @@ theme.innerHTML=`
 <img src="/imgs/lightnow.png" width="40" height="40">
 `;
 footer.insertBefore(theme,footer.firstChild);
-let lightOrDark="light";
+function getCookieValue(key: string): string {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        var cookiesArray = cookie.split('='); 
+        if (cookiesArray[0].trim() == key.trim()) { 
+            return cookiesArray[1];  // (key[0],value[1])
+        }
+    }
+    return '';
+}
+if(getCookieValue("haruymththeme")==""){
+document.cookie="haruymththeme=light";
+}
+let lightOrDark=getCookieValue("haruymththeme");
 $("#theme").css(
     {"text-align":"right",
     "margin-bottom":"25px",
@@ -55,6 +68,7 @@ function themeSet(mode){
 	lightOrDark="dark";
 		theme.innerHTML=`
         <img src="/imgs/${lightOrDark}now.png" width="25" height="25">`;
+		document.cookie=`haruymththeme=${lightOrDark}`;
 	}
 	if(mode=="light"){
 	$("body").css(
@@ -80,6 +94,7 @@ function themeSet(mode){
 	lightOrDark="light";
 		theme.innerHTML=`
         <img src="/imgs/${lightOrDark}now.png" width="25" height="25">`;
+		document.cookie=`haruymththeme=${lightOrDark}`;
 	}
 	$("a.nav").css({
   "text-decoration":"none",
