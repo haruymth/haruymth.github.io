@@ -13,11 +13,11 @@ var head=document.getElementsByTagName("head")[0];
 head.before(header);
 var html=document.getElementsByTagName("html")[0];
 html.appendChild(footer);
-			};
+			
 var theme=document.createElement("a");
 theme.setAttribute("id","theme");
 theme.innerHTML=`
-<img src="/imgs/lightnow.png" width="25" height="25">
+<img src="/imgs/lightnow.png/" width="25" height="25">
 `;
 footer.before(theme);
 let lightOrDark="light";
@@ -26,3 +26,64 @@ $("#theme").css(
     "margin-bottom":"10px",
     "margin-right":"10px"
     });
+function themeSet(mode){
+	if(mode=="dark"){
+	$("body").css(
+		{"background-color":"#233648","color":"#f4f6f7"
+		});
+	$("h2").css(
+		{
+		"color":"#f4f6f7"
+		});
+	$("a").css(
+		{
+		"color":"#FFF7D6"
+		});
+	$("a:hover").css(
+		{
+		"color":"#FFF7D6"
+		});
+	$(".code").css(
+		{
+		"color":"#233648",
+		"background-color":"#f4f6f7"
+		});
+	lightOrDark="dark";
+		theme.innerHTML=`
+        <img src="/imgs/${lightOrDark}now.png/" width="25" height="25">`;
+	}
+	if(mode=="light"){
+	$("body").css(
+		{"background-color":"#f4f6f7","color":"#233648"
+		});
+	$("h2").css(
+		{
+		"color":"#233648"
+		});
+	$("a").css(
+		{
+		"color":"#4b749c"
+		});
+	$("a:hover").css(
+		{
+		"color":"#4b749c"
+		});
+	$(".code").css(
+		{
+		"color":"#f4f6f7",
+		"background-color":"#233648"
+		});
+	lightOrDark="light";
+		theme.innerHTML=`
+        <img src="/imgs/${lightOrDark}now.png/" width="25" height="25">`;
+	}
+}
+themeSet(lightOrDark);
+theme.onclick=function(){
+	if(lightOrDark==light){
+	themeSet(dark);
+	}else{
+	themeSet(light);
+	}
+}
+};
