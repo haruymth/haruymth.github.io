@@ -21,6 +21,11 @@ theme.innerHTML=`
 `;
 footer.before(theme);
 let lightOrDark="light";
+$("#theme").css(
+    {"text-align":"right",
+    "margin-bottom":"10px",
+    "margin-right":"10px"
+    });
 function themeSet(theme){
 	if(theme==dark){
 	$("body").css(
