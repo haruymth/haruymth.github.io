@@ -38,7 +38,7 @@ html.appendChild(footer);
 var theme=document.createElement("div");
 theme.setAttribute("id","theme");
 theme.innerHTML=`
-<img src="/imgs/lightnow.png" width="40" height="40">
+<img id="_lod" src="/imgs/lightnow.png" width="40" height="40">
 `;
 footer.insertBefore(theme,footer.firstChild);
 function getCookieValue(key){
