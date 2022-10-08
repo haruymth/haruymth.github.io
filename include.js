@@ -134,7 +134,6 @@ let lightOrDark=getCookieValue("haruymththeme");
               "padding":"20px",
             });
             }
-            lightOrDark="dark";
             themeSet(lightOrDark);
             theme.onclick=function(){
               if(lightOrDark=="light"){
