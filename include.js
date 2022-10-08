@@ -17,7 +17,7 @@ html.appendChild(footer);
 var theme=document.createElement("a");
 theme.setAttribute("id","theme");
 theme.innerHTML=`
-<img src="/imgs/lightnow.png/" width="25" height="25">
+<img src="/imgs/lightnow.png" width="25" height="25">
 `;
 footer.before(theme);
 let lightOrDark="light";
@@ -50,7 +50,7 @@ function themeSet(mode){
 		});
 	lightOrDark="dark";
 		theme.innerHTML=`
-        <img src="/imgs/${lightOrDark}now.png/" width="25" height="25">`;
+        <img src="/imgs/${lightOrDark}now.png" width="25" height="25">`;
 	}
 	if(mode=="light"){
 	$("body").css(
@@ -75,15 +75,15 @@ function themeSet(mode){
 		});
 	lightOrDark="light";
 		theme.innerHTML=`
-        <img src="/imgs/${lightOrDark}now.png/" width="25" height="25">`;
+        <img src="/imgs/${lightOrDark}now.png" width="25" height="25">`;
 	}
 }
 themeSet(lightOrDark);
 theme.onclick=function(){
-	if(lightOrDark==light){
-	themeSet(dark);
+	if(lightOrDark=="light"){
+	themeSet("dark");
 	}else{
-	themeSet(light);
+	themeSet("light");
 	}
 }
 };
