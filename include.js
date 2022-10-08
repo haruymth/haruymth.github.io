@@ -25,8 +25,7 @@ footer.insertBefore(theme,footer.firstChild);
 let lightOrDark="light";
 $("#theme").css(
     {"text-align":"right",
-    "margin-bottom":"40px",
-    "padding-right":"40px",
+    "margin-bottom":"25px",
      "cursor": "pointer",
      "width":"100%",
      "margin-top":"50px"
