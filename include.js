@@ -7,7 +7,7 @@ header.innerHTML = `
 		</ul>`;
 var footer=document.createElement("footer");
 footer.innerHTML=`
-<div>
+<div id="infooter">
 &copy;&nbsp;2022&nbsp;yamaguchi03
 </div>
 `;
