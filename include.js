@@ -55,13 +55,7 @@ if(getCookieValue("haruymththeme")==""){
 document.cookie="haruymththeme=light;path=/";
 }
 let lightOrDark=getCookieValue("haruymththeme");
-$("#theme").css(
-    {"text-align":"right",
-    "margin-bottom":"25px",
-     "cursor": "pointer",
-     "width":"100%",
-     "margin-top":"50px"
-    });
+
 function themeSet(mode){
 	if(mode=="dark"){
 	$("body").css(
