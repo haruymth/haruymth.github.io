@@ -78,6 +78,22 @@ function themeSet(mode){
 		theme.innerHTML=`
         <img src="/imgs/${lightOrDark}now.png" width="25" height="25">`;
 	}
+	$("a.nav").css({
+  "text-decoration":"none",
+  "color":"#ffffff",
+  "text-align":"center",
+  "font-weight":"600",
+  "vertical-align": "middle",
+  "padding":"20px"
+});
+$("a.nav:hover").css({
+  "text-decoration":"none",
+  "color":"#ffffff",
+  "text-align":"center",
+  "font-weight":"600",
+  "vertical-align": "middle",
+  "padding":"20px",
+});
 }
 themeSet(lightOrDark);
 theme.onclick=function(){
