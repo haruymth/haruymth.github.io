@@ -55,7 +55,8 @@ $("#theme").css(
     "margin-bottom":"25px",
      "cursor": "pointer",
      "width":"100%",
-     "margin-top":"50px"
+     "margin-top":"50px",
+     "position":"fixed"
     });
 function themeSet(mode){
 	if(mode=="dark"){
