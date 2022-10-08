@@ -26,8 +26,8 @@ $("#theme").css(
     "margin-bottom":"10px",
     "margin-right":"10px"
     });
-function themeSet(theme){
-	if(theme=="dark"){
+function themeSet(mode){
+	if(mode=="dark"){
 	$("body").css(
 		{"background-color":"#233648","color":"#f4f6f7"
 		});
@@ -52,7 +52,7 @@ function themeSet(theme){
 		theme.innerHTML=`
         <img src="/imgs/${lightOrDark}now.png/" width="25" height="25">`;
 	}
-	if(theme=="light"){
+	if(mode=="light"){
 	$("body").css(
 		{"background-color":"#f4f6f7","color":"#233648"
 		});
@@ -74,7 +74,7 @@ function themeSet(theme){
 		"background-color":"#233648"
 		});
 	lightOrDark="light";
-		ttheme.innerHTML=`
+		theme.innerHTML=`
         <img src="/imgs/${lightOrDark}now.png/" width="25" height="25">`;
 	}
 }
