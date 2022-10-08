@@ -22,7 +22,7 @@ header.innerHTML = `
 		<ul id=headerul>
 				<li class="head"> <a href="https://haru-ymth.github.io/" class="nav"><img src="https://haru-ymth.github.io/favicon.png" width="35px" height="35px" id="icon"></a> </li>
 				<li class="head"><a href="https://haru-ymth.github.io/" class="nav">yamaguchi03</a></li>
-				<li class="head"> <a href="https://haru-ymth.github.io/others" class="nav">その他</a> </li>
+				<li class="head" style="display: flex;justify-content: flex-end;"> <a href="https://haru-ymth.github.io/others" class="nav">その他</a> </li>
 		</ul>`;
 var footer=document.createElement("footer");
 footer.innerHTML=`
