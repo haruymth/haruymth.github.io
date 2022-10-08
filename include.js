@@ -11,6 +11,7 @@ footer.innerHTML=`
 &copy;&nbsp;2022&nbsp;yamaguchi03
 </div>
 `;
+footer.setAttribute("id","infooter");
 var head=document.getElementsByTagName("head")[0];
 head.before(header);
 var html=document.getElementsByTagName("html")[0];
