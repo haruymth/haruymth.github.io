@@ -19,7 +19,7 @@ function getCookieValue(key){
 if(getCookieValue("haruymththeme")==""){
 document.cookie="haruymththeme=light;path=/";
 }
-let lightOrDark=getCookieValue("haruymththeme");
+var lightOrDark=getCookieValue("haruymththeme");
 window.onload=function(){var header = document.createElement("header");
 header.innerHTML = `
 		<ul id=headerul>
