@@ -22,7 +22,7 @@ theme.innerHTML=`
 <img src="/imgs/lightnow.png" width="40" height="40">
 `;
 footer.insertBefore(theme,footer.firstChild);
-function getCookieValue(key: string): string {
+function getCookieValue(key){
     const cookies = document.cookie.split(';');
     for (let cookie of cookies) {
         var cookiesArray = cookie.split('='); 
@@ -120,5 +120,5 @@ theme.onclick=function(){
 	}else{
 	themeSet("light");
 	}
-}
+};
 };
