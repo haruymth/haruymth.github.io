@@ -13,7 +13,7 @@ window.onload=function(){
 		</ul><div id="menushadow"></div>`;
     
     var footer=document.createElement("footer");
-    footer.innerHTML=`<div id="infooter">&copy;&nbsp;2022&nbsp;yamaguchi03</div>`;
+    //footer.innerHTML=`<div id="infooter">&copy;&nbsp;2022&nbsp;yamaguchi03</div>`;
     var menu=document.createElement("iframe");
     menu.id="menubar";
     menu.src="https://haru-ymth.github.io/others";
@@ -22,9 +22,9 @@ window.onload=function(){
     head.after(header);
     head.after(menu);
     var html=document.getElementsByTagName("html")[0];
-    html.appendChild(footer);
-    var head = document.getElementsByTagName('head')
-    var script = document.createElement('script')
+   // html.appendChild(footer);
+    var head = document.getElementsByTagName('head');
+    var script = document.createElement('script');
         script.setAttribute('src', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');script.setAttribute('type', 'text/javascript');script.addEventListener('load', function() {
             //$("#menubar").on("click",function(){$("#menubar").css("right","0");});
         })
