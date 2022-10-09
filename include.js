@@ -34,7 +34,7 @@ window.onload=function(){
     var sonota=document.getElementById("sidebartoggle");
 		sonota.addEventListener('click', function(){
     	if(document.getElementById("menubar").style.right=="0px"){
-        document.getElementById("_shadow").style.transitionDelay="0s,1s";
+        document.getElementById("_shadow").style.transitionDelay="0s,0.5s";
       	document.getElementById("menubar").style.right="-100vw";
         document.getElementById("_shadow").style.opacity="0";
         document.getElementById("_shadow").style.height="0";
