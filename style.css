@@ -5,6 +5,7 @@ html {
   margin-top:0px;
   font-family: 'Noto Sans JP', sans-serif;
   height:100%;
+  position:relative;
 }
 
 body {
@@ -201,4 +202,17 @@ button.button:hover{
   border:none;
   position:fixed;
   transition:right .5s;
+  z-index:998
+}
+#_shadow{
+ position:absolute;
+ position:fixed;
+  top:50px;
+  left:0;
+  height:100%;
+  width:100%;
+  opacity:0;
+  background-color:#000;
+  transition:opacity .5s;
+  z-index:99;
 }
