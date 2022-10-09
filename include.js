@@ -3,7 +3,7 @@ head.insertAdjacentHTML('afterBegin', `
 	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
 	  <meta charset="utf-8"> 
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">`);
-//window.onload=function(){
+window.onload=function(){
     var header = document.createElement("header");
     header.innerHTML = `
 		<ul id=headerul>
@@ -53,4 +53,4 @@ head.insertAdjacentHTML('afterBegin', `
         document.getElementById("_shadow").style.height="0";
     });
     
-//};
+};
