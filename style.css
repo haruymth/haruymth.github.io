@@ -213,6 +213,8 @@ button.button:hover{
   width:100%;
   opacity:0;
   background-color:#000;
-  transition:opacity 1s,;
+  transition-property:opacity,height;
+  transition-duration:1s,0s;
+  transition-delay:0s,1s;
   z-index:99;
 }
