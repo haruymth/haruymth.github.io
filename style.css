@@ -214,7 +214,7 @@ button.button:hover{
   opacity:0;
   background-color:#000;
   transition-property:opacity,height;
-  transition-duration:1s,0s;
-  transition-delay:0s,1s;
+  transition-duration:0.5s,0s;
+  transition-delay:0s,0.5s;
   z-index:99;
 }
