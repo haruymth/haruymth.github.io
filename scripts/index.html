@@ -4,31 +4,6 @@
 	<title>
 		Scripts
 	</title>
-	<script>
-    window.addEventListener('load', function(){
-var code=document.getElementsByClassName("code");
-for(let i=0;i<code.length;i++){
-	var button=document.createElement("button");
-  button.setAttribute("class","button");
-  button.setAttribute("onclick","copyScripts(this.previousElementSibling);");
-  button.innerHTML="Copy";
-	code[i].after(button);
-};
-});
-
-function copyScripts(scripts){
-	var element = document.createElement("textarea");
-	element.value=scripts.textContent;
-	document.body.appendChild(element);
-	element.select();
-	document.execCommand('copy');
-	document.body.removeChild(element)
-	scripts.nextElementSibling.innerHTML="Copied!";
-	setTimeout(function(){scripts.nextElementSibling.innerHTML="Copy"},1000);
-};
-
-
-</script>
   </head>
 	<body>
 		<h1>
@@ -112,5 +87,6 @@ for(i=0;i&lt;studioarr.length;i++){
 console.log(&quot;入れ終わったぞ&quot;);</div>
 	
 		<main><br>Scratch.mit.edu内でコンソールにて実行してください。<br>二次配布はしてもいいですけど自作発言はやめてください。 </main>
+		<script src="/script.js"></script>
 	</body>
 </html>
