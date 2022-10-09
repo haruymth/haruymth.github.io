@@ -1,6 +1,6 @@
 const head = document.head;
 head.insertAdjacentHTML('afterBegin', `
-	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
+	  link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
 	  <meta charset="utf-8"> 
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">`);
 window.onload=function(){
@@ -34,10 +34,12 @@ window.onload=function(){
     var sonota=document.getElementById("sidebartoggle");
 		sonota.addEventListener('click', function(){
     	if(document.getElementById("menubar").style.right=="0px"){
+        document.getElementById("_shadow").style.transitionDelay="0s,1s";
       	document.getElementById("menubar").style.right="-100vw";
         document.getElementById("_shadow").style.opacity="0";
-        setTimeout(function(){document.getElementById("_shadow").style.height="0";},1000);
+        document.getElementById("_shadow").style.height="0";
     	}else{
+        document.getElementById("_shadow").style.transitionDelay="0s,0s";
         document.getElementById("menubar").style.right="0px";
         document.getElementById("_shadow").style.opacity="0.5";
         document.getElementById("_shadow").style.height="100%";
