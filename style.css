@@ -25,6 +25,16 @@ h2 {
   border-radius:2px;
   font-size:20px;
 }
+h1 {
+  margin-top:40px;
+  padding-top:5px;
+  padding:20px;
+  padding-left:10px;
+  border-bottom: solid 1px #233648;
+  color:#233648;
+  border-radius:2px;
+  font-size:40px;
+}
 
 main {
   padding:5px;
@@ -158,6 +168,9 @@ button.button:hover{
     color:#f4f6f7;
   }
   h2{
+    color:#f4f6f7;
+  }
+  h1{
     color:#f4f6f7;
   }
   a{
