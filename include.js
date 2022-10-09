@@ -10,8 +10,10 @@ window.onload=function(){
 				<li class="head"> <a href="https://haru-ymth.github.io/" class="nav"><img src="https://haru-ymth.github.io/favicon.png" width="35px" height="35px" id="icon"></a> </li>
 				<li class="head"><a href="https://haru-ymth.github.io/" class="nav">yamaguchi03</a></li>
 				<li class="head" id="sidebartoggle"> <a class="nav">その他</a> </li>
-		</ul><div id="menushadow"></div>`;
-    
+		</ul>`;
+    var shadow=document.createElement("div");
+    shadow.id="_shadow";
+    document.body.after(shadow);
     var footer=document.createElement("footer");
     //footer.innerHTML=`<div id="infooter">&copy;&nbsp;2022&nbsp;yamaguchi03</div>`;
     var menu=document.createElement("iframe");
@@ -33,8 +35,10 @@ window.onload=function(){
 		sonota.addEventListener('click', function(){
     	if(document.getElementById("menubar").style.right=="0px"){
       	document.getElementById("menubar").style.right="-100vw";
+        document.getElementById("_shadow").style.opacity="0";
     	}else{
         document.getElementById("menubar").style.right="0px";
+        document.getElementById("_shadow").style.opacity="0.5";
       }
     });
     
