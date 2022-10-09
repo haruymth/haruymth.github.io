@@ -36,9 +36,11 @@ window.onload=function(){
     	if(document.getElementById("menubar").style.right=="0px"){
       	document.getElementById("menubar").style.right="-100vw";
         document.getElementById("_shadow").style.opacity="0";
+        setTimeout(function(){document.getElementById("_shadow").style.height="0";},1000);
     	}else{
         document.getElementById("menubar").style.right="0px";
         document.getElementById("_shadow").style.opacity="0.5";
+        document.getElementById("_shadow").style.height="100%";
       }
     });
     
