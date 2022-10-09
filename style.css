@@ -15,7 +15,7 @@ body {
   padding-left:40px;
   font-weight:200;
   color:#233648;
-  height:100%;
+  height:calc(100%+40px);
 }
 h2 {
   margin-top:40px;
