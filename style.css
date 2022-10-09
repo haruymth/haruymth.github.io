@@ -4,6 +4,7 @@ html {
   margin:0px;
   margin-top:0px;
   font-family: 'Noto Sans JP', sans-serif;
+  height:100%;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
   padding-left:40px;
   font-weight:200;
   color:#233648;
+  height:100%;
 }
 h2 {
   margin-top:40px;
@@ -82,6 +84,7 @@ a.nav {
   font-weight:600;
   vertical-align: middle;
   padding:20px;
+  cursor:pointer;
 }
 a.nav:hover {
   text-decoration:none;
@@ -90,6 +93,7 @@ a.nav:hover {
   font-weight:600;
   vertical-align: middle;
   padding:20px;
+  cursor:pointer;
 }
 
 li.head {
@@ -113,7 +117,7 @@ header{
   position: fixed;
   top: 0;
   left: 0;
-  z-index:2147483646;
+  z-index:999;
 }
 
 #icon {
@@ -160,7 +164,9 @@ button.button:hover{
   opacity:0.8;
   cursor: pointer;
 }
-#sidebartoggle{margin: 0 0 0 auto;}
+#sidebartoggle{
+  margin: 0 0 0 auto;
+  }
 
 @media (prefers-color-scheme: dark) {
   body{
@@ -183,4 +189,15 @@ button.button:hover{
     color:#f4f6f7;
     background-color:#314b63;
   }
+}
+#menubar{
+  position:  absolute;
+  display:block;
+  width:40%;
+  height:100vh;
+  right:-100vw;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+  border:none;
+  position:fixed;
+  transition:right .5s;
 }
