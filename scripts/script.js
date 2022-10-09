@@ -1,4 +1,5 @@
-var code=document.getElementsByClassName("code");
+window.addEventListener('DOMContentLoaded', function() {
+	var code=document.getElementsByClassName("code");
 for(let i=0;i<code.length;i++){
 	var button=document.createElement("button");
   button.setAttribute("class","button");
@@ -6,6 +7,7 @@ for(let i=0;i<code.length;i++){
   button.innerHTML="Copy";
 	code[i].after(button);
 };
+});
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
 	element.value=scripts.textContent;
