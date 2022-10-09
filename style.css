@@ -167,8 +167,11 @@ button.button:hover{
 }
 #sidebartoggle{
   margin: 0 0 0 auto;
+  user-select:none;
   }
-
+img{
+  user-select:none;
+}
 @media (prefers-color-scheme: dark) {
   body{
     background-color:#233648;
