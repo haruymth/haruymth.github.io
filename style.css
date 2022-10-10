@@ -171,6 +171,7 @@ button.button:hover{
   }
 img{
   user-select:none;
+  
 }
 @media (prefers-color-scheme: dark) {
   body{
