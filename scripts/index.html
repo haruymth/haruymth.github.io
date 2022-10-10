@@ -56,7 +56,11 @@
     console.log(`=====結果====\n${page}ページ目、${rank}位にありました。`)
   };
   calKei();</div>
-		
+  
+		<main>
+            僕がJavaScriptを勉強し始めて初期の頃に作ったものなので、無駄が多いですが、ちゃんと動作します。<br>
+            ダイアログの説明に従えばいけます。コンソールに「全ページ合わせて○位まで調べました」とか、出たら、成功です。
+        </main>
 		
 		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ（JavaScript)</h2>	
 <div class="code">let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
@@ -89,7 +93,16 @@ for(i=0;i&lt;studioarr.length;i++){
     });
 }
 console.log(&quot;入れ終わったぞ&quot;);</div>
-	
+	<main>
+        いわゆる「拡散」です。<br>
+        傾向に乗ってる人は、みんなスタジオに入れまくってるので、自分もやろうと思って、手動でやってたら、「これめんどすぎやろ」って思ったわけです。<br>
+        そこで、「この作業、自動でやらせよう」と思って、これを作りました。<br><br>
+        ①スタジオ検索何ページ分調べるか入力。<br>
+        ②数秒待つ。<br>
+        ③それで、入れたいプロジェクトIDをいれる。<br>
+        <br>
+        それだけ。簡単ですよね。
+    </main>
   <script src="https://haru-ymth.github.io/include.js"></script>
 		<script src="/scripts/script.js"></script>
 	</body>
