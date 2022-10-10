@@ -1,39 +1,40 @@
+
 <html>
-  <head>
-	  <title>
-		  その他のページ
-	  </title>
-  </head>
-	
-	<body>
-		<h1>ページ一覧</h1>
-		<h2><a href="/scripts">スクリプト配布</a></h2>
-		<main>
-			僕が作った便利なScratch用のスクリプトを置いています。
-		</main>
-		<h1>相互リンク</h1>
-		<ul>
-            <li>
-                <img src="https://uploads.scratch.mit.edu/get_image/user/92614120_60x60.png" width="25" height="25">
-                <a href="https://atridott.github.io/">Atridott</a>
-            </li>
-		</ul>
-		<style>
-			body{padding-top:30px;}
-            li{vertical-align: middle;margin-bottom:10px;}</style>
-		<script src="https://haru-ymth.github.io/include.js"></script>
-	  <script>window.addEventListener('DOMContentLoaded', function() {
-			  var header = document.getElementsByTagName("header")[0];
-			  header.remove();
-			  var footer = document.getElementById("infooter");
-			  footer.remove();
-			  var iframe = document.getElementsByTagName("iframe")[0];
-			  iframe.remove();
-			  var href=document.getElementsByTagName("a");
-			  for(let i;i<href.length;i++){
-			  	href[i].target="_parent";
-			  }
-		  });
-	  </script>
-	</body>
-</html>
+    <head>
+        <title>
+            その他のページ
+        </title>
+    </head>
+      
+      <body>
+          <h1>ページ一覧</h1>
+          <h2><a href="/scripts">スクリプト配布</a></h2>
+          <main>
+              僕が作った便利なScratch用のスクリプトを置いています。
+          </main>
+          <h1>相互リンク</h1>
+          <ul>
+          <li class="li">
+                  <img src="https://uploads.scratch.mit.edu/get_image/user/92614120_60x60.png" width="25" height="25">
+                  <a href="https://atridott.github.io/">Atridott</a>
+          
+          </li>
+          </ul>
+          <style>
+              body{padding-top:30px;}
+              .li{margin-bottom:10px;border:solid 1px #000000;vertical-align: middle;}img{vertical-align: bottom;}</style>
+          <script src="https://haru-ymth.github.io/include.js"></script>
+        <script>window.addEventListener('DOMContentLoaded', function() {
+                var header = document.getElementsByTagName("header")[0];
+                header.remove();
+                var iframe = document.getElementsByTagName("iframe")[0];
+                iframe.remove();
+                var href=document.getElementsByTagName("a");
+                for(let i=0;i<href.length;i++){
+                    href[i].target="_parent";
+                }
+            });
+        </script>
+      </body>
+  </html>
+  
