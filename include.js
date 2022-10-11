@@ -2,7 +2,16 @@ const head = document.head;
 head.insertAdjacentHTML('afterBegin', `
 	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
 	  <meta charset="utf-8"> 
-	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">`);
+	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
+	  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T5V03S2YS9');
+</script>`);
 window.addEventListener('DOMContentLoaded', function() {
     var header = document.createElement("header");
     header.innerHTML = `
