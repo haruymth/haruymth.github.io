@@ -3,15 +3,7 @@ head.insertAdjacentHTML('afterBegin', `
 	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
 	  <meta charset="utf-8"> 
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
-	  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T5V03S2YS9');
-</script>`);
+	  `);
 window.addEventListener('DOMContentLoaded', function() {
     var header = document.createElement("header");
     header.innerHTML = `
@@ -37,9 +29,20 @@ window.addEventListener('DOMContentLoaded', function() {
     var head = document.getElementsByTagName('head');
     var script = document.createElement('script');
         script.setAttribute('src', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');script.setAttribute('type', 'text/javascript');script.addEventListener('load', function() {
-            //$("#menubar").on("click",function(){$("#menubar").css("right","0");});
         })
         document.head.appendChild(script);  
+const he = document.head;
+	he.insertAdjacentHTML('afterBegin', `
+	  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T5V03S2YS9');
+</script>
+	  `);
     var sonota=document.getElementById("sidebartoggle");
 		sonota.addEventListener('click', function(){
     	if(document.getElementById("menubar").style.right=="0px"){
