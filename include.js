@@ -1,5 +1,5 @@
 const head = document.head;
-head.insertAdjacentHTML('afterBegin', `
+head.insertAdjacentHTML('beforeend', `
 	  <link rel="stylesheet" href="https://haru-ymth.github.io/style.css">
 	  <meta charset="utf-8"> 
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
