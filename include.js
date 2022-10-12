@@ -6,18 +6,7 @@ head.insertAdjacentHTML('beforeend', `
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 	  `);
 window.addEventListener('DOMContentLoaded', function() {
-	var googleAnalytics=document.createElement("div");
-	googleAnalytics.innerHTML=`<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T5V03S2YS9');
-</script>`;
-	var afterHead=document.head;
-	afterHead.after(googleAnalytics);
+	
     var header = document.createElement("header");
     header.innerHTML = `
 		<ul id=headerul>
@@ -39,6 +28,18 @@ window.addEventListener('DOMContentLoaded', function() {
     head.after(menu);
     var html=document.getElementsByTagName("html")[0];
    // html.appendChild(footer);
+	var googleAnalytics=document.createElement("div");
+	googleAnalytics.innerHTML=`<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T5V03S2YS9');
+</script>`;
+	var afterHead=document.head;
+	afterHead.after(googleAnalytics);
     var sonota=document.getElementById("sidebartoggle");
 		sonota.addEventListener('click', function(){
     	if(document.getElementById("menubar").style.right=="0px"){
