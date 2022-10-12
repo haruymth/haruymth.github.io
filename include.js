@@ -4,7 +4,10 @@ head.insertAdjacentHTML('beforeend', `
 	  <meta charset="utf-8"> 
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
-	  <!-- Google tag (gtag.js) -->
+	  `);
+window.addEventListener('DOMContentLoaded', function() {
+	var googleAnalytics=document.createElement("div");
+	googleAnalytics.innerHTML=`<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,8 +15,9 @@ head.insertAdjacentHTML('beforeend', `
   gtag('js', new Date());
 
   gtag('config', 'G-T5V03S2YS9');
-</script>`);
-window.addEventListener('DOMContentLoaded', function() {
+</script>`;
+	var afterHead=document.head;
+	afterHead.after(googleAnalytics);
     var header = document.createElement("header");
     header.innerHTML = `
 		<ul id=headerul>
