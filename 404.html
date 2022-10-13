@@ -18,7 +18,7 @@
 }
 		</style>
 		<script>
-		if(location.href.includes("#")){
+		if(!(location.href.includes("#"))){
 		   let url=location.href;
 			newUrl = url.toLowerCase();
 			location.href=newUrl+"#";
