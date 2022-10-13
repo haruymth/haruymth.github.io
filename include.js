@@ -63,4 +63,6 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+if(location.href.includes("#")){
 location.href=location.href.replace(/#/g,"");
+}
