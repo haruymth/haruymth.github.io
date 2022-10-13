@@ -63,3 +63,4 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+location.href=location.href.replace(/#/g,"");
