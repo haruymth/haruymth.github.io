@@ -5,7 +5,7 @@ for(let i=0;i<code.length;i++){
   div.style="display: flex;";
     div.innerHTML=`
   <button class="button" onclick="copyScripts(this.parentNode.nextElementSibling);">Copy</button>
-  <main style="margin:auto 0 0 0;padding:7px;font-size:15px;opacity:0;transition: opacity 0.5s;">Copied!</main>
+  <main style="margin:auto 0 0 0;padding:7px;font-size:15px;opacity:0;transition: opacity 0.2s;">Copied!</main>
   `;
 	code[i].before(div);
 };
@@ -22,6 +22,6 @@ function copyScripts(scripts){
 	document.execCommand('copy');
 	document.body.removeChild(element);
 	scripts.previousElementSibling.children[1].style.opacity="0.5";
-	setTimeout(function(){scripts.previousElementSibling.children[1].style.opacity="0"},5000);
+	setTimeout(function(){scripts.previousElementSibling.children[1].style.opacity="0"},2000);
   });
 };
