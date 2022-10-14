@@ -23,6 +23,6 @@ function copyScripts(scripts){
 	document.execCommand('copy');
 	document.body.removeChild(element);
 	scripts.previousElementSibling.children[1].innerHTML=`Copied!`;
-	setTimeout(function(){scripts.previousElementSibling.children[1].innerHTML=``},1000);
+	setTimeout(function(){scripts.previousElementSibling.children[1].innerHTML=``},5000);
   });
 };
