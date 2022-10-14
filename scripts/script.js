@@ -3,9 +3,9 @@ window.addEventListener('DOMContentLoaded', function() {
 for(let i=0;i<code.length;i++){
 	var button=document.createElement("button");
   button.setAttribute("class","button");
-  button.setAttribute("onclick","copyScripts(this.previousElementSibling);");
+  button.setAttribute("onclick","copyScripts(this.nextElementSibling);");
   button.innerHTML="Copy";
-	code[i].after(button);
+	code[i].before(button);
 };
 });
 /*htmlのidをファイル名の.txtを抜いたやつにする。ファイルは/scripts/codes/にある。*/
@@ -20,6 +20,6 @@ function copyScripts(scripts){
 	document.execCommand('copy');
 	document.body.removeChild(element);
 	scripts.nextElementSibling.innerHTML="Copied!";
-	setTimeout(function(){scripts.nextElementSibling.innerHTML="Copy"},1000);
+	setTimeout(function(){scripts.previousElementSibling.innerHTML="Copy"},1000);
   });
 };
