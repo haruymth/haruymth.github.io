@@ -19,7 +19,7 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);
-	scripts.nextElementSibling.innerHTML="Copied!";
+	scripts.previousElementSibling.innerHTML="Copied!";
 	setTimeout(function(){scripts.previousElementSibling.innerHTML="Copy"},1000);
   });
 };
