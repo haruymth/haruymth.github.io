@@ -8,16 +8,7 @@ for(let i=0;i<code.length;i++){
 	code[i].after(button);
 };
 });
-/*function copyScripts(scripts){
-	var element = document.createElement("textarea");
-	element.value=scripts.textContent;
-	document.body.appendChild(element);
-	element.select();
-	document.execCommand('copy');
-	document.body.removeChild(element)
-	scripts.nextElementSibling.innerHTML="Copied!";
-	setTimeout(function(){scripts.nextElementSibling.innerHTML="Copy"},1000);
-};*/
+/*htmlのidをファイル名の.txtを抜いたやつにする。ファイルは/scripts/codes/にある。*/
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
   fetch(`https://haru-ymth.github.io/scripts/codes/${scripts.id}.txt`)
