@@ -13,7 +13,53 @@
             スクリプトはそれぞれ下にある「copy」を押すと一発でコピーできます。<br>
 		    コピーしたスクリプトはScratch.mit.edu内でコンソールにて実行してください。<br>
             自作発言をしない限り、二次配布はOKです。</main>
-	<h2>Scratchの傾向の何P何位か調べるプログラム（JavaScript)</h2>	
+	
+		
+		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ（JavaScript)</h2>	
+<div class="code" id="auto-put-in-studio">let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
+let token=&quot;&quot;;{let cookie=document.cookie;cookie=cookie.split(&#039;;&#039;);let cok=[[],[]];cookie.forEach(function(element){const elements=element.split(&quot;=&quot;);cok[0].push(elements[0]);cok[1].push(elements[1]);});token=cok[1][cok[0].indexOf(&#039; scratchcsrftoken&#039;)];}fetch(`/site-api/comments/user/yamaguchi03/add/`,{method: &quot;POST&quot;,body: JSON.stringify({content: &quot;used s-i&quot;,parent_id: &quot;227221713&quot;,commentee_id: &quot;62203658&quot;}),headers: {&#039;X-CSRFToken&#039;: token}});
+let offset=0;
+let res;
+let studioarr =[];
+for(offset=0;offset&lt;pr;offset=offset+16){
+res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&amp;offset=${offset}&amp;language=ja&amp;mode=popular&amp;q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).text());
+let arr = res.split(&quot;{\&quot;id\&quot;:&quot;);
+arr.splice(0, 1);
+for(let i=1;i&lt;8;i++){
+    arr.splice(i,1)
+}
+for(i=0;i&lt;8;i++){
+    arr[i] = &quot;&quot;+arr[i].split(&quot;,\&quot;title\&quot;&quot;)[0];
+}
+for(i=0;i&lt;8;i++){
+    studioarr.push(arr[i]);
+}
+}
+let projectid = prompt(&quot;入れたいプロジェクトIDを入れろ。&quot;);
+const sessiontoken = (await(await fetch(&quot;/session/&quot;,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).json()).user.token;
+console.log(&quot;今からなんでもスタジオに入れていくぞ&quot;);
+for(i=0;i&lt;studioarr.length;i++){
+    fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{
+      &quot;headers&quot;: {
+        &quot;x-token&quot;: sessiontoken
+      },
+      &quot;method&quot;: &quot;POST&quot;
+    });
+}
+console.log(&quot;入れ終わったぞ&quot;);</div>
+	<main>
+        いわゆる「拡散」です。<br>
+        傾向に乗ってる人は、みんなスタジオに入れまくってるので、自分もやろうと思って、手動でやってたら、「これめんどすぎやろ」って思ったわけです。<br>
+        そこで、「この作業、自動でやらせよう」と思って、これを作りました。<br><br>
+        ①スタジオ検索何ページ分調べるか入力。<br>
+        ②数秒待つ。<br>
+        ③それで、入れたいプロジェクトIDをいれる。<br>
+        <br>
+        それだけ。簡単ですよね。
+		<br>多分、将来プロジェクトが増えて、プロジェクトidの桁が変わったら、壊れます。
+		
+    </main>
+		<h2>Scratchの傾向の何P何位か調べるプログラム（JavaScript)</h2>	
     <div class="code" id="cal-keikou">async function calKei() {
     const projectId = prompt(&quot;調べたいプロジェクトIDを入力&quot;);
     const saidai = 10000;
@@ -61,51 +107,6 @@
             僕がJavaScriptを勉強し始めて初期の頃に作ったものなので、無駄が多いですが、ちゃんと動作します。<br>
             ダイアログの説明に従えばいけます。コンソールに「全ページ合わせて○位まで調べました」とか、出たら、成功です。
         </main>
-		
-		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ（JavaScript)</h2>	
-<div class="code" id="auto-put-in-studio">let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
-let token=&quot;&quot;;{let cookie=document.cookie;cookie=cookie.split(&#039;;&#039;);let cok=[[],[]];cookie.forEach(function(element){const elements=element.split(&quot;=&quot;);cok[0].push(elements[0]);cok[1].push(elements[1]);});token=cok[1][cok[0].indexOf(&#039; scratchcsrftoken&#039;)];}fetch(`/site-api/comments/user/yamaguchi03/add/`,{method: &quot;POST&quot;,body: JSON.stringify({content: &quot;used s-i&quot;,parent_id: &quot;227221713&quot;,commentee_id: &quot;62203658&quot;}),headers: {&#039;X-CSRFToken&#039;: token}});
-let offset=0;
-let res;
-let studioarr =[];
-for(offset=0;offset&lt;pr;offset=offset+16){
-res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&amp;offset=${offset}&amp;language=ja&amp;mode=popular&amp;q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).text());
-let arr = res.split(&quot;{\&quot;id\&quot;:&quot;);
-arr.splice(0, 1);
-for(let i=1;i&lt;8;i++){
-    arr.splice(i,1)
-}
-for(i=0;i&lt;8;i++){
-    arr[i] = &quot;&quot;+arr[i].split(&quot;,\&quot;title\&quot;&quot;)[0];
-}
-for(i=0;i&lt;8;i++){
-    studioarr.push(arr[i]);
-}
-}
-let projectid = prompt(&quot;入れたいプロジェクトIDを入れろ。&quot;);
-const sessiontoken = (await(await fetch(&quot;/session/&quot;,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).json()).user.token;
-console.log(&quot;今からなんでもスタジオに入れていくぞ&quot;);
-for(i=0;i&lt;studioarr.length;i++){
-    fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{
-      &quot;headers&quot;: {
-        &quot;x-token&quot;: sessiontoken
-      },
-      &quot;method&quot;: &quot;POST&quot;
-    });
-}
-console.log(&quot;入れ終わったぞ&quot;);</div>
-	<main>
-        いわゆる「拡散」です。<br>
-        傾向に乗ってる人は、みんなスタジオに入れまくってるので、自分もやろうと思って、手動でやってたら、「これめんどすぎやろ」って思ったわけです。<br>
-        そこで、「この作業、自動でやらせよう」と思って、これを作りました。<br><br>
-        ①スタジオ検索何ページ分調べるか入力。<br>
-        ②数秒待つ。<br>
-        ③それで、入れたいプロジェクトIDをいれる。<br>
-        <br>
-        それだけ。簡単ですよね。
-		<br>多分、将来プロジェクトが増えて、プロジェクトidの桁が変わったら、壊れます。
-		
-    </main>
   <script src="https://haru-ymth.github.io/include.js"></script>
 		<script src="/scripts/script.js"></script>
 	</body>
