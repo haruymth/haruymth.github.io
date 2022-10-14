@@ -5,7 +5,7 @@ for(let i=0;i<code.length;i++){
   div.style="display: flex;";
     div.innerHTML=`
   <button class="button" onclick="copyScripts(this.parentNode.nextElementSibling);">Copy</button>
-  <main style="margin:auto 0 0 0;padding:7px;font-size:15px;opacity:0.5;transition: opacity 0.5s;"></main>
+  <main style="margin:auto 0 0 0;padding:7px;font-size:15px;opacity:0;transition: opacity 0.5s;">Copied!</main>
   `;
 	code[i].before(div);
 };
@@ -13,7 +13,6 @@ for(let i=0;i<code.length;i++){
 /*htmlのidをファイル名の.txtを抜いたやつにする。ファイルは/scripts/codes/にある。*/
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
-	scripts.previousElementSibling.children[1].innerHTML=`...`;
   fetch(`https://haru-ymth.github.io/scripts/codes/${scripts.id}.txt`)
   .then(response => response.text())
   .then(data => {
@@ -22,7 +21,7 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);
-	scripts.previousElementSibling.children[1].innerHTML=`Copied!`;
-	setTimeout(function(){scripts.previousElementSibling.children[1].innerHTML=``},5000);
+	scripts.previousElementSibling.children[1].style.opacity="0.5";
+	setTimeout(function(){scripts.previousElementSibling.children[1].style.opacity="0"},5000);
   });
 };
