@@ -138,6 +138,7 @@ header{
   border-radius:10px;
   padding:7px;
   overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 button.button{
