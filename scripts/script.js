@@ -5,7 +5,7 @@ for(let i=0;i<code.length;i++){
   div.style="display: flex;";
     div.innerHTML=`
   <button class="button" onclick="copyScripts(this.parentNode.nextElementSibling);">Copy</button>
-  <main style="margin:auto 0 0 0;padding:7px;font-size:15px;opacity:0.5;"></main>
+  <main style="margin:auto 0 0 0;padding:7px;font-size:15px;opacity:0.5;transition: opacity 0.5s;"></main>
   `;
 	code[i].before(div);
 };
