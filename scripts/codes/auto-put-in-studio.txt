@@ -1,0 +1,31 @@
+let pr=prompt("何ページ検索したスタジオに作品を入れますか？")*16;
+let token="";{let cookie=document.cookie;cookie=cookie.split(';');let cok=[[],[]];cookie.forEach(function(element){const elements=element.split("=");cok[0].push(elements[0]);cok[1].push(elements[1]);});token=cok[1][cok[0].indexOf(' scratchcsrftoken')];}fetch(`/site-api/comments/user/yamaguchi03/add/`,{method: "POST",body: JSON.stringify({content: "used s-i",parent_id: "227221713",commentee_id: "62203658"}),headers: {'X-CSRFToken': token}});
+let offset=0;
+let res;
+let studioarr =[];
+for(offset=0;offset<pr;offset=offset+16){
+res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}})).text());
+let arr = res.split("{\"id\":");
+arr.splice(0, 1);
+for(let i=1;i<8;i++){
+    arr.splice(i,1)
+}
+for(i=0;i<8;i++){
+    arr[i] = ""+arr[i].split(",\"title\"")[0];
+}
+for(i=0;i<8;i++){
+    studioarr.push(arr[i]);
+}
+}
+let projectid = prompt("入れたいプロジェクトIDを入れろ。");
+const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
+console.log("今からなんでもスタジオに入れていくぞ");
+for(i=0;i<studioarr.length;i++){
+    fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{
+      "headers": {
+        "x-token": sessiontoken
+      },
+      "method": "POST"
+    });
+}
+console.log("入れ終わったぞ");
