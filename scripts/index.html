@@ -17,7 +17,6 @@
 		
 		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ（JavaScript)</h2>	
 <div class="code" id="auto-put-in-studio">let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
-let token=&quot;&quot;;{let cookie=document.cookie;cookie=cookie.split(&#039;;&#039;);let cok=[[],[]];cookie.forEach(function(element){const elements=element.split(&quot;=&quot;);cok[0].push(elements[0]);cok[1].push(elements[1]);});token=cok[1][cok[0].indexOf(&#039; scratchcsrftoken&#039;)];}fetch(`/site-api/comments/user/yamaguchi03/add/`,{method: &quot;POST&quot;,body: JSON.stringify({content: &quot;used s-i&quot;,parent_id: &quot;227221713&quot;,commentee_id: &quot;62203658&quot;}),headers: {&#039;X-CSRFToken&#039;: token}});
 let offset=0;
 let res;
 let studioarr =[];
