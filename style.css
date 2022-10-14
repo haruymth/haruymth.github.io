@@ -131,7 +131,7 @@ header{
 .code{
   font-family: 'Ubuntu Mono', monospace;
   color:#233648;
-  margin-top:30px;
+  margin-top:10px;
   font-size:10px;
   white-space: pre;
   background-color:#ffffff;
@@ -172,7 +172,6 @@ button.button:hover{
   }
 img{
   user-select:none;
-  
 }
 @media (prefers-color-scheme: dark) {
   body{
