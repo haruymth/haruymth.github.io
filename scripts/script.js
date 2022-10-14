@@ -5,7 +5,7 @@ for(let i=0;i<code.length;i++){
   div.style="display: flex;";
     div.innerHTML=`
   <button class="button" onclick="copyScripts(this.parentNode.nextElementSibiling);">Copy</button>
-  <main></main>
+  <main style="margin:auto 0 0 0;padding:7px;font-size:10px;"></main>
   `;
 	code[i].before(div);
 };
@@ -22,8 +22,8 @@ function copyScripts(scripts){
 	document.execCommand('copy');
 	document.body.removeChild(element);
 	scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
-  <main>Copied!</main>`;
+  <main style="margin:auto 0 0 0;padding:7px;font-size:10px;">Copied!</main>`;
 	setTimeout(function(){scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
-  <main></main>`},1000);
+  <main style="margin:auto 0 0 0;padding:7px;font-size:10px;"></main>`},1000);
   });
 };
