@@ -4,7 +4,7 @@ for(let i=0;i<code.length;i++){
   var div=document.createElement("div");
   div.style="display: flex;";
     div.innerHTML=`
-  <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+  <button class="button" onclick="copyScripts(this.parentNode.nextElementSibiling);">Copy</button>
   <main></main>
   `;
 	code[i].before(div);
@@ -21,9 +21,9 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);
-	scripts.previousElementSibling.previousElementSibling.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+	scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
   <main>Copied!</main>`;
-	setTimeout(function(){scripts.previousElementSibling.previousElementSibling.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+	setTimeout(function(){scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
   <main></main>`},1000);
   });
 };
