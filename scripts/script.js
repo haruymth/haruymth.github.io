@@ -1,11 +1,13 @@
 window.addEventListener('DOMContentLoaded', function() {
 	var code=document.getElementsByClassName("code");
 for(let i=0;i<code.length;i++){
-	var button=document.createElement("button");
-  button.setAttribute("class","button");
-  button.setAttribute("onclick","copyScripts(this.nextElementSibling);");
-  button.innerHTML="Copy";
-	code[i].before(button);
+  var div=document.createElement("div");
+  div.style="display: flex;";
+    div.innerHTML=`
+  <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+  <main></main>
+  `;
+	code[i].before(div);
 };
 });
 /*htmlのidをファイル名の.txtを抜いたやつにする。ファイルは/scripts/codes/にある。*/
@@ -19,7 +21,9 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);
-	scripts.previousElementSibling.innerHTML="Copied!";
-	setTimeout(function(){scripts.previousElementSibling.innerHTML="Copy"},1000);
+	scripts.previousElementSibling.previousElementSibling.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+  <main>Copied!</main>`;
+	setTimeout(function(){scripts.previousElementSibling.previousElementSibling.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+  <main></main>`},1000);
   });
 };
