@@ -4,7 +4,7 @@ for(let i=0;i<code.length;i++){
   var div=document.createElement("div");
   div.style="display: flex;";
     div.innerHTML=`
-  <button class="button" onclick="copyScripts(this.parentNode.nextElementSibiling);">Copy</button>
+  <button class="button" onclick="copyScripts(this.parentNode.nextElementSibling);">Copy</button>
   <main style="margin:auto 0 0 0;padding:7px;font-size:10px;"></main>
   `;
 	code[i].before(div);
@@ -21,9 +21,9 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);
-	scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+	scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.parentNode.nextElementSibling);">Copy</button>
   <main style="margin:auto 0 0 0;padding:7px;font-size:10px;">Copied!</main>`;
-	setTimeout(function(){scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibiling.nextElementSibiling);">Copy</button>
+	setTimeout(function(){scripts.previousElementSibling.firstChild.innerHTML=` <button class="button" onclick="copyScripts(this.nextElementSibling.nextElementSibling);">Copy</button>
   <main style="margin:auto 0 0 0;padding:7px;font-size:10px;"></main>`},1000);
   });
 };
