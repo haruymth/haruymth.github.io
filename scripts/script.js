@@ -21,7 +21,7 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);
-	scripts.previousElementSibling.lastChild.innerText=`Copied!`;
-	setTimeout(function(){scripts.previousElementSibling.lastChild.innerText=``},1000);
+	scripts.previousElementSibling.children[1].innerHTML=`Copied!`;
+	setTimeout(function(){scripts.previousElementSibling.children[1].innerHTML=``},1000);
   });
 };
