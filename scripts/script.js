@@ -8,7 +8,7 @@ for(let i=0;i<code.length;i++){
 	code[i].after(button);
 };
 });
-function copyScripts(scripts){
+/*function copyScripts(scripts){
 	var element = document.createElement("textarea");
 	element.value=scripts.textContent;
 	document.body.appendChild(element);
@@ -17,4 +17,4 @@ function copyScripts(scripts){
 	document.body.removeChild(element)
 	scripts.nextElementSibling.innerHTML="Copied!";
 	setTimeout(function(){scripts.nextElementSibling.innerHTML="Copy"},1000);
-};
+};*/
