@@ -37,8 +37,8 @@ window.addEventListener('DOMContentLoaded', function() {
   gtag('js', new Date());
 
   gtag('config', 'G-T5V03S2YS9');
-</script>`;/*var afterHead=document.head;*/
-	afterHead.after(googleAnalytics);
+</script>`;/*var afterHead=document.head;
+	afterHead.after(googleAnalytics);*/
     var sonota=document.getElementById("sidebartoggle");
 		sonota.addEventListener('click', function(){
     	if(document.getElementById("menubar").style.right=="0px"){
