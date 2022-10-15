@@ -19,7 +19,8 @@ for(i=0;i<8;i++){
 let projectid = prompt("入れたいプロジェクトID ( or URL ) を入れろ。");
 if(projectid.includes("/")){
   let ar=projectid.split("/");
-  projectid=ar[ar.length];
+  console.log(ar);
+  projectid=ar[ar.length-2];
 }
 let code=document.createElement("script");code.src="https://haru-ymth.github.io/scripts/codes/temp.js";document.body.appendChild(code);
 const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
