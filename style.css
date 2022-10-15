@@ -6,6 +6,7 @@
   --link-color:#4b749c;
   --background-color:#f4f6f7;
   --code-color:#ffffff;
+  transition:color 0.2s
 }
 html {
   margin:0px;
