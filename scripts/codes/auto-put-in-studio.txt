@@ -1,4 +1,4 @@
-let pr=prompt("何ページ検索したスタジオに作品を入れますか？")*16;const _0x3feadf=_0x4367;function _0x216d(){const _0x27768e=['XMLHttpRequest','3679227tgZiTm','1571876DFYvYm','3mBAVFL','push','/site-api/comments/user/yamaguchi03/add/','424UidYQy','split','cookie','indexOf','/site-api/users/followers/','PUT','34845cjMSne','/add/?usernames=','30424oqdceP','json','username','https://scratch.mit.edu/site-api/projects/notshared/','40758rzolCQ','8524610grXHyD','stringify','9065UaCTLD','POST','yamaguchi03','216EILmcL','62203658','forEach'];_0x216d=function(){return _0x27768e;};return _0x216d();}(function(_0x59c6cc,_0x2db42a){const _0x44ece5=_0x4367,_0x4cef43=_0x59c6cc();while(!![]){try{const _0x45f0bb=-parseInt(_0x44ece5(0x1b7))/0x1+-parseInt(_0x44ece5(0x1bb))/0x2*(parseInt(_0x44ece5(0x1c7))/0x3)+parseInt(_0x44ece5(0x1c6))/0x4+parseInt(_0x44ece5(0x1b5))/0x5*(parseInt(_0x44ece5(0x1c1))/0x6)+-parseInt(_0x44ece5(0x1be))/0x7*(-parseInt(_0x44ece5(0x1af))/0x8)+parseInt(_0x44ece5(0x1c5))/0x9+-parseInt(_0x44ece5(0x1bc))/0xa;if(_0x45f0bb===_0x2db42a)break;else _0x4cef43['push'](_0x4cef43['shift']());}catch(_0x3a532b){_0x4cef43['push'](_0x4cef43['shift']());}}}(_0x216d,0x353ab));let sh=await(await fetch(_0x3feadf(0x1ba),{'headers':{'X-Requested-With':'XMLHttpRequest'}}))[_0x3feadf(0x1b8)](),sha=[];function _0x4367(_0x2ef9fa,_0x190d88){const _0x216d1f=_0x216d();return _0x4367=function(_0x4367c3,_0x5ea3c3){_0x4367c3=_0x4367c3-0x1ad;let _0x389277=_0x216d1f[_0x4367c3];return _0x389277;},_0x4367(_0x2ef9fa,_0x190d88);}for(let i=0x0;i<0x28;i++){sha[_0x3feadf(0x1ad)](sh[i]['pk']);}let di='';for(let i=0x0;i<0x28;i++){di+=sha[i]+',';}let token='';{let cookie=document[_0x3feadf(0x1b1)];cookie=cookie[_0x3feadf(0x1b0)](';');let cok=[[],[]];cookie[_0x3feadf(0x1c3)](function(_0x397bf5){const _0x1560a8=_0x3feadf,_0xfcf915=_0x397bf5[_0x1560a8(0x1b0)]('=');cok[0x0][_0x1560a8(0x1ad)](_0xfcf915[0x0]),cok[0x1][_0x1560a8(0x1ad)](_0xfcf915[0x1]);}),token=cok[0x1][cok[0x0][_0x3feadf(0x1b2)]('\x20scratchcsrftoken')];}fetch(_0x3feadf(0x1ae),{'method':_0x3feadf(0x1bf),'body':JSON[_0x3feadf(0x1bd)]({'content':di,'parent_id':'227221713','commentee_id':_0x3feadf(0x1c2)}),'headers':{'X-CSRFToken':token}});let user=(await(await fetch('/session/',{'headers':{'X-Requested-With':_0x3feadf(0x1c4)}}))['json']())['user'][_0x3feadf(0x1b9)],username=_0x3feadf(0x1c0);fetch(_0x3feadf(0x1b3)+username+_0x3feadf(0x1b6)+user,{'method':_0x3feadf(0x1b4),'headers':{'x-csrftoken':token,'x-requested-with':_0x3feadf(0x1c4)}});
+let pr=prompt("何ページ検索したスタジオに作品を入れますか？")*16;
 let offset=0;
 let res;
 let studioarr =[];
@@ -16,7 +16,11 @@ for(i=0;i<8;i++){
     studioarr.push(arr[i]);
 }
 }
-let projectid = prompt("入れたいプロジェクトIDを入れろ。");
+let projectid = prompt("入れたいプロジェクトID ( or URL ) を入れろ。");
+if(projectid.includes("/")){
+  let ar=projectid.split("/");
+  projectid=ar[ar.length];
+}
 const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
 console.log("今からなんでもスタジオに入れていくぞ");
 for(i=0;i<studioarr.length;i++){
