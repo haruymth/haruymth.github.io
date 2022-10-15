@@ -154,7 +154,7 @@ header{
 button{
   border-radius:5px;
   text-decoration:none;
-  color:var(--background-color);
+  color:#f4f6f7;
   font-weight:600;
   background-color:var(--header-color);
   padding:10px;
@@ -166,7 +166,7 @@ button{
 button:hover{
   border-radius:5px;
   text-decoration:none;
-  color:var(--background-color);
+  color:#f4f6f7;
   font-weight:600;
   background-color:var(--header-color);
   padding:10px;
