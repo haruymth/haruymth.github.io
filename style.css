@@ -6,7 +6,8 @@
   --link-color:#4b749c;
   --background-color:#f4f6f7;
   --code-color:#ffffff;
-  transition:color 0.2s
+  transition:color 0.2s;
+  transition:background-color 0.2s;
 }
 html {
   margin:0px;
@@ -23,7 +24,7 @@ body {
   padding-top:80px;
   padding-left:40px;
   font-weight:200;
-  color:#233648;
+  color:var(--main-color);
   padding-bottom:100px;
 }
 h2 {
@@ -32,7 +33,7 @@ h2 {
   padding:10px;
   padding-left:10px;
   border-left: solid 5px var(--header-color);
-  color:#233648;
+  color:var(--main-color);
   border-radius:2px;
   font-size:20px;
 }
@@ -41,8 +42,8 @@ h1 {
   padding-top:5px;
   padding:20px;
   padding-left:10px;
-  border-bottom: solid 1px #233648;
-  color:#233648;
+  border-bottom: solid 1px var(--main-color);
+  color:var(--main-color);
   border-radius:2px;
   font-size:40px;
 }
@@ -120,7 +121,7 @@ img#png {
 header{
   width:100%;
   height:60px;
-  background-color:var(--header-color);
+  background-color:#f4f6f7;
   box-shadow: 0px 2px 5px 1px #0000004d;
   margin:0px;
   position: fixed;
