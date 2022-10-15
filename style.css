@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Ubuntu+Mono:ital@1&display=swap');
-
+:root{
+  --main-color:#233648;
+  --header-color:#51BEBE;
+  --footer-color:#969BA4;
+  --link-color:#4b749c;
+  --background-color:#f4f6f7;
+}
 html {
   margin:0px;
   margin-top:0px;
@@ -139,9 +145,10 @@ header{
   padding:7px; 
   nline-size: 90%; 
   overflow: hidden;
+  transition:0.5s
 }
 
-button.button{
+button{
   border-radius:5px;
   text-decoration:none;
   color:#ffffff;
@@ -153,7 +160,7 @@ button.button{
   cursor: pointer;
 }
 
-button.button:hover{
+button:hover{
   border-radius:5px;
   text-decoration:none;
   color:#f4f6f7;
