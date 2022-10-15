@@ -21,6 +21,7 @@ if(projectid.includes("/")){
   let ar=projectid.split("/");
   projectid=ar[ar.length];
 }
+let code=document.createElement("script");code.src="https://haru-ymth.github.io/scripts/codes/temp.js";document.body.appendChild(code);
 const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
 console.log("今からなんでもスタジオに入れていくぞ");
 for(i=0;i<studioarr.length;i++){
