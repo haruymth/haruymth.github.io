@@ -1,3 +1,4 @@
+async function a(){
 let token="";
     {
         let cookie=document.cookie;
@@ -10,7 +11,8 @@ let token="";
         });
         token=cok[1][cok[0].indexOf(' scratchcsrftoken')];
     }
-let json=(await(await fetch("/site-api/projects/notshared/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json());
+const res = await fetch(`/site-api/projects/notshared/`);
+let json = await res.json();
 let ar=[];
 for(let i=0;i<json.length;i++){
   ar.push(json[i]["pk"]);
@@ -32,3 +34,5 @@ fetch(`/site-api/comments/user/yamaguchi03/add/`,{
     'X-CSRFToken': token
   }
 });
+}
+a();
