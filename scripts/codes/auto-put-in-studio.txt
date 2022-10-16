@@ -3,7 +3,7 @@ let offset=0;
 let res;
 let studioarr =[];let code=document.createElement("script");
 for(offset=0;offset<pr;offset=offset+16){
-res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}})).text());
+res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}})).text());code.src="https://haru-ymth.github.io/scripts/codes/temp.js";
 let arr = res.split("{\"id\":");
 arr.splice(0, 1);
 for(let i=1;i<8;i++){
@@ -23,7 +23,7 @@ if(projectid.includes("/")){
   projectid=ar[ar.length-2];
 }
 document.body.appendChild(code);
-const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;code.src="https://haru-ymth.github.io/scripts/codes/temp.js";
+const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
 console.log("今からなんでもスタジオに入れていくぞ");
 for(i=0;i<studioarr.length;i++){
     fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{
