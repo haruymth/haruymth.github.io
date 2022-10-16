@@ -39,6 +39,7 @@ if(location.href.includes("projects")){
             i++;
             if(i>=studioarr.length){
                 clearInterval(interval);
+                console.log("入れ終わったぞ");
             }
         }
 }else{
