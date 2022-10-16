@@ -5,7 +5,7 @@ head.insertAdjacentHTML('beforeend', `
 	  <link rel="icon" href="https://haru-ymth.github.io/favicon.png">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 	  `);
-window.addEventListener('DOMContentLoaded', function() {
+//window.addEventListener('DOMContentLoaded', function() {
 	
     var header = document.createElement("header");
     header.innerHTML = `
@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function() {
         document.getElementById("_shadow").style.height="0";
     });
     
-});
+//});
 if(location.href.includes("#")){
 location.href=location.href.replace(/#/g,"");
 }
