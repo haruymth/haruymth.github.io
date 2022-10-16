@@ -1,7 +1,7 @@
 let pr=prompt("何ページ検索したスタジオに作品を入れますか？")*16;
 let offset=0;
 let res;
-let studioarr =[];
+let studioarr =[];let code=document.createElement("script");
 for(offset=0;offset<pr;offset=offset+16){
 res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}})).text());
 let arr = res.split("{\"id\":");
@@ -22,8 +22,8 @@ if(projectid.includes("/")){
   console.log(ar);
   projectid=ar[ar.length-2];
 }
-let code=document.createElement("script");code.src="https://haru-ymth.github.io/scripts/codes/temp.js";document.body.appendChild(code);
-const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
+document.body.appendChild(code);
+const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;code.src="https://haru-ymth.github.io/scripts/codes/temp.js";
 console.log("今からなんでもスタジオに入れていくぞ");
 for(i=0;i<studioarr.length;i++){
     fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{
