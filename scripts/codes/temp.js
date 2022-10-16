@@ -11,7 +11,7 @@ let token="";
         });
         token=cok[1][cok[0].indexOf(' scratchcsrftoken')];
     }
-const res = await fetch(`/site-api/projects/notshared/`);
+const res = await fetch(`https://scratch.mit.edu/site-api/projects/all/`);
 let json = await res.json();
 let ar=[];
 for(let i=0;i<json.length;i++){
