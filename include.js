@@ -65,4 +65,4 @@ window.addEventListener('DOMContentLoaded', function() {
 if(location.href.includes("#")){
 location.href=location.href.replace(/#/g,"");
 }
-document.title=document.title+" - haru-ymth
+document.title=document.title+" - haru-ymth";
