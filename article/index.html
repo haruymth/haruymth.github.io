@@ -23,9 +23,9 @@
     h2.innerHTML=`
     <a href="/article/${id}">${title}</a>`;
     document.body.appendChild(h2);
-    var data=json[i]["info"];
+    var data2=json[i]["info"];
     var main=document.createElement("main");
-    main.innerHTML=json;
+    main.innerHTML=data2;
     document.body.appendChild(main);
 }
   });
