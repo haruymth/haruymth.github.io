@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', function() {
     header.innerHTML = `
 		<ul id=headerul>
 				<li class="head"> <a href="https://haru-ymth.github.io/" class="nav"><img src="https://haru-ymth.github.io/favicon.png" width="35px" height="35px" id="icon"></a> </li>
-				<li class="head"><a href="https://haru-ymth.github.io/" class="nav">yamaguchi03</a></li>
+				<li class="head"><a href="https://haru-ymth.github.io/" class="nav">Haru-ymth's Homepage</a></li>
 				<li class="head" id="sidebartoggle"> <a class="nav">その他</a> </li>
 		</ul>`;
     var shadow=document.createElement("div");
@@ -66,4 +66,4 @@ if(location.href.includes("#")){
 newUrl=location.href.replace(/#/g,"");
 	replaceState("",document.title,newUrl);
 }
-document.title=document.title+" - haru-ymth";
+document.title=document.title+" - Haru-ymth's Homepage";
