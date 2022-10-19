@@ -15,16 +15,17 @@
               fetch("https://haru-ymth.github.io/article/info.json")
   .then(response => response.json())
   .then(data => {
- for(let i=data.length-1;i>=0;i=i-1){
-    var id=data[i]["id"];
-    var title=data[i]["title"];
+  let json=data;
+ for(let i=json.length-1;i>=0;i=i-1){
+    var id=json[i]["id"];
+    var title=json[i]["title"];
     var h2=document.createElement("h2");
     h2.innerHTML=`
     <a href="/article/${id}">${title}</a>`;
     document.body.appendChild(h2);
-    var data=data[i]["info"];
+    var data=json[i]["info"];
     var main=document.createElement("main");
-    main.innerHTML=data;
+    main.innerHTML=json;
     document.body.appendChild(main);
 }
   });
