@@ -12,7 +12,7 @@
             僕がちょっと思ったことをTwitterよりちゃんとまとめて書きたいやつを記事にしています。
         </main>
         <script type="text/javascript">
-            const info = (await(await fetch("/article/info.json",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json());
+            const info = (await(await fetch("https://haru-ymth.github.io/article/info.json",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json());
             for(let i=0;i<info.length;i++){
                 var id=info[i]["id"];
                 var title=info[i]["title"];
