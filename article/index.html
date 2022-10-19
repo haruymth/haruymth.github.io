@@ -15,7 +15,7 @@
               fetch("https://haru-ymth.github.io/article/info.json")
   .then(response => response.json())
   .then(data => {
- for(let i=data.length;0<=i;i-=){
+ for(let i=data.length;0<=i;i--){
     var id=data[i]["id"];
     var title=data[i]["title"];
     var h2=document.createElement("h2");
