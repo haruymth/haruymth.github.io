@@ -48,6 +48,16 @@ h1 {
   font-size:40px;
 }
 
+h3 {
+  margin-top:40px;
+  padding-top:5px;
+  padding:20px;
+  padding-left:10px;
+  border-bottom: dashed 1px var(--main-color);
+  color:var(--main-color);
+  border-radius:2px;
+  font-size:15px;
+
 main {
   padding:5px;
   text-decoration:none;
