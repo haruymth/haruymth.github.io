@@ -12,19 +12,23 @@
             僕がちょっと思ったことをTwitterよりちゃんとまとめて書きたいやつを記事にしています。
         </main>
         <script type="text/javascript">
-            const info = (await(await fetch("https://haru-ymth.github.io/article/info.json",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json());
-            for(let i=0;i<info.length;i++){
-                var id=info[i]["id"];
-                var title=info[i]["title"];
-                var h2=document.createElement("h2");
-                h2.innerHTML=`
-                <a href="/article/articles/${id}">${title}</a>`;
-                document.body.appendChild(h2);
-                var info=info[i]["info"];
-                var main=document.createElement("main");
-                main.innerHTML=info;
-                document.body.appendChild(main);
-            }
+              fetch("https://haru-ymth.github.io/article/info.json")
+  .then(response => response.json())
+  .then(data => {
+ for(let i=0;i<data.length;i++){
+    var id=data[i]["id"];
+    var title=data[i]["title"];
+    var h2=document.createElement("h2");
+    h2.innerHTML=`
+    <a href="/article/articles/${id}">${title}</a>`;
+    document.body.appendChild(h2);
+    var data=data[i]["data"];
+    var main=document.createElement("main");
+    main.innerHTML=data;
+    document.body.appendChild(main);
+}
+  });
+
         </script>
         <script src="/include.js"></script>
     </body>
