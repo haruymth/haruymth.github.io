@@ -22,7 +22,7 @@
     h2.innerHTML=`
     <a href="/article/articles/${id}">${title}</a>`;
     document.body.appendChild(h2);
-    var data=data[i]["data"];
+    var data=data[i]["info"];
     var main=document.createElement("main");
     main.innerHTML=data;
     document.body.appendChild(main);
