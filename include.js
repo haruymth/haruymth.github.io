@@ -63,6 +63,7 @@ window.addEventListener('DOMContentLoaded', function() {
     
 });
 if(location.href.includes("#")){
-location.href=location.href.replace(/#/g,"");
+newUrl=location.href.replace(/#/g,"");
+	replaceState("",document.title,newUrl);
 }
 document.title=document.title+" - haru-ymth";
