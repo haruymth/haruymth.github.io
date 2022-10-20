@@ -27,6 +27,9 @@ body {
   transition:color 0.2s;
   transition:background-color 0.2s;
 }
+td,th{
+  padding:20px;
+}
 h2 {
   margin-top:40px;
   padding-top:5px;
