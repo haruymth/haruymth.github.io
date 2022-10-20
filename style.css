@@ -30,6 +30,7 @@ body {
 td,th{
   padding:20px;
   background-color:var(--code-color);
+  font-size:7px;
 }
 h2 {
   margin-top:40px;
