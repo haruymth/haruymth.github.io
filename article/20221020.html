@@ -1,1 +1,17 @@
-
+<html>
+    <head>
+        <title>
+            Scratchでの行動のAPIをなんとなくまとめておく
+        </title>
+    </head>
+    <body>
+        <h1>
+            Scratchでの行動のAPIをなんとなくまとめておく
+        </h1>
+        <table>
+            <tr><td>何をするAPIなのか</td><td>URL</td><td>メソッド</td><td colspan="4">headersに書く内容</td><td></td><td></td><td></td><td></td><td rowspan="2">bodyに書く内容(JSON形式)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>x-csrftoken</td><td>x-token</td><td>cookie</td><td>x-requested-with</td><td>その他の指定項目</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr><tr><td>ログアウトする</td><td>https://scratch.mit.edu/accounts/logout/</td><td>POST</td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ログインする</td><td>https://scratch.mit.edu/accounts/login/</td><td>POST</td><td>○</td><td>○</td><td></td><td>○</td><td></td><td>"username":<ログインするユーザー名>,"password":<ログインするパスワード>,"useMessages":false</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>フォローする</td><td>https://scratch.mit.edu/site-api/users/followers/<フォローするユーザー名>/add/?usernames=<自分のユーザー名></td><td>POST</td><td>○</td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>アンフォローする</td><td>https://scratch.mit.edu/site-api/users/followers/<フォローを外すユーザー名>/remove/?usernames=<自分のユーザー名></td><td>PUT</td><td>○</td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>https://scratch.mit.edu/site-api/comments/user/<プロフのユーザー名>/add/</td><td>POST</td><td>○</td><td></td><td></td><td></td><td></td><td>content:(コメントの内容),parent_id:(返信する場合の元コメントID),commentee_id:(そのコメントIDのユーザーID)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>作品にコメントする</td><td>https://api.scratch.mit.edu/proxy/comments/project/<プロジェクトID></td><td>POST</td><td>○</td><td>○</td><td></td><td></td><td></td><td>content(コメントの内容),parent_id(返信する場合の元コメントID),commentee_id(そのコメントIDのユーザーID)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>プロフの文を変える</td><td>https://scratch.mit.edu/site-api/users/all/<自分のユーザー名>/</td><td>PUT</td><td>○</td><td></td><td></td><td>○</td><td></td><td>status:(私についての内容(指定しなくてもいい)),bio:(私が取り組んでいることの内容(こちらも指定しなくてもいい))</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <script src="/include.js"></script>
+    </body>
+</html>
