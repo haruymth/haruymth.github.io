@@ -50,14 +50,14 @@
                 例（ログインするやつ）
             </h3>
         <div class="code">
-            fetch("https://scratch.mit.edu/accounts/login/"
-             {method:"POST" ,
-                headers:{"x-csrftoken":(cookieから取ってきたやつ),
-                        "x-token":(/sessionから取ってきたやつ),
-                        "x-requested-with":"XMLHttpRequest"},
-            body:JSON.stringify({"username":(ユーザー名),"password":(パスワード),"useMessages":false})
-            }
-            );
+fetch("https://scratch.mit.edu/accounts/login/"
+ {method:"POST" ,
+    headers:{"x-csrftoken":(cookieから取ってきたやつ),
+            "x-token":(/sessionから取ってきたやつ),
+            "x-requested-with":"XMLHttpRequest"},
+body:JSON.stringify({"username":(ユーザー名),"password":(パスワード),"useMessages":false})
+}
+);
         </div>
         こうです。
         </main>
