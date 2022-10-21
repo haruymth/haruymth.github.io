@@ -9,12 +9,16 @@
             Scratchでの行動のAPIをなんとなくまとめておく
         </h1>
         <table border="2" style="border-collapse: collapse">
-            <tr><th rowspan="2">何をするAPIなのか</th><th rowspan="2">URL</th><th rowspan="2">メソッド</th><th colspan="5">headersに書く内容</th><th rowspan="2">bodyに書く内容(JSON形式)</th></tr>
-            <tr><td>x-csrftoken</td><td>x-token</td><td>x-requested-with</td><td>その他の指定項目</td><td>cookie</td></tr><tr><td>ログアウトする</td><td>https://scratch.mit.edu/accounts/logout/</td><td>POST</td><td>○</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ログインする</td><td>https://scratch.mit.edu/accounts/login/</td><td>POST</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td>"username":ログインするユーザー名,"password":ログインするパスワード,"useMessages":false</td></tr><tr><td>フォローする</td><td>https://scratch.mit.edu/site-api/users/followers/フォローするユーザー名/add/?usernames=自分のユーザー名</td><td>POST</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>アンフォローする</td><td>https://scratch.mit.edu/site-api/users/followers/フォローを外すユーザー名/remove/?usernames=自分のユーザー名</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>プロフにコメントする</td><td>https://scratch.mit.edu/site-api/comments/user/プロフのユーザー名/add/</td><td>POST</td><td>○</td><td></td><td></td><td></td><td></td><td>content:(コメントの内容),parent_id:(返信する場合の元コメントID),commentee_id:(そのコメントIDのユーザーID)</td></tr><tr><td>作品にコメントする</td><td>https://api.scratch.mit.edu/proxy/comments/project/プロジェクトID</td><td>POST</td><td>○</td><td>○</td><td></td><td></td><td></td><td>content(コメントの内容),parent_id(返信する場合の元コメントID),commentee_id(そのコメントIDのユーザーID)</td></tr><tr><td>プロフの文を変える</td><td>https://scratch.mit.edu/site-api/users/all/自分のユーザー名/</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td>status:(私についての内容(指定しなくてもいい)),bio:(私が取り組んでいることの内容(こちらも指定しなくてもいい))</td></tr><tr><td>スタジオに作品を入れる</td><td>https://api.scratch.mit.edu/studios/スタジオID/project/プロジェクトID</td><td>POST</td><td></td><td>○</td><td></td><td></td><td></td><td></td></tr><tr><td>作品を削除する</td><td>https://scratch.mit.edu/site-api/projects/all/プロジェクトID/</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td>visibility:"trshbyusr"</td></tr><tr><td>作品を非共有にする</td><td>https://scratch.mit.edu/site-api/projects/all/プロジェクトID/</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td>visibility:"visible"</td></tr><tr><td>作品を共有する</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/share</td><td>PUT</td><td>○</td><td>○</td><td>○</td><td></td><td>○</td><td></td></tr><tr><td>作品のproject.jsonを変える（＝直ちに保存）</td><td>https://projects.scratch.mit.edu/プロジェクトID</td><td>PUT</td><td></td><td></td><td></td><td>"content-type":"application/json"</td><td>○</td><td>プロジェクト内容のproject.json</td></tr><tr><td>参照数を1増やす</td><td>https://api.scratch.mit.edu/users/yamaguchi03/projects/プロジェクトID/views</td><td>POST</td><td>○</td><td></td><td></td><td></td><td>○</td><td></td></tr><tr><td>❤をつける</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/loves/user/自分のユーザー名</td><td>POST</td><td>○</td><td>○</td><td>○</td><td></td><td>○</td><td></td></tr><tr><td>★をつける</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/favorites/user/自分のユーザー名</td><td>POST</td><td>○</td><td>○</td><td>○</td><td></td><td>○</td><td></td></tr><tr><td>メッセージを既読にする</td><td>https://scratch.mit.edu/site-api/messages/messages-clear/</td><td>POST</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>プロフコメントの開閉</td><td>https://scratch.mit.edu/site-api/comments/user/自分のユーザー名/toggle-comments/</td><td>POST</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>新しい作品を作成</td><td>https://projects.scratch.mit.edu</td><td>POST</td><td></td><td></td><td></td><td>"content-type":"application/json"</td><td>○</td><td>作成したときのプロジェクト内容のproject.json</td></tr><tr><td>作品を報告する</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/report</td><td>POST</td><td>○</td><td>○</td><td></td><td>"content-type":"application/json","accept":"application/json"</td><td>○</td><td>"report_category":(報告する選択肢のやつ（1~19)),"notes":(報告文),"thumbnail":""</td></tr>
+            <tr><th rowspan="2">何をするAPIなのか</th><th rowspan="2">URL</th><th rowspan="2">メソッド</th><th colspan="4">headersに書く内容</th><th rowspan="2">cookie</th><th rowspan="2">bodyに書く内容(JSON形式)</th></tr>
+            <tr><td>x-csrftoken</td><td>x-token</td><td>x-requested-with</td><td>その他の指定項目</td><td></td></tr><tr><td>ログアウトする</td><td>https://scratch.mit.edu/accounts/logout/</td><td>POST</td><td>○</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ログインする</td><td>https://scratch.mit.edu/accounts/login/</td><td>POST</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td>"username":ログインするユーザー名,"password":ログインするパスワード,"useMessages":false</td></tr><tr><td>フォローする</td><td>https://scratch.mit.edu/site-api/users/followers/フォローするユーザー名/add/?usernames=自分のユーザー名</td><td>POST</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>アンフォローする</td><td>https://scratch.mit.edu/site-api/users/followers/フォローを外すユーザー名/remove/?usernames=自分のユーザー名</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>プロフにコメントする</td><td>https://scratch.mit.edu/site-api/comments/user/プロフのユーザー名/add/</td><td>POST</td><td>○</td><td></td><td></td><td></td><td></td><td>content:(コメントの内容),parent_id:(返信する場合の元コメントID),commentee_id:(そのコメントIDのユーザーID)</td></tr><tr><td>作品にコメントする</td><td>https://api.scratch.mit.edu/proxy/comments/project/プロジェクトID</td><td>POST</td><td>○</td><td>○</td><td></td><td></td><td></td><td>content(コメントの内容),parent_id(返信する場合の元コメントID),commentee_id(そのコメントIDのユーザーID)</td></tr><tr><td>プロフの文を変える</td><td>https://scratch.mit.edu/site-api/users/all/自分のユーザー名/</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td>status:(私についての内容(指定しなくてもいい)),bio:(私が取り組んでいることの内容(こちらも指定しなくてもいい))</td></tr><tr><td>スタジオに作品を入れる</td><td>https://api.scratch.mit.edu/studios/スタジオID/project/プロジェクトID</td><td>POST</td><td></td><td>○</td><td></td><td></td><td></td><td></td></tr><tr><td>作品を削除する</td><td>https://scratch.mit.edu/site-api/projects/all/プロジェクトID/</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td>visibility:"trshbyusr"</td></tr><tr><td>作品を非共有にする</td><td>https://scratch.mit.edu/site-api/projects/all/プロジェクトID/</td><td>PUT</td><td>○</td><td></td><td>○</td><td></td><td></td><td>visibility:"visible"</td></tr><tr><td>作品を共有する</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/share</td><td>PUT</td><td>○</td><td>○</td><td>○</td><td></td><td>○</td><td></td></tr><tr><td>作品のproject.jsonを変える（＝直ちに保存）</td><td>https://projects.scratch.mit.edu/プロジェクトID</td><td>PUT</td><td></td><td></td><td></td><td>"content-type":"application/json"</td><td>○</td><td>プロジェクト内容のproject.json</td></tr><tr><td>参照数を1増やす</td><td>https://api.scratch.mit.edu/users/yamaguchi03/projects/プロジェクトID/views</td><td>POST</td><td>○</td><td></td><td></td><td></td><td>○</td><td></td></tr><tr><td>❤をつける</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/loves/user/自分のユーザー名</td><td>POST</td><td>○</td><td>○</td><td>○</td><td></td><td>○</td><td></td></tr><tr><td>★をつける</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/favorites/user/自分のユーザー名</td><td>POST</td><td>○</td><td>○</td><td>○</td><td></td><td>○</td><td></td></tr><tr><td>メッセージを既読にする</td><td>https://scratch.mit.edu/site-api/messages/messages-clear/</td><td>POST</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>プロフコメントの開閉</td><td>https://scratch.mit.edu/site-api/comments/user/自分のユーザー名/toggle-comments/</td><td>POST</td><td>○</td><td></td><td>○</td><td></td><td></td><td></td></tr><tr><td>新しい作品を作成</td><td>https://projects.scratch.mit.edu</td><td>POST</td><td></td><td></td><td></td><td>"content-type":"application/json"</td><td>○</td><td>作成したときのプロジェクト内容のproject.json</td></tr><tr><td>作品を報告する</td><td>https://api.scratch.mit.edu/proxy/projects/プロジェクトID/report</td><td>POST</td><td>○</td><td>○</td><td></td><td>"content-type":"application/json","accept":"application/json"</td><td>○</td><td>"report_category":(報告する選択肢のやつ（1~19)),"notes":(報告文),"thumbnail":""</td></tr>
         </table>
-        <h3>各headersの内容について</h3>
+        <h3>各見出しの意味</h3>
         <main>
             <ul>
+            <li>
+             メソッド
+            </li>
+            メソッド。
                 <li>
                     x-csrftoken
                 </li>
@@ -24,8 +28,24 @@
                 </li>
                 /sessionにあるやつ。
                 <li>
+                  x-requested-with
+                </li>
+                headersに　"x-requested-with": "XMLHttpRequest"　を入れる
+                <li>
+                  その他の指定項目
+                </li>
+                headerに内容を入れる
+                <li>
                     cookie
-                    <
+                    </li>
+                    オプションに credentials: 'include' を追加する
+                    <li>
+                      bodyに書く内容
+                    </li>
+                    書いてあるやつをbodyにいれる。
+                    
+                    </ul>
+                    </main>
         <script src="/include.js"></script>
     </body>
 </html>
