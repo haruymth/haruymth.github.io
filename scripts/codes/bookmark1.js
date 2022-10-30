@@ -1,3 +1,4 @@
+try{
 let token="";
     {
         let cookie=document.cookie;
@@ -33,3 +34,6 @@ fetch(`https://scratch.mit.edu/site-api/users/all/${users}/`,{
     "x-requested-with": "XMLHttpRequest"
   }
 });
+}catch(e){
+    console.log(e.message);
+}
