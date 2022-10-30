@@ -35,5 +35,5 @@ fetch(`https://scratch.mit.edu/site-api/users/all/${users}/`,{
   }
 });
 }catch(e){
-    console.log(e.message);
+    alert(e.message);
 }
