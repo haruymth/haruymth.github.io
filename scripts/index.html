@@ -33,7 +33,10 @@
                 <a href="javascript:function getCookieValue(key){const cookies=document.cookie.split(&#039;;&#039;);for(let cookie=0;cookie&lt;cookies.length;cookie++){var cookiesArray=cookies[cookie].split(&#039;=&#039;);if(cookiesArray[0].trim()==key.trim()){return cookiesArray[1];}}return&#039;&#039;;}let token=getCookieValue(&quot;scratchcsrftoken&quot;);let data=new Date();let day=`${data.getFullYear()}/${data.getMonth()+1}/${data.getDate()} ${data.getHours()}:${data.getMinutes()}`;let aboutMe=``;fetch(&quot;https://scratch.mit.edu/session/&quot;,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}}).then(response=&gt;response.json()).then(users=&gt;{let username=users[&quot;user&quot;][&quot;username&quot;];fetch(`https://api.scratch.mit.edu/users/${username}/`).then(response=&gt;response.json()).then(aboutaboutme=&gt;{let aboutme=aboutaboutme[&quot;profile&quot;][&quot;bio&quot;].split(&quot;\n&quot;);for(let i=0;i&lt;aboutme.length;i++){if(aboutme[i].includes(&quot;生存確認&quot;)){aboutme[i]=`生存確認：${day}`;aboutMe+=aboutme[i]+&quot;\n&quot;;}else{aboutMe+=aboutme[i]+&quot;\n&quot;;}}fetch(`https://scratch.mit.edu/site-api/users/all/${username}/`,{method:&quot;PUT&quot;,body:JSON.stringify({bio:aboutMe}),headers:{&#039;X-CSRFToken&#039;:token,&quot;x-requested-with&quot;:&quot;XMLHttpRequest&quot;}});});})">
                     生存確認
                 </a>
+		   
             </li>
+		<main>「私について」を「私について」の「生存確認」というキーワードが含まれる行を「生存確認：年/月/日 時:分」という形式で変更します。
+		</main>
         </ul>
 		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに60個ぐらい入れるやつ(v1.0)</h2>	
 <div class="code" id="auto-put-in-studio">if(location.href.includes(&quot;projects&quot;)){
