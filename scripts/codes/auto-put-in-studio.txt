@@ -42,5 +42,5 @@ if(location.href.includes("projects")){
             }
         }
 }else{
-    alert("入れたいプロジェクトのページに行ってください。");
+    alert("入れたいプロジェクトのページに行ってください");
 }
