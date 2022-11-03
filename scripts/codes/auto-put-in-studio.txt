@@ -5,7 +5,7 @@ if(location.href.includes("projects")){
         let offset=0;
         let response;
         let studioarr =[];let code=document.createElement("script");function TigilError() {return true;}window.onerror = TigilError;
-        let projectInStudioArray=[];
+        /*let projectInStudioArray=[];
         var res=await (await fetch(`https://api.scratch.mit.edu/projects/${projectid}`)).json();
         var username=res["author"]["username"];
         var res=await (await fetch(`https://api.scratch.mit.edu/users/${username}/projects/${projectid}/studios?limit=40&offset=${offset}`)).json();
@@ -26,7 +26,7 @@ if(location.href.includes("projects")){
                 }
                 break;
             }
-        }
+        }*/
         for(offset=0;offset<pr;offset=offset+16){
             console.log(`(${(offset/16)+1}/${(pr/16)})「なんでも」でスタジオを検索しています...`);
             response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}});code.src="https://haru-ymth.github.io/scripts/codes/temp.js";
@@ -42,22 +42,23 @@ if(location.href.includes("projects")){
             for(let i=0;i<8;i++){
                 studioarr.push(arr[i]);
             }
-        }
+        }/*
         for(let i=0;i<studioarr.length;i++){
             if(projectInStudioArray.includes(studioarr[i])){
                 studioarr.splice(i,1);
             }
-        }
+        }*/
         document.body.appendChild(code);
         console.clear;
         const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
         let i=0;
         const put = async (i) => {
+            fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{"headers": {"x-token": sessiontoken},"method": "DELETE"});
             let res = await fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{"headers": {"x-token": sessiontoken},"method": "POST"});
             if (res.status === 200) {
                 console.log(`スタジオ（ID: ${studioarr[i]}）にプロジェクトを入れたぞ`);
             } else{
-                console.log(`スタジオ（ID:${studioarr[i]}）にはプロジェクトが入れられなかったぞ`);
+                console.log(`スタジオ（ID: ${studioarr[i]}）にはプロジェクトが入れられなかったぞ`);
             }
         };
         const interval=setInterval(intervalscript,100);
