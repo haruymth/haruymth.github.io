@@ -21,7 +21,7 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);
-	scripts.nextElementSibling.children[0].style.opacity="0.7";
-	setTimeout(function(){scripts.nextElementSibling.children[0].style.opacity="0"},3000);
+	scripts.nextElementSibling.children[1].style.opacity="0.7";
+	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
   });
 };
