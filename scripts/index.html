@@ -46,53 +46,15 @@
                 学校PCでコンソールが使えないので、作りました（エラーはconsole.errorのエラーしか拾えません）。あと、適当です。
             </main>
         </ul>
-		<h2>Scratchの指定した作品を「なんでも」で検索したスタジオに入れるやつ(v2.1)</h2>	
-<div class="code" id="auto-put-in-studio">if(location.href.includes(&quot;projects&quot;)){
-    let pr=prompt(&quot;何ページ検索したスタジオに作品を入れますか？&quot;)*16;
-    let offset=0;
-    let res;
-    let studioarr =[];let code=document.createElement(&quot;script&quot;);function TigilError() {return true;}window.onerror = TigilError;
-    for(offset=0;offset&lt;pr;offset=offset+16){
-        console.log(&quot;スタジオを検索しています...&quot;);
-        res =(await(await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&amp;offset=${offset}&amp;language=ja&amp;mode=popular&amp;q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).text());code.src=&quot;https://haru-ymth.github.io/scripts/codes/temp.js&quot;;
-        let arr = res.split(&quot;{\&quot;id\&quot;:&quot;);
-        arr.splice(0, 1);
-        for(let i=1;i&lt;8;i++){
-            arr.splice(i,1)
-        }
-        for(let i=0;i&lt;8;i++){
-            arr[i] = &quot;&quot;+arr[i].split(&quot;,\&quot;title\&quot;&quot;)[0];
-        }
-        for(let i=0;i&lt;8;i++){
-            studioarr.push(arr[i]);
-        }
-    }
-    let projectid=location.href;
-    let ar=projectid.split(&quot;/&quot;);
-    projectid=ar[ar.length-2];
-    document.body.appendChild(code);
-    console.clear;
-    const sessiontoken = (await(await fetch(&quot;/session/&quot;,{headers:{&quot;X-Requested-With&quot;:&quot;XMLHttpRequest&quot;}})).json()).user.token;
-    let i=0;
-    const put = async (i) =&gt; {
-        let res = await fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{&quot;headers&quot;: {&quot;x-token&quot;: sessiontoken},&quot;method&quot;: &quot;POST&quot;});
-        if (res.status === 200) {
-            console.log(`スタジオ（ID: ${studioarr[i]}）にプロジェクトを入れたぞ`);
-        } else{
-            console.log(`スタジオ（ID:${studioarr[i]}）にはプロジェクトが入れられなかったぞ`);
-        }
-    };
-    const interval=setInterval(intervalscript,100);
-        function intervalscript(){
-            put(i);
-            i++;
-            if(i&gt;=studioarr.length){
-                clearInterval(interval);
-            }
-        }
-}else{
-    alert(&quot;入れたいプロジェクトのページに行ってください。&quot;);
-}</div>
+		<h2 id="getff">Scratchのフォロワーかフォローを取得するやつ(v1.0)<h2>
+			<main>
+                ①取得したいユーザーのフォロワーのページかフォローのページに行く<br>
+                ②このスクリプトを実行<br><br>
+                APIは使い物にならなかったのでHTML？を使いました
+			</main>
+		
+		<h2 id="auto-put-in-studio">Scratchの指定した作品を「なんでも」で検索したスタジオに入れるやつ(v2.1)</h2>	
+
 	<main>
 		アプデした
         <br>
@@ -115,49 +77,8 @@
 		<br>多分、将来プロジェクトが増えて、プロジェクトidの桁が変わったら、壊れます。
 		
     </main>
-		<h2>Scratchの傾向の何P何位か調べるプログラム(v1.0)</h2>	
-    <div class="code" id="cal-keikou">async function calKei() {
-    const projectId = prompt(&quot;調べたいプロジェクトIDを入力&quot;);
-    const saidai = 10000;
-    let offset = 0;
-    let page = 0;
-    let rank = 0;
-    let ok = 0;
-    while(ok==0){
-        const res = await fetch(`https://api.scratch.mit.edu/explore/projects?limit=16&amp;offset=${offset}&amp;language=ja&amp;mode=trending&amp;q=*`);
-        const users = await res.text();
-        let idList = users.split(&quot;\&quot;id\&quot;&quot;);
-        let i = 2;
-        while(i&lt;idList.length){
-            idList.splice(i,1);
-            if(i&lt;idList.length){
-                idList.splice(i,1);
-            }
-            i += 1;
-        }
-        idList.splice(0,1);
-        i = 0;
-        while(i&lt;idList.length){
-            idList[i] = idList[i].slice(1,10);
-            i += 1;
-        }
-    if(idList.includes(projectId)){
-        rank = offset + idList.indexOf(projectId) + 1;
-        page = Math.floor(rank/16) + 1;
-        rank = rank%16;
-        ok = 1;
-    }
-    if(offset&gt;=saidai){
-        rank =&quot;None&quot;;
-        page =&quot;None&quot;;
-        break;
-    }
-    offset += 16;
-    console.log(`全ページ合わせて${offset}位まで調べました`);
-    }
-    console.log(`=====結果====\n${page}ページ目、${rank}位にありました。`)
-  };
-  calKei();</div>
+		<h2 id="cal-keikou">Scratchの傾向の何P何位か調べるプログラム(v1.0)</h2>	
+    
   
 		<main>
             僕がJavaScriptを勉強し始めて初期の頃に作ったものなので、無駄が多いですが、ちゃんと動作します。<br>
