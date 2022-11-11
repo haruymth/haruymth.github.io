@@ -31,6 +31,8 @@
 	<h2>
         ステータス
     </h2>
+	<input type="text" id="statustextbox" value="yamaguchi03">
+	<button onclick="displayStatus()"></button>
     <main>
         <div id="status"></div>
     </main><!--
@@ -72,7 +74,9 @@
         </style>-->
 	<script>
   async function displayStatus(){
-        const res = await fetch(`https://scratchdb.lefty.one/v3/user/info/yamaguchi03`);
+	const username="document.getElementById("statustextbox").value;
+	document.getElementById("status").innerHTML=`ステータスを読み込み中...`;
+        const res = await fetch(`https://scratchdb.lefty.one/v3/user/info/${username}`);
         const data = await res.json();
         let followers=data["statistics"]["followers"];
         let views=data["statistics"]["views"];
@@ -83,7 +87,6 @@
         日本フォロワー順位： ${followerRank} 位
         <br>※このステータスはScratchDBを使用しています。`;
         }
-document.getElementById("status").innerHTML=`ステータスを読み込み中...`;
 displayStatus();
 	</script>
 	  <script src="https://haru-ymth.github.io/include.js"></script>
