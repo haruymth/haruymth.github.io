@@ -74,7 +74,7 @@
         </style>-->
 	<script>
   async function displayStatus(){
-	const username="document.getElementById("statustextbox").value;
+	const username=document.getElementById("statustextbox").value;
 	document.getElementById("status").innerHTML=`ステータスを読み込み中...`;
         const res = await fetch(`https://scratchdb.lefty.one/v3/user/info/${username}`);
         const data = await res.json();
