@@ -32,7 +32,7 @@
         ステータス
     </h2>
 	<input type="text" id="statustextbox" value="yamaguchi03">
-	<button onclick="displayStatus()"></button>
+	<button id="submitbutton" value="表示">
     <main>
         <div id="status"></div>
     </main><!--
@@ -88,6 +88,7 @@
         <br>※このステータスはScratchDBを使用しています。`;
         }
 displayStatus();
+		document.getElementById("submitbutton").addEventListener("click",displayStatus);
 	</script>
 	  <script src="https://haru-ymth.github.io/include.js"></script>
 	</body>
