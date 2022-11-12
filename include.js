@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var footer=document.createElement("footer");
 	footer.id="infooter";
     footer.innerHTML=`&copy;&nbsp;2022&nbsp;yamaguchi03`;
-	document.body.after("footer")
+	document.body.after(footer)
     var menu=document.createElement("iframe");
     menu.id="menubar";
     menu.src="https://haru-ymth.github.io/others";
