@@ -7,7 +7,7 @@ function getParam(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-const username=/*getParam("username")*/"yamaguchi03";
+const username=getParam("username");
 async function showStatus(){
 	let data=await (await fetch(`https://scratchdb.lefty.one/v3/user/info/${username}`)).json();
   let f=data["joined"].split("-");
