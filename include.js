@@ -67,4 +67,3 @@ if(location.href.includes("#")){
 newUrl=location.href.replace(/#/g,"");
 	replaceState("",document.title,newUrl);
 }
-document.title=document.title+" - Haru-ymth's Homepage";
