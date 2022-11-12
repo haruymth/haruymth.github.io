@@ -18,7 +18,8 @@ window.addEventListener('DOMContentLoaded', function() {
     shadow.id="_shadow";
     document.body.after(shadow);
     var footer=document.createElement("footer");
-    //footer.innerHTML=`<div id="infooter">&copy;&nbsp;2022&nbsp;yamaguchi03</div>`;
+    footer.innerHTML=`<div id="infooter">&copy;&nbsp;2022&nbsp;yamaguchi03</div>`;
+	document.body.appendChild(footer);
     var menu=document.createElement("iframe");
     menu.id="menubar";
     menu.src="https://haru-ymth.github.io/others";
@@ -27,7 +28,6 @@ window.addEventListener('DOMContentLoaded', function() {
     head.after(header);
     head.after(menu);
     var html=document.getElementsByTagName("html")[0];
-   // html.appendChild(footer);
 	var googleAnalytics=document.createElement("div");
 	googleAnalytics.innerHTML=`<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
