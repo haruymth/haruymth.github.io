@@ -5,7 +5,51 @@
         </title>
     </head>
     <body>
-        <script src="/include.js"></script>
+    <h1>
+    Statistics
+    </h1>
+    <main style="font-size:10px;">
+      JavaScriptでなんか作りたかったのでこんなへんなのを作りました。<br>
+      ScratchDBを使っているのでめっちゃ遅いです。1ヶ月遅れることだってあります。<br>
+      なので、ここに表示されるのはだいぶ古い情報なのでそこは、ご了承ください。
+    </main>
+    <h2 id="username">
+      <img id="statusicon" src="https://uploads.scratch.mit.edu/get_image/user/default_60x60.png" height="60" width="60"><span>ScratchCat<br><span id="scratcher">New scratcher&nbsp;/&nbsp;No country</span></span>
+    </h2>
+    <div id="container">
+      <div id="biotoka">
+        <h3>
+        私について
+        </h3>
+        <main class="detail" id="bio"></main>
+        <h3>
+        私が取り組んでいること
+        </h3>
+        <main class="detail" id="work"></main>
+      </div>
+      <div id="statistics">
+        <h3>
+          統計情報
+        </h3>
+        <div id="followerbox" class="content-box">
+        <span class="content-box-head">
+           <img src="https://haru-ymth.github.io/imgs/people.svg" width="15" height="15">フォロワー</span>
+        </div>
+        <div id="viewbox" class="content-box">
+        <span class="content-box-head">
+           <img src="https://haru-ymth.github.io/imgs/view.svg" width="15" height="15">参照数</span>
+        </div>
+        <div id="lovebox" class="content-box">
+        <span class="content-box-head">
+           <img src="https://haru-ymth.github.io/imgs/heart.svg" width="15" height="15">ハート</span>
+        </div>
+        <div id="favoritebox" class="content-box">
+        <span class="content-box-head">
+           <img src="https://haru-ymth.github.io/imgs/favorite.svg" width="15" height="15">星</span>
+        </div>
+      </div>
+    </div>
+        <script src="//haru-ymth.github.io/include.js"></script>
         <script src="/status/main.js"></script>
     </body>
 </html>
