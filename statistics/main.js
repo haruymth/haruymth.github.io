@@ -14,9 +14,9 @@ async function showStatus(){
   let date=`${f[0]}/${f[1]}/${f[2].split("T")[0]}`
   let u=document.getElementById("username");
   if(data["school"]==null){
-    u.innerHTML=`<img id="statusicon" src="https://uploads.scratch.mit.edu/get_image/user/${data["id"]}_60x60.png" height="60" width="60"><span>`+username+`<br><span id="scratcher">${date}&nbsp;に参加&nbsp;|&nbsp;${data["status"]}&nbsp;/&nbsp;${data["country"]}</span></span>`;
+    u.innerHTML=`<img id="statusicon" src="https://uploads.scratch.mit.edu/get_image/user/${data["id"]}_60x60.png" height="60" width="60"><span><a href="https://scratch.mit.edu/users/${username}">`+username+`</a><br><span id="scratcher">${date}&nbsp;に参加&nbsp;|&nbsp;${data["status"]}&nbsp;/&nbsp;${data["country"]}</span></span>`;
     }else{
-    u.innerHTML=`<img id="statusicon" src="https://uploads.scratch.mit.edu/get_image/user/${data["id"]}_60x60.png" height="60" width="60"><span>`+username+`<br><span id="scratcher">${date}&nbsp;に参加&nbsp;|&nbsp;${data["status"]}&nbsp;/&nbsp;${data["country"]}&nbsp;/&nbsp;学校アカウント</span></span>`;
+    u.innerHTML=`<img id="statusicon" src="https://uploads.scratch.mit.edu/get_image/user/${data["id"]}_60x60.png" height="60" width="60"><span><a href="https://scratch.mit.edu/users/${username}">`+username+`</a><br><span id="scratcher">${date}&nbsp;に参加&nbsp;|&nbsp;${data["status"]}&nbsp;/&nbsp;${data["country"]}&nbsp;/&nbsp;学校アカウント</span></span>`;
     }
   let bio=document.getElementById("bio");
   let work=document.getElementById("work");
