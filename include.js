@@ -18,8 +18,9 @@ window.addEventListener('DOMContentLoaded', function() {
     shadow.id="_shadow";
     document.body.after(shadow);
     var footer=document.createElement("footer");
-    footer.innerHTML=`<div id="infooter">&copy;&nbsp;2022&nbsp;yamaguchi03</div>`;
-	document.body.appendChild(footer);
+	footer.id="infooter";
+    footer.innerHTML=`&copy;&nbsp;2022&nbsp;yamaguchi03`;
+	document.body.after("footer")
     var menu=document.createElement("iframe");
     menu.id="menubar";
     menu.src="https://haru-ymth.github.io/others";
