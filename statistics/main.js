@@ -32,4 +32,4 @@ async function showStatus(){
   favorite.innerHTML+=`総カウント：${data["statistics"]["favorites"]}&nbsp;回<br>国際ランク：${data["statistics"]["ranks"]["favorites"]}&nbsp;位<br>国内ランク：${data["statistics"]["ranks"]["country"]["favorites"]}&nbsp;位`;
 }
 showStatus();
-console.log(Date())
+document.title=username+"'s statistics";
