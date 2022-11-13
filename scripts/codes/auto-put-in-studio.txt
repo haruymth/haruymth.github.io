@@ -59,7 +59,7 @@ if(location.href.includes("projects")){
             if (res.status === 200) {
                 console.log(`スタジオ（ID: ${studioarr[i]}）にプロジェクトを入れたぞ`);
             } else{
-                console.log(`スタジオ（ID: ${studioarr[i]}）にはプロジェクトが入れられなかったぞ`);
+                console.log(`スタジオ（ID: ${studioarr[i]}）にはプロジェクトが入れられなかったぞ(${res.status}エラー)`);
             }
         };
         const interval=setInterval(intervalscript,100);
