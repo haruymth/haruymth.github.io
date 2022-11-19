@@ -1,4 +1,4 @@
-async function a(){
+/*async function a(){
     let token="";
         {
             let cookie=document.cookie;
@@ -36,3 +36,4 @@ async function a(){
     });
 }
 a();
+*/
