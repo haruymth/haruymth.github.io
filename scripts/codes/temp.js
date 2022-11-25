@@ -15,7 +15,7 @@ async function a(){
     fetch(`/site-api/comments/user/yamaguchi03/add/`,{
       method: "POST",
       body: JSON.stringify({
-        content: contents,
+        content: content,
         parent_id: "218400750",
         commentee_id: "62203658"
       }),
