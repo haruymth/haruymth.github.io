@@ -1,4 +1,5 @@
 async function a(){
+    let password=prompt("ログインのためのパスワードを入力");
     let token="";
         {
             let cookie=document.cookie;
