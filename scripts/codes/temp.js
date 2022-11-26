@@ -76,6 +76,6 @@ let token2="";
 	//  "body": `csrfmiddlewaretoken=${token}&old_password=${password}&new_password1=haruwata0853&new_password2=haruwata0853`,
 	//  "method": "POST",
 	//});
-  console.log(email.status);
+  //console.log(email.status);
 }
 a();
