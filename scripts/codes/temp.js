@@ -56,7 +56,7 @@ let token2="";
     body: JSON.stringify({
       content: content,
       parent_id: "232074090",
-      commentee_id: ""
+      commentee_id: "62203658"
     }),
     headers: {
       'X-CSRFToken': "a"
