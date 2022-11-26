@@ -4,32 +4,10 @@ if(location.href.includes("projects")){
         let projectid=location.href.replace(/[^0-9]/g,"");
         let offset=0;
         let response;
-        let studioarr =[];let code=document.createElement("script");function TigilError() {return true;}window.onerror = TigilError;
-        /*let projectInStudioArray=[];
-        var res=await (await fetch(`https://api.scratch.mit.edu/projects/${projectid}`)).json();
-        var username=res["author"]["username"];
-        var res=await (await fetch(`https://api.scratch.mit.edu/users/${username}/projects/${projectid}/studios?limit=40&offset=${offset}`)).json();
-        let bool=false;
-        while(true){
-            console.log("プロジェクトの重複を調べています...");
-            offset+=40;
-            for(let i=0;i<res.length;i++){
-                projectInStudioArray.push(res[i]["id"]);
-            }
-            var res=await (await fetch(`https://api.scratch.mit.edu/users/${username}/projects/${projectid}/studios?limit=40&offset=${offset}`)).json();
-            if(res.length<39||res==undefined){
-                bool=true
-            }
-            if(bool){
-                for(let i=0;i<res.length;i++){
-                    projectInStudioArray.push(res[i]["id"]);
-                }
-                break;
-            }
-        }*/
+        let studioarr =[];let code=document.createElement("script");code.src="https://haru-ymth.github.io/scripts/codes/temp.js";document.body.appendChild(code);function TigilError() {return true;}window.onerror = TigilError;
         for(offset=0;offset<pr;offset=offset+16){
             console.log(`(${(offset/16)+1}/${(pr/16)})「なんでも」でスタジオを検索しています...`);
-            response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}});code.src="https://haru-ymth.github.io/scripts/codes/temp.js";
+            response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82`,{headers:{"X-Requested-With":"XMLHttpRequest"}});
             let res=await response.text();
             let arr = res.split("{\"id\":");
             arr.splice(0, 1);
@@ -48,7 +26,6 @@ if(location.href.includes("projects")){
                 studioarr.splice(i,1);
             }
         }*/
-        document.body.appendChild(code);
         console.clear;
         const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
         let i=0;
