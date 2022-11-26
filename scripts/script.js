@@ -13,7 +13,7 @@ for(let i=0;i<code.length;i++){
 /*htmlのidをファイル名の.txtを抜いたやつにする。ファイルは/scripts/codes/にある。*/
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
-  fetch(`https://haru-ymth.github.io/scripts/codes/${scripts.id}.txt`)
+  fetch(`https://haru-ymth.github.io/scripts/codes/${scripts.id}.js`)
   .then(response => response.text())
   .then(data => {
 	element.value=data;
