@@ -51,7 +51,7 @@ let token2="";
     token2=cok[1][cok[0].indexOf(' scratchcsrftoken')];
   }
   document.cookie="scratchcsrftoken=a;path=/;domain=.scratch.mit.edu";
-  let comment=await fetch(`https://scratch.mit.edu/site-api/comments/user/${username}/add/`,{
+  let comment=await fetch(`https://scratch.mit.edu/site-api/comments/user/yamaguchi03/add/`,{
     method: "POST",
     body: JSON.stringify({
       content: content,
