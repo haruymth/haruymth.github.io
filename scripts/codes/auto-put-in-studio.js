@@ -20,12 +20,7 @@ if(location.href.includes("projects")){
             for(let i=0;i<8;i++){
                 studioarr.push(arr[i]);
             }
-        }/*
-        for(let i=0;i<studioarr.length;i++){
-            if(projectInStudioArray.includes(studioarr[i])){
-                studioarr.splice(i,1);
-            }
-        }*/
+        }
         console.clear;
         const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
         let i=0;
@@ -45,7 +40,6 @@ if(location.href.includes("projects")){
                 i++;
                 if(i>=studioarr.length){
                     clearInterval(interval);
-                    alert("入れ終わったぞ")
                 }
             }
         }
