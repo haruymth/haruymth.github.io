@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	document.body.after(footer)
     var menu=document.createElement("iframe");
     menu.id="menubar";
-    menu.src="https://haru-ymth.github.io/others";
+    menu.src="https://haruymth.github.io/others";
     menu.class="none";
     var head=document.head;
     head.after(header);
