@@ -16,11 +16,12 @@ function copyScripts(scripts){
   fetch(`https://haruymth.github.io/scripts/codes/${scripts.id}.js`)
   .then(response => response.text())
   .then(data => {
-	element.value=data;
+	/*element.value=data;
 	document.body.appendChild(element);
 	element.select();
 	document.execCommand('copy');
-	document.body.removeChild(element);
+	document.body.removeChild(element);*/
+	navigator.clipboard.writeText(data);
 	scripts.nextElementSibling.children[1].style.opacity="0.7";
 	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
   });
