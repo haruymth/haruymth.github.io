@@ -18,13 +18,53 @@
 		ホームページ
 	</h1>
 	<h2>
-		haru-ymth (<a href="https://scratch.mit.edu/users/yamaguchi03">yamaguchi03</a>)
+		haru-ymth
 	</h2>
 <main>
-    プログラミングが好きな13歳です。
-    <br>
-    <br>
-    今は、HTML、CSS、JavaScript、Python、Scratchをやっています。ちなみにScratch以外全部雑魚
+    プログラミングが好きな中2です。<br>
+    2009年3月生まれなので多分今は<span id="age"></span>歳ですね。
+    <script>
+        let nowDate=new Date();
+        let birthDate=new Date("2009/3/1");
+        let ms=nowDate.getTime()-birthDate.getTime();
+        let age=Math.floor(ms/(1000*60*60*24*365));
+        document.getElementById("age").innerHTML=age;
+    </script>
+    <h3>
+        できる言語
+    </h3>
+	<ul>
+        <li>
+            日本語
+        </li>
+        <main>
+            国語ですね。国語は嫌いだけど一応喋れます。（日本人なので）
+        </main>
+        <li>
+            英語
+        </li>
+        <main>
+            喋れないけど学校とかで習った文法とか英単語とかはだいたい覚えてるから、英語でコメントとかはできるかもしれないけどクソ雑魚だから多分無理ですね((
+        </main>
+        <li>
+            JavaScript
+        </li>
+        <main>
+            なんか結構簡単に覚えれたからすごく使ってます。このサイトにもところどころJavaScriptがあります。でも使ってるって言ってもAtCoderのB問題までぐらいしか解けないんですけどね。あとNode.jsとか使ったらできることめっちゃ増えるし。
+        </main>
+        <li>
+            Python
+        </li>
+        <main>
+            初めて習得したScratch以外のプログラミング言語ですね。もう今はJSばっかりやっているのでPythonは忘れかけてます。
+        </main>
+        <li>
+            HTML&nbsp;&&nbsp;CSS
+        </li>
+        <main>
+            このサイトもHTMLとCSSで作ってます。厳密に言うと、HTMLだけだとマークアップ言語といって、プログラミング言語じゃないんです。でも、CSSと一緒に使うと、チューリング完全を満たすらしいのでプログラミング言語になるらしいです。
+        </main>
+    </ul>
     
 	
 </main>
@@ -36,7 +76,7 @@
     <main>
         <div id="status"></div>
 	    もっと詳しいステータスは、<a href="/statistics/?username=yamaguchi03">ここ</a>で見れます。URLを変えれば別の人のも見れます。
-    </main><!--
+    </main>
         <h2>
             関連リンク
         </h2>
@@ -72,7 +112,7 @@
               text-align:center;
               margin:10px;
             }
-        </style>-->
+        </style>
 	<script>
   async function displayStatus(){
 	const username=document.getElementById("statustextbox").value;
