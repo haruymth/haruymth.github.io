@@ -1,8 +1,8 @@
 const head = document.head;
 head.insertAdjacentHTML('beforeend', `
-	  <link rel="stylesheet" href="https://haruymth.github.io/style.css">
+	  <link rel="stylesheet" href="/style.css">
 	  <meta charset="utf-8"> 
-	  <link rel="icon" href="https://haruymth.github.io/favicon.png">
+	  <link rel="icon" href="/favicon.png">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 	  `);
 window.addEventListener('DOMContentLoaded', function() {
@@ -10,8 +10,8 @@ window.addEventListener('DOMContentLoaded', function() {
     var header = document.createElement("header");
     header.innerHTML = `
 		<ul id=headerul>
-				<li class="head"> <a href="https://haruymth.github.io/" class="nav"><img src="https://haruymth.github.io/favicon.png" width="35px" height="35px" id="icon"></a> </li>
-				<li class="head"><a href="https://haruymth.github.io/" class="nav">Haru-ymth's Homepage</a></li>
+				<li class="head"> <a href="/" class="nav"><img src="/favicon.png" width="35px" height="35px" id="icon"></a> </li>
+				<li class="head"><a href="/" class="nav">Haru-ymth's Homepage</a></li>
 				<li class="head" id="sidebartoggle"> <a class="nav">その他</a> </li>
 		</ul>`;
     var shadow=document.createElement("div");
