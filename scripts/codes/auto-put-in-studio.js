@@ -2,7 +2,6 @@ if(location.href.includes("projects")){
     async function autoPutInStudio(){
         let pr=prompt("何ページ検索したスタジオに作品を入れますか？（推奨：1~15）")*16;
         let q=encodeURI(prompt("検索キーワードは？（推奨：なんでも/入れろ など）"));
-        alert(q)
         let projectid=location.href.replace(/[^0-9]/g,"");
         let offset=0;
         let response;
