@@ -9,20 +9,13 @@ if(location.href.includes("projects")){
         for(offset=0;offset<pr;offset=offset+16){
             console.log(`(${(offset/16)+1}/${(pr/16)})「${decodeURI(q)}」でスタジオを検索しています...`);
             response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=${q}`,{headers:{"X-Requested-With":"XMLHttpRequest"}});
-            let res=await response.text();
-            let arr = res.split("{\"id\":");
-            arr.splice(0, 1);
-            for(let i=1;i<8;i++){
-                arr.splice(i,1)
-            }
-            for(let i=0;i<8;i++){
-                arr[i] = ""+arr[i].split(",\"title\"")[0];
-            }
-            for(let i=0;i<8;i++){
-                studioarr.push(arr[i]);
+            let res=await response.json();
+            for(let i=0;i<res.length;i++){
+                studioarr.push(res[i].id)
+                //console.log(res[i].id,res[i].title)
             }
         }
-        console.clear;
+        console.clear();
         const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
         let i=0;
         const put = async (i) => {
