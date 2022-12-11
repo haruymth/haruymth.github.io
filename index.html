@@ -129,7 +129,15 @@
         <br>※このステータスはScratchDBを使用しています。`;
         }
 displayStatus();
+		
 		document.getElementById("submitbutton").addEventListener("click",displayStatus);
+		 fetch("https://visitorCounts.haru-ymth.repl.co")
+		.then(res=>res.text())
+		.then(visitorcount=>{
+    let visitorcount2=document.createElement("span");
+	visitorcount2.style="margin-bottom:50px;"
+    visitorcount2.innerText="あなたは"+visitorcount+"人目の訪問者です";
+    document.body.appendChild(visitorcount2)});
 	</script>
 	  <script src="/include.js"></script>
 	</body>
