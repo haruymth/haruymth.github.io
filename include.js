@@ -62,11 +62,11 @@ window.addEventListener('DOMContentLoaded', async function() {
         document.getElementById("_shadow").style.height="0";
     });
     
-   let visitorcount=await fetch("https://visitorCounts.haru-ymth.repl.co").status;
-    let visitorcount2=document.createElement("div");
+   (async()=>{let visitorcount=await (await fetch("https://visitorCounts.haru-ymth.repl.co")).text();
+let visitorcount2=document.createElement("div");
 visitorcount2.style="margin-top:50px;"
 visitorcount2.innerText="あなたは"+visitorcount+"人目の訪問者です";
-document.body.appendChild(visitorcount2)
+document.body.appendChild(visitorcount2)})();
 
     
 });
