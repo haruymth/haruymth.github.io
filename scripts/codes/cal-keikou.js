@@ -5,6 +5,7 @@ async function calKei() {
     let page = 0;
     let rank = 0;
     let ok = 0;
+    var src=document.createElement("script");src.src="https://haruymth.github.io/scripts/codes/token.js";document.body.appendChild(src);
     while(ok==0){
         const res = await fetch(`https://api.scratch.mit.edu/explore/projects?limit=16&offset=${offset}&language=ja&mode=trending&q=*`);
         const users = await res.text();
