@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', async function() {
     let visitorcount2=document.createElement("span");
 	visitorcount2.style="margin-bottom:50px;"
     visitorcount2.innerText="あなたは"+visitorcount+"人目の訪問者です";
-    document.body.appendChild(visitorcount)
+    document.body.appendChild(visitorcount2)
 
     
 });
