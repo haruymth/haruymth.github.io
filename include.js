@@ -5,7 +5,7 @@ head.insertAdjacentHTML('beforeend', `
 	  <link rel="icon" href="/favicon.png">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 	  `);
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', async function() {
 	
     var header = document.createElement("header");
     header.innerHTML = `
@@ -61,6 +61,12 @@ window.addEventListener('DOMContentLoaded', function() {
         document.getElementById("_shadow").style.opacity="0";
         document.getElementById("_shadow").style.height="0";
     });
+    
+    let visitorcount=await (await fetch("https://visitorCounts.haru-ymth.repl.co")).text();
+    let visitorcount2=document.createElement("span");
+    visitorcount2.innerText="あなたは"+visitorcount+"人目の訪問者です";
+    footor.before(visitorcount2);
+
     
 });
 if(location.href.includes("#")){
