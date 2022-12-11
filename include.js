@@ -64,8 +64,9 @@ window.addEventListener('DOMContentLoaded', async function() {
     
     let visitorcount=await (await fetch("https://visitorCounts.haru-ymth.repl.co")).text();
     let visitorcount2=document.createElement("span");
+	visitorcount2.style="margin-bottom:50px;"
     visitorcount2.innerText="あなたは"+visitorcount+"人目の訪問者です";
-    footer.before(visitorcount2);
+    document.body.appendChild(visitorcount)
 
     
 });
