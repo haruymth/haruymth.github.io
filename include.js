@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', async function() {
         document.getElementById("_shadow").style.opacity="0";
         document.getElementById("_shadow").style.height="0";
     });
-    
+    if(location.pathname=="/others"){return}
    (async()=>{let visitorcount=await (await fetch("https://visitorCounts.haru-ymth.repl.co")).text();
 let visitorcount2=document.createElement("div");
 visitorcount2.style="margin-top:50px;"
