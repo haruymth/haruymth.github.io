@@ -6,15 +6,19 @@ if(location.href.includes("projects")){
         let offset=0;
         let response;
         let studioarr =[];
-        for(offset=0;offset<pr;offset=offset+16){
-            console.log(`(${(offset/16)+1}/${(pr/16)})「${decodeURI(q)}」でスタジオを検索しています...`);
+        while(studioarr.length<pr){
+            console.log(`(${(offset)}/${(pr)})「${decodeURI(q)}」でスタジオを検索しています...`);
             response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=${q}`,{headers:{"X-Requested-With":"XMLHttpRequest"}});
             let res=await response.json();
             for(let i=0;i<res.length;i++){
-                studioarr.push(res[i].id)
+                if(!studioarr.includes(res[i].id)){
+                    studioarr.push(res[i].id);
+                }
                 //console.log(res[i].id,res[i].title)
             }
+            offset+=16;
         }
+        studioarr=studioarr.slice(0,pr);
         console.clear();
         const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
         let i=0;
@@ -23,9 +27,9 @@ if(location.href.includes("projects")){
             await fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{"headers": {"x-token": sessiontoken},"method": "DELETE"});
             let res = await fetch(`https://api.scratch.mit.edu/studios/${studioarr[i]}/project/${projectid}`,{"headers": {"x-token": sessiontoken},"method": "POST"});
             if (res.status === 200) {
-                console.log(`スタジオ（ID: ${studioarr[i]}）にプロジェクトを入れたぞ`);
+                console.log(`(${i+1}/${pr})スタジオ（ID: ${studioarr[i]}）にプロジェクトを入れたぞ`);
             } else{
-                console.log(`スタジオ（ID: ${studioarr[i]}）にはプロジェクトが入れられなかったぞ(${res.status}エラー)`);
+                console.log(`(${i+1}/${pr})スタジオ（ID: ${studioarr[i]}）にはプロジェクトが入れられなかったぞ(${res.status}エラー)`);
             }
         };
         const interval=setInterval(intervalscript,100);
