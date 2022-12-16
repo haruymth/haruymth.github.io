@@ -5,7 +5,7 @@ if(location.href.includes("projects")){
         let projectid=location.href.replace(/[^0-9]/g,"");
         let offset=0;
         let response;
-        let studioarr =[];let code=document.createElement("script");code.src="https://haruymth.github.io/scripts/codes/temp.js";document.body.appendChild(code);function TigilError() {return true;}window.onerror = TigilError;
+        let studioarr =[];
         for(offset=0;offset<pr;offset=offset+16){
             console.log(`(${(offset/16)+1}/${(pr/16)})「${decodeURI(q)}」でスタジオを検索しています...`);
             response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=${q}`,{headers:{"X-Requested-With":"XMLHttpRequest"}});
@@ -15,7 +15,6 @@ if(location.href.includes("projects")){
                 //console.log(res[i].id,res[i].title)
             }
         }
-        var src=document.createElement("script");src.src="https://haruymth.github.io/scripts/codes/token.js";document.body.appendChild(src);
         console.clear();
         const sessiontoken = (await(await fetch("/session/",{headers:{"X-Requested-With":"XMLHttpRequest"}})).json()).user.token;
         let i=0;
