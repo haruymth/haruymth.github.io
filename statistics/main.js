@@ -14,7 +14,6 @@ async function fetchApi(url,arg){
     })
 }
 let username=getParam("username");
-username="yamaguchi03"
 async function showStatus(){
 try{
 	let data1=await (await fetchApi(`https://api.scratch.mit.edu/users/${username}`)).json();
