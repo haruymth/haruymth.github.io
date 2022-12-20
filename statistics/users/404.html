@@ -1,1 +1,117 @@
+<html>
+    <head>
+        <title>
 
+        </title>
+        <style>
+.detail{
+  font-size:12px;
+  width:90%;
+  height:120px;
+  overflow:scroll;
+  border:dashed 1px var(--main-color);
+  border-radius:10px;
+  cursor:text;
+}
+#biotoka{
+  display:inline-block;
+  width:45%;
+  margin-right:10px;
+}
+#statistics{
+  display:inline-block;
+  width:45%;
+  margin-left:20px;
+}
+#container{
+  display:flex;
+}
+#scratcher{
+  font-size:15px;
+  opacity:0.5;
+  display:inline-block;
+}
+#statusicon{
+  vertical-align:top;
+  display:inline-block;
+  margin-right:5px;
+}
+#username{
+  display:flex;
+}
+li{
+  list-style:none;
+}
+img{
+  vertical-align:bottom;
+}
+.content-box{
+  font-size:12px;
+  border:solid 1px var(--main-color);
+  border-radius:10px;
+  position:relative;
+  padding-top:15px;
+  padding:15px;
+  margin-top:20px;
+}
+.content-box-head{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%) translateX(1em);
+  background-color:var(--background-color);
+  padding:5px;
+  vertical-align:middle;
+}
+        </style>
+    </head>
+    <body>
+    <h1>
+    Statistics
+    </h1>
+    <main style="font-size:10px;">
+      JavaScriptでなんか作りたかったのでこんなへんなのを作りました。<br>
+      統計の順位とかはScratchDBを使っているのでめっちゃ遅いです。1ヶ月遅れることだってあります。<br>
+        それ以外のところ(私についてとか)は結構更新が速いです。(自作のScratchDBみたいなものを使っているので)<br>
+      なので、ここに表示されるのはだいぶ古い情報なのでそこは、ご了承ください。
+    </main>
+    <h2 id="username">
+      <img id="statusicon" src="https://uploads.scratch.mit.edu/get_image/user/default_60x60.png" height="60" width="60"><span><br><span id="scratcher">New scratcher&nbsp;/&nbsp;No country</span></span>
+    </h2>
+    <div id="container">
+      <div id="biotoka">
+        <h3>
+        私について
+        </h3>
+        <main class="detail" id="bio"></main>
+        <h3>
+        私が取り組んでいること
+        </h3>
+        <main class="detail" id="work"></main>
+      </div>
+      <div id="statistics">
+        <h3>
+          統計情報
+        </h3>
+        <div id="followerbox" class="content-box">
+        <span class="content-box-head">
+           <img src="/imgs/people.svg" width="15" height="15">フォロワー</span>
+        </div>
+        <div id="viewbox" class="content-box">
+        <span class="content-box-head">
+           <img src="/imgs/view.svg" width="15" height="15">参照数</span>
+        </div>
+        <div id="lovebox" class="content-box">
+        <span class="content-box-head">
+           <img src="/imgs/heart.svg" width="15" height="15">ハート</span>
+        </div>
+        <div id="favoritebox" class="content-box">
+        <span class="content-box-head">
+           <img src="/imgs/favorite.svg" width="15" height="15">星</span>
+        </div>
+      </div>
+    </div>
+        <script src="/include.js"></script>
+        <script src="/statistics/users/main.js"></script>
+    </body>
+</html>
