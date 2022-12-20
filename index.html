@@ -32,15 +32,6 @@
     </script>
     広告でも募集しようかな
 </main>
-	<h2>
-        ステータス
-    </h2>
-	<input type="text" id="statustextbox" value="yamaguchi03">
-	<button id="submitbutton">表示</button>
-    <main>
-        <div id="status"></div>
-	    もっと詳しいステータスは、<a href="/statistics/?username=yamaguchi03">ここ</a>で見れます。URLを変えれば別の人のも見れます。
-    </main>
         <h2>
             関連リンク
         </h2>
@@ -77,26 +68,7 @@
               margin:10px;
             }
         </style>
-	<script>
-  async function displayStatus(){
-	const username=document.getElementById("statustextbox").value;
-	document.getElementById("status").innerHTML=`ステータスを読み込み中...`;
-        const res = await fetch(`https://scratchdb.lefty.one/v3/user/info/${username}`);
-        const data = await res.json();
-        let followers=data["statistics"]["followers"];
-        let views=data["statistics"]["views"];
-        let followerRank=data["statistics"]["ranks"]["country"]["followers"];
-        document.getElementById("status").innerHTML=`
-        フォロワー： ${followers} 人<br>
-        総参照数： ${views} 回<br>
-        日本フォロワー順位： ${followerRank} 位
-        <br>※このステータスはScratchDBを使用しています。`;
-        }
-displayStatus();
-		
-		document.getElementById("submitbutton").addEventListener("click",displayStatus);
-		 
-	</script>
+	
 	  <script src="/include.js"></script>
 	</body>
 </html>
