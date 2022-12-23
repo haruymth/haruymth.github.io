@@ -288,7 +288,7 @@
             <td>○</td>
             <td>"content-type":"application/json"</td>
             <td></td>
-            <td>作成したときのプロジェクト内容のproject.json</td>
+            <td></td>
         </tr>
         <tr>
             <td>スタジオのサムネを変更</td>
@@ -297,9 +297,53 @@
             <td>○</td>
             <td></td>
             <td>○</td>
-            <td>content-type: multipart/form-data; boundary=----WebKitFormBoundaryssvzdb3VXIsT6gyL</td>
+            <td>"content-type": "multipart/form-data; boundary=----WebKitFormBoundaryssvzdb3VXIsT6gyL"</td>
             <td></td>
-            <td>作成したときのプロジェクト内容のproject.json</td>
+            <td>フォームデータ(new FormData())にfile:写真をappendしたやつかな。多分。</td>
+        </tr>
+        <tr>
+            <td>キュレーターを招待（招待を承認）</td>
+            <td>https://scratch.mit.edu/site-api/users/curators-in/スタジオID/invite_curator/?usernames=相手のユーザー名</td>
+            <td>PUT</td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>マネージャーに昇格</td>
+            <td>https://scratch.mit.edu/site-api/users/curators-in/スタジオID/promote/?usernames=相手のユーザー名</td>
+            <td>PUT</td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>キュレーターを削除</td>
+            <td>https://scratch.mit.edu/site-api/users/curators-in/スタジオID/remove/?usernames=相手のユーザー名</td>
+            <td>PUT</td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>所有権を移行</td>
+            <td>https://api.scratch.mit.edu/studios/スタジオID/transfer/相手のユーザー名</td>
+            <td>PUT</td>
+            <td>○</td>
+            <td>○</td>
+            <td></td>
+            <td></td>
+            <td>○</td>
+            <td>{password:パスワード}</td>
         </tr>
         <tr>
             <td>作品を報告する</td>
