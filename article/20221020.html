@@ -82,6 +82,17 @@
             <td>content:(コメントの内容),parent_id:(返信する場合の元コメントID),commentee_id:(そのコメントIDのユーザーID)</td>
         </tr>
         <tr>
+            <td>プロフコメント削除</td>
+            <td>https://scratch.mit.edu/site-api/comments/user/プロフのユーザー名/del/</td>
+            <td>POST</td>
+            <td>○</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>id:コメントID</td>
+        </tr>
+        <tr>
             <td>作品にコメントする</td>
             <td>https://api.scratch.mit.edu/proxy/comments/project/プロジェクトID</td>
             <td>POST</td>
@@ -91,6 +102,17 @@
             <td></td>
             <td></td>
             <td>content(コメントの内容),parent_id(返信する場合の元コメントID),commentee_id(そのコメントIDのユーザーID)</td>
+        </tr>
+        <tr>
+            <td>作品のコメント削除</td>
+            <td>https://api.scratch.mit.edu/proxy/comments/project/プロジェクトID/comments/コメントID</td>
+            <td>DELETE</td>
+            <td>○</td>
+            <td>○</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>プロフの文を変える</td>
@@ -110,6 +132,28 @@
             <td></td>
             <td>○</td>
             <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>スタジオをフォロー</td>
+            <td>https://scratch.mit.edu/site-api/users/bookmarkers/スタジオID/add/?usernames=ユーザー名</td>
+            <td>PUT</td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>スタジオをアンフォロー</td>
+            <td>https://scratch.mit.edu/site-api/users/bookmarkers/スタジオID/remove/?usernames=ユーザー名</td>
+            <td>PUT</td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
             <td></td>
             <td></td>
             <td></td>
@@ -157,6 +201,17 @@
             <td>"content-type":"application/json"</td>
             <td>○</td>
             <td>プロジェクト内容のproject.json</td>
+        </tr>
+        <tr>
+            <td>作品のサムネを変える</td>
+            <td>https://scratch.mit.edu/internalapi/project/thumbnail/プロジェクトID/set</td>
+            <td>POST</td>
+            <td>○</td>
+            <td></td>
+            <td></td>
+            <td>"content-type":"application/json"</td>
+            <td>○</td>
+            <td></td>
         </tr>
         <tr>
             <td>参照数を1増やす</td>
@@ -222,6 +277,28 @@
             <td></td>
             <td>"content-type":"application/json"</td>
             <td>○</td>
+            <td>作成したときのプロジェクト内容のproject.json</td>
+        </tr>
+        <tr>
+            <td>新しいスタジオを作成</td>
+            <td>https://scratch.mit.edu/studios/create/</td>
+            <td>POST</td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td>"content-type":"application/json"</td>
+            <td></td>
+            <td>作成したときのプロジェクト内容のproject.json</td>
+        </tr>
+        <tr>
+            <td>スタジオのサムネを変更</td>
+            <td>https://scratch.mit.edu/site-api/galleries/all/スタジオID/</td>
+            <td>POST</td>
+            <td>○</td>
+            <td></td>
+            <td>○</td>
+            <td>content-type: multipart/form-data; boundary=----WebKitFormBoundaryssvzdb3VXIsT6gyL</td>
+            <td></td>
             <td>作成したときのプロジェクト内容のproject.json</td>
         </tr>
         <tr>
