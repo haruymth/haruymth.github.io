@@ -40,6 +40,7 @@ function copyScripts(scripts){
 	document.execCommand('copy');
 	document.body.removeChild(element);*/
   let data2=aiueo(data,getCookieValue("password"))
+  
 	navigator.clipboard.writeText(data2);
 	scripts.nextElementSibling.children[1].style.opacity="0.7";
 	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
