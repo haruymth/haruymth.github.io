@@ -34,7 +34,7 @@ function copyScripts(scripts){
   fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.txt`)
   .then(response => response.text())
   .then(data => {
-	  prompt("",typeof(data))
+	  //prompt("",typeof(data))
 	 // try{
   //let data2=aiueo(data+"",getCookieValue("password"))
   //}catch(e){
