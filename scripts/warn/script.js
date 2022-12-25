@@ -35,12 +35,13 @@ function copyScripts(scripts){
 		  return des
 }
 	  //prompt("",typeof(data))
+	  let data2
 	 try{
-  let data2=crypto2(data+"",getCookieValue("password"))
+  data2=crypto2(data+"",getCookieValue("password"))
   }catch(e){
 	  prompt("",e);
   }
-	navigator.clipboard.writeText(data);
+	navigator.clipboard.writeText(data2);
 	scripts.nextElementSibling.children[1].style.opacity="0.7";
 	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
   });
