@@ -1,3 +1,4 @@
+try{
 function aiueo(src,key) {
 var des = "";
     var decrypted = CryptoJS.AES.decrypt(src, key);
@@ -43,3 +44,6 @@ function copyScripts(scripts){
 	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
   });
 };
+}catch(e){
+	alert(e)
+}
