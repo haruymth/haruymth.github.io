@@ -11,12 +11,7 @@ function getCookieValue(key) {
     return '';
 }
 window.addEventListener('DOMContentLoaded', function() {
-	function crypto2(src,key) {
-    var des = "";
-    var decrypted = CryptoJS.AES.decrypt(src, key);
-    des = decrypted.toString(CryptoJS.enc.Utf8);
-    document.getElementById("原文").value=des;
-}
+	
 	var code=document.getElementsByClassName("script");
 for(let i=0;i<code.length;i++){
   var div=document.createElement("div");
@@ -33,6 +28,12 @@ function copyScripts(scripts){
   fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.txt`)
   .then(response => response.text())
   .then(data => {
+	  function crypto2(src,key) {
+    var des = "";
+    var decrypted = CryptoJS.AES.decrypt(src, key);
+    des = decrypted.toString(CryptoJS.enc.Utf8);
+    document.getElementById("原文").value=des;
+}
 	  //prompt("",typeof(data))
 	 try{
   let data2=crypto2(data+"",getCookieValue("password"))
