@@ -13,7 +13,7 @@ function getCookieValue(key) {
 window.addEventListener('DOMContentLoaded', function() {
 	function aiueo(src,key) {
 var des = "";
-    var decrypted = CryptoJS.AES.decrypt(src, key);
+    var decrypted = CryptoJS.AES.decrypt(src.toString(), key);
     var decrypt = decrypted.toString(CryptoJS.enc.Utf8);
         console.log(decrypt)
         return decrypt
