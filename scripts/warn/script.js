@@ -29,7 +29,7 @@ for(let i=0;i<code.length;i++){
 });
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
-  fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.js`)
+  fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.txt`)
   .then(response => response.text())
   .then(data => {
 	/*element.value=data;
