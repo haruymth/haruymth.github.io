@@ -63,8 +63,9 @@ button.onclick=async function(){
   }
 }
 document.getElementById("container").appendChild(button);
-if(!getCookieValue("patiban")==""){
+if(!getCookieValue("password")==""){
   document.getElementById("container").innerHTML=aiueo(getCookieValue("password"));
+  
 }
       }catch(e){
         alert(e)  
