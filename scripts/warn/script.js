@@ -1,11 +1,5 @@
 try{
-function aiueo(src,key) {
-var des = "";
-    var decrypted = CryptoJS.AES.decrypt(src, key);
-    var decrypt = decrypted.toString(CryptoJS.enc.Utf8);
-        console.log(decrypt)
-        return decrypt
-}
+
 function getCookieValue(key) {
     const cookies = document.cookie.split(';');
     for (let cookie of cookies) {
@@ -17,6 +11,13 @@ function getCookieValue(key) {
     return '';
 }
 window.addEventListener('DOMContentLoaded', function() {
+	function aiueo(src,key) {
+var des = "";
+    var decrypted = CryptoJS.AES.decrypt(src, key);
+    var decrypt = decrypted.toString(CryptoJS.enc.Utf8);
+        console.log(decrypt)
+        return decrypt
+}
 	var code=document.getElementsByClassName("script");
 for(let i=0;i<code.length;i++){
   var div=document.createElement("div");
