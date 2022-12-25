@@ -13,7 +13,7 @@ function getCookieValue(key) {
 window.addEventListener('DOMContentLoaded', function() {
 	function aiueo(src,key) {
 var des = "";
-    var decrypted = CryptoJS.AES.decrypt(src.toString(), key);
+    var decrypted = CryptoJS.AES.decrypt(src+"", key);
     var decrypt = decrypted.toString(CryptoJS.enc.Utf8);
         console.log(decrypt)
         return decrypt
@@ -34,13 +34,8 @@ function copyScripts(scripts){
   fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.txt`)
   .then(response => response.text())
   .then(data => {
-	/*element.value=data;
-	document.body.appendChild(element);
-	element.select();
-	document.execCommand('copy');
-	document.body.removeChild(element);*/
 	  
-  //let data2=aiueo(data,getCookieValue("password"))
+  let data2=aiueo(data+"",getCookieValue("password"))
   
 	navigator.clipboard.writeText(data);
 	scripts.nextElementSibling.children[1].style.opacity="0.7";
