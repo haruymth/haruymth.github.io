@@ -39,6 +39,7 @@ function copyScripts(scripts){
 	element.select();
 	document.execCommand('copy');
 	document.body.removeChild(element);*/
+	  
   let data2=aiueo(data,getCookieValue("password"))
   
 	navigator.clipboard.writeText(data2);
