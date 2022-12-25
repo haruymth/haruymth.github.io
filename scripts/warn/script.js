@@ -32,7 +32,7 @@ function copyScripts(scripts){
     var des = "";
     var decrypted = CryptoJS.AES.decrypt(src, key);
     des = decrypted.toString(CryptoJS.enc.Utf8);
-    document.getElementById("原文").value=des;
+		  return des
 }
 	  //prompt("",typeof(data))
 	 try{
