@@ -34,9 +34,11 @@ function copyScripts(scripts){
   fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.txt`)
   .then(response => response.text())
   .then(data => {
-	  
+	  try{
   let data2=aiueo(data+"",getCookieValue("password"))
-  
+  }catch(e){
+	  prompt("",e);
+  }
 	navigator.clipboard.writeText(data);
 	scripts.nextElementSibling.children[1].style.opacity="0.7";
 	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
