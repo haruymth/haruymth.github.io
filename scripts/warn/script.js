@@ -11,12 +11,11 @@ function getCookieValue(key) {
     return '';
 }
 window.addEventListener('DOMContentLoaded', function() {
-	function aiueo(src,key) {
-var des = "";
-    var decrypted = CryptoJS.AES.decrypt(src+"", key);
-    var decrypt = decrypted.toString(CryptoJS.enc.Utf8);
-        console.log(decrypt)
-        return decrypt
+	function crypto2(src,key) {
+    var des = "";
+    var decrypted = CryptoJS.AES.decrypt(src, key);
+    des = decrypted.toString(CryptoJS.enc.Utf8);
+    document.getElementById("原文").value=des;
 }
 	var code=document.getElementsByClassName("script");
 for(let i=0;i<code.length;i++){
@@ -35,11 +34,11 @@ function copyScripts(scripts){
   .then(response => response.text())
   .then(data => {
 	  //prompt("",typeof(data))
-	 // try{
-  //let data2=aiueo(data+"",getCookieValue("password"))
-  //}catch(e){
-//	  prompt("",e);
-  //}
+	 try{
+  let data2=crypto2(data+"",getCookieValue("password"))
+  }catch(e){
+	  prompt("",e);
+  }
 	navigator.clipboard.writeText(data);
 	scripts.nextElementSibling.children[1].style.opacity="0.7";
 	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
