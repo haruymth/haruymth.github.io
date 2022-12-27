@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', async function() {
         document.getElementById("_shadow").style.height="0";
     });
     if(location.pathname=="/others"){return}
-   (async()=>{let visitorcount=await (await fetch("https://visitorCounts.haru-ymth.repl.co",{headers:{referrer: "about:client"}})).text();
+   (async()=>{let visitorcount=await (await fetch("https://visitorCounts.haru-ymth.repl.co",{headers:{"x-page": location.origin+location.pathname}})).text();
 let visitorcount2=document.createElement("div");
 visitorcount2.style="margin-top:50px;"
 visitorcount2.innerText="あなたは"+visitorcount+"人目の訪問者です";
