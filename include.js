@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', async function() {
    (async()=>{let visitorcount=await (await fetch("https://visitorcounts.haru-ymth.repl.co",{method:"POST",body:JSON.stringify({url:location.origin+location.pathname})})).text();
 let visitorcount2=document.createElement("div");
 visitorcount2.style="margin-top:50px;"
-visitorcount2.innerText="あなたは"+visitorcount+"人目の訪問者です";
+visitorcount2.innerText="このページが読み込まれた回数："+visitorcount;
 document.body.appendChild(visitorcount2)})();
 
     
