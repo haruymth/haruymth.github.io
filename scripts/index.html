@@ -54,12 +54,28 @@
                 なんか、ScratchのAPIの仕様が変わって、非共有の作品にはproject_tokenを知っている自分しかアクセスできないようになったので、プロジェクトページ上で、このブックマークレットをクリックすれば、自動でproject_tokenを取得して、turbowarpに飛んでくれます。
             </main>
 		<li>
-                <a href="javascript:{var srcs=document.createElement(&quot;script&quot;);srcs.src=&quot;https://haruymth.github.io/tools/console.js&quot;;document.body.appendChild(srcs);}">
-                    コンソール
+                <a href="javascript:{var srcs=document.createElement(&quot;script&quot;);srcs.src=&quot;https://haruymth.github.io/tools/console.v.2.0.js&quot;;document.body.appendChild(srcs);}">
+                    コンソール V.2.0
                 </a>
             </li>
             <main>
-                学校PCでコンソールが使えないので、作りました（エラーはconsole.errorのエラーしか拾えません）。あと、適当です。
+                学校PCでコンソールが使えないので、作りました。
+		 <br>   
+		    <h3>前バージョンからの変更点</h3>
+		    <ul>
+			 <li>
+				 UIの変更（ChromeのDevToolsのConsoleに似せた)
+			    </li>
+			    <li>
+				 エラーを拾えるようになった   
+			    </li>
+			    <li>
+				 コンソールログなどでログが増えるとDiscordとかのチャットサイトみたいに自動で下にスクロールする。   
+			    </li>
+			    
+		    </ul>
+		    <br>
+		    要は本物に近づいたってことです。
             </main>
         </ul>
 		<h2 id="auto-put-in-studio" class="script">拡散ツール（スタジオに入れるやつ）(v2.0)</h2>
