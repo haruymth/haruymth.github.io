@@ -1,115 +1,127 @@
 <html>
-  <head>
-	<title>
-		スクリプト配布
-	</title>
-  </head>
-	<!-- Google tag (gtag.js) -->
+
+<head>
+        <title>
+                スクリプト配布
+        </title>
+</head>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5V03S2YS9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-T5V03S2YS9');
+        function gtag() {
+                dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-T5V03S2YS9');
 </script>
-	<body>
-		<h1>
-			スクリプト配布
-		</h1>
-		<main>
-            ここで僕が作った地味に便利なスクリプトを配布しています。<br>
-            スクリプトはそれぞれ上にある「copy」を押すと一発でコピーできます。<br>
-		    コピーしたスクリプトはScratch.mit.edu内でコンソールにて実行してください。<br>
-            自作発言をしない限り、二次配布はOKです。<br>ここにあるのは表記がない限りJSです。
-		</main>
-	
-		
-		<h2>
-            ブックマークレット
+
+<body>
+        <h1>
+                スクリプト配布
+        </h1>
+        <main>
+                ここで僕が作った地味に便利なスクリプトを配布しています。<br>
+                スクリプトはそれぞれ上にある「copy」を押すと一発でコピーできます。<br>
+                コピーしたスクリプトはScratch.mit.edu内でコンソールにて実行してください。<br>
+                自作発言をしない限り、二次配布はOKです。<br>ここにあるのは表記がない限りJSです。
+        </main>
+
+
+        <h2>
+                ブックマークレット
         </h2>
         <ul>
-		<li>
-                <a href='javascript:{let x=document.createElement("script");x.src="https://haruymth.github.io/tools/switchaccount.js";document.body.appendChild(x)}'>
-                    アカウント切り替え
-                </a>
-            </li>
-            <main>
-                アカウントを追加しといて、このブックマークをクリックすると、UIが出てきます。それで、切り替えたいアカウントをクリックしたら、切り替えれます。
-            </main>
-            <li>
-                <a href="javascript:{let x=document.createElement(&quot;script&quot;);x.src=&quot;https://haruymth.github.io/tools/seizonkakunin.js&quot;;document.body.appendChild(x)}">
-                    生存確認
-                </a>
-		   
-            </li>
-		<main>「私について」を「私について」の「生存確認」というキーワードが含まれる行を「生存確認：年/月/日 時:分」という形式で変更します。
-		</main>
-            <li>
-                <a href="javascript:{var srcs=document.createElement(&quot;script&quot;);srcs.src=&quot;https://haruymth.github.io/tools/jumpToTurbowarp.js&quot;;document.body.appendChild(srcs)}">
-                    Turbowarpに飛ぶ
-                </a>
-            </li>
-            <main>
-                なんか、ScratchのAPIの仕様が変わって、非共有の作品にはproject_tokenを知っている自分しかアクセスできないようになったので、プロジェクトページ上で、このブックマークレットをクリックすれば、自動でproject_tokenを取得して、turbowarpに飛んでくれます。
-            </main>
-		<li>
-                <a href="javascript:{var srcs=document.createElement(&quot;script&quot;);srcs.id='consoleCode';srcs.src=&quot;https://haruymth.github.io/tools/console.v.2.0.js&quot;;document.body.appendChild(srcs);}">
-                    コンソール V.2.0
-                </a>
-            </li>
-            <main>
-                学校PCでコンソールが使えないので、作りました。
-		 <br>   
-		    <h3>前バージョンからの変更点</h3>
-		    <ul>
-			 <li>
-				 UIの変更（ChromeのDevToolsのConsoleに似せた)
-			    </li>
-			    <li>
-				 エラーを拾えるようになった   
-			    </li>
-			    <li>
-				 コンソールログなどでログが増えるとDiscordとかのチャットサイトみたいに自動で下にスクロールする。   
-			    </li>
-			    
-		    </ul>
-		    <br>
-		    要は本物に近づいたってことです。あと、コード入力するときはShift+Enterで改行、Enterで実行です。
-            </main>
+                <li>
+                        <a href='javascript:{let x=document.createElement("script");x.src="https://haruymth.github.io/tools/switchaccount.js";document.body.appendChild(x)}'>
+                                アカウント切り替え
+                        </a>
+                </li>
+                <main>
+                        アカウントを追加しといて、このブックマークをクリックすると、UIが出てきます。それで、切り替えたいアカウントをクリックしたら、切り替えれます。
+                </main>
+                <li>
+                        <a href="javascript:{let x=document.createElement(&quot;script&quot;);x.src=&quot;https://haruymth.github.io/tools/seizonkakunin.js&quot;;document.body.appendChild(x)}">
+                                生存確認
+                        </a>
+
+                </li>
+                <main>「私について」を「私について」の「生存確認」というキーワードが含まれる行を「生存確認：年/月/日 時:分」という形式で変更します。
+                </main>
+                <li>
+                        <a href="javascript:{var srcs=document.createElement(&quot;script&quot;);srcs.src=&quot;https://haruymth.github.io/tools/jumpToTurbowarp.js&quot;;document.body.appendChild(srcs)}">
+                                Turbowarpに飛ぶ
+                        </a>
+                </li>
+                <main>
+                        なんか、ScratchのAPIの仕様が変わって、非共有の作品にはproject_tokenを知っている自分しかアクセスできないようになったので、プロジェクトページ上で、このブックマークレットをクリックすれば、自動でproject_tokenを取得して、turbowarpに飛んでくれます。
+                </main>
+                <li>
+                        <a href="javascript:{var srcs=document.createElement(&quot;script&quot;);srcs.id='consoleCode';srcs.src=&quot;https://haruymth.github.io/tools/console.v.2.0.js&quot;;document.body.appendChild(srcs);}">
+                                コンソール V.2.0
+                        </a>
+                </li>
+                <main>
+                        学校PCでコンソールが使えないので、作りました。
+                        <br>
+                        <h3>前バージョンからの変更点</h3>
+                        <ul>
+                                <li>
+                                        UIの変更（ChromeのDevToolsのConsoleに似せた)
+                                </li>
+                                <li>
+                                        エラーを拾えるようになった
+                                </li>
+                                <li>
+                                        コンソールログなどでログが増えるとDiscordとかのチャットサイトみたいに自動で下にスクロールする。
+                                </li>
+
+                        </ul>
+                        <br>
+                        要は本物に近づいたってことです。あと、コード入力するときはShift+Enterで改行、Enterで実行です。
+                </main>
         </ul>
-		<h2 id="auto-put-in-studio" class="script">拡散ツール（スタジオに入れるやつ）(v2.0)</h2>
-			<main>
+        <h2 id="auto-put-in-studio" class="script">拡散ツール（スタジオに入れるやつ）(v2.0)</h2>
+        <main>
                 ①拡散したいプロジェクトに行く<br>
                 ②このスクリプトを実行<br>かなりズルなコードです。
-			</main>
-		<h2 id="getff" class="script">Scratchのフォロワーかフォローを取得するやつ(v1.0)</h2>
-			<main>
+        </main>
+	
+        <h2 id="getff" class="script">Scratchのフォロワーかフォローを取得するやつ(v1.0)</h2>
+        <main>
                 ①取得したいユーザーのフォロワーのページかフォローのページに行く<br>
                 ②このスクリプトを実行<br><br>
                 APIは使い物にならなかったのでHTML？を使いました
-			</main>
-		
-		
-		<h2 id="cal-keikou" class="script">Scratchの傾向の何P何位か調べるプログラム(v1.0)</h2>	
-    
-  
-		<main>
-            僕がJavaScriptを勉強し始めて初期の頃に作ったものなので、無駄が多いですが、ちゃんと動作します。<br>
-            ダイアログの説明に従えばいけます。コンソールに「全ページ合わせて○位まで調べました」とか、出たら、成功です。
         </main>
-		<h2>
-            <a href="https://useragentcomparer.glitch.me/" target="_blank">UA比較ツール</a>
+	<h2 id="getfavorite" class="script">Scratchのお気に入りのプロジェクトを取得するやつ(v1.0)</h2>
+        <main>
+                ①取得したいユーザーのお気に入りのプロジェクトのページに行く<br>
+                ②このスクリプトを実行
+        </main>
+
+
+        <h2 id="cal-keikou" class="script">Scratchの傾向の何P何位か調べるプログラム(v1.0)</h2>
+
+
+        <main>
+                僕がJavaScriptを勉強し始めて初期の頃に作ったものなので、無駄が多いですが、ちゃんと動作します。<br>
+                ダイアログの説明に従えばいけます。コンソールに「全ページ合わせて○位まで調べました」とか、出たら、成功です。
+        </main>
+        <h2>
+                <a href="https://useragentcomparer.glitch.me/" target="_blank">UA比較ツール</a>
         </h2>
         <main>
-            ユーザー名を入力するだけでUAを比較できます。<br>
-            超便利だと思います。
+                ユーザー名を入力するだけでUAを比較できます。<br>
+                超便利だと思います。
         </main>
-		<h2><a href="/scripts/warn">闇の危険なコード</a></h2>
-		<main>ここには普通のScratcherなんかが使うようなものじゃなくて、危険なスクリプトを置いています。<br>なので、ページはパスワードで暗号化されているので、パスワードを知っていないと見れません。<br>パスワードを教えてほしい場合は、discordのDMか、TwitterのDMに来てください。そこでパスワードを教えるか決めます。
-			
-		</main>
-  <script src="/include.js"></script>
-		<script src="/scripts/script.js"></script>
-	</body>
+        <h2><a href="/scripts/warn">闇の危険なコード</a></h2>
+        <main>ここには普通のScratcherなんかが使うようなものじゃなくて、危険なスクリプトを置いています。<br>なので、ページはパスワードで暗号化されているので、パスワードを知っていないと見れません。<br>パスワードを教えてほしい場合は、discordのDMか、TwitterのDMに来てください。そこでパスワードを教えるか決めます。
+
+        </main>
+        <script src="/include.js"></script>
+        <script src="/scripts/script.js"></script>
+</body>
+
 </html>
