@@ -8,7 +8,7 @@ if(location.href.includes("projects")){
         let studioarr =[];
         while(studioarr.length<pr){
             console.log(`(${(offset)}/${(pr)})「${decodeURI(q)}」でスタジオを検索しています...`);
-            response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=popular&q=${q}`,{headers:{"X-Requested-With":"XMLHttpRequest"}});
+            response =await fetch(`https://api.scratch.mit.edu/search/studios?limit=16&offset=${offset}&language=ja&mode=trending&q=${q}`,{headers:{"X-Requested-With":"XMLHttpRequest"}});
             let res=await response.json();
             for(let i=0;i<res.length;i++){
                 if(!studioarr.includes(res[i].id)){
