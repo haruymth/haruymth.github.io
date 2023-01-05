@@ -124,7 +124,7 @@
     codeAreaContainer.id="code-area-container";
     let codeArea=document.createElement("textArea");
     codeArea.id="codearea";
-    codeArea.onkeypress="if(event.keyCode==13){if(event.shiftKey==true){event.returnValue=true}else{event.returnValue=false}}";
+    codeArea.onkeypress="if(event.keyCode==13){if(event.shiftKey==true){event.returnValue=true}else{event.preventDefault();}}";
     let codeAreaTrack=document.createElement("span");
     codeAreaTrack.textContent=">";
     codeAreaTrack.id="code-area-track";
@@ -156,6 +156,7 @@
     document.addEventListener("keyup",keyPress);
     function keyPress(e){
       if(!e.shiftKey && e.key === 'Enter'){
+        e.preventDefault();
         let code=document.getElementById("codearea").value.trim();
       if(!code)return;
       let code2="{"+document.getElementById("codearea").value+"}";
@@ -234,4 +235,6 @@
   })();
   window.onerror = function(message, source, lineno, colno, error) {
     console.error(error);
-  };  })();
+  };
+})();
+  
