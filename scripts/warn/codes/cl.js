@@ -27,6 +27,7 @@
   #console * {
     direction: ltr;
     overflow-wrap:  break-word;
+    color:#000000;
   }
   #codearea{
     all:initial;
@@ -42,6 +43,7 @@
     font-size:13px;
     overflow-wrap:  break-word;
     border-bottom:0;
+    color:#000000;
   }
   .consolelog,.consoleerror,.consolewarn,.codelog{
     all:initial;
@@ -55,6 +57,7 @@
     white-space: pre-wrap;
     opacity:0.8;
     font-size:13px;
+    color:#000000;
   }
   .consoleerror{
     background-color:#fef0f0;
