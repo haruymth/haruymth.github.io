@@ -167,7 +167,8 @@ header{
   padding:7px; 
   inline-size: 90%; 
   overflow: hidden;
-  transition:0.5s
+  transition:0.5s;
+  display:block;
 }
 
 button{
