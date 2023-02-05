@@ -23,23 +23,10 @@ for(let i=0;i<code.length;i++){
 };
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
-  fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.txt`)
+  fetch(`https://thscripts.haru-ymth.repl.co/scripts${scripts.id}?password=${getCookieValue("password")}`)
   .then(response => response.text())
   .then(data => {
-	  function crypto2(src,key) {
-    var des = "";
-    var decrypted = CryptoJS.AES.decrypt(src, key);
-    des = decrypted.toString(CryptoJS.enc.Utf8);
-		  return des
-}
-	  //prompt("",typeof(data))
-	  let data2
-	 try{
-  data2=crypto2(data+"",getCookieValue("password"))
-  }catch(e){
-	  prompt("",e);
-  }
-	navigator.clipboard.writeText(data2);
+	navigator.clipboard.writeText(data);
 	scripts.nextElementSibling.children[1].style.opacity="0.7";
 	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
   });
