@@ -10,7 +10,6 @@ function getCookieValue(key) {
     }
     return '';
 }
-window.addEventListener('DOMContentLoaded', function() {
 	
 	var code=document.getElementsByClassName("script");
 for(let i=0;i<code.length;i++){
@@ -22,7 +21,6 @@ for(let i=0;i<code.length;i++){
   `;
 	code[i].after(div);
 };
-});
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
   fetch(`https://haruymth.github.io/scripts/warn/codes/${scripts.id}.txt`)
