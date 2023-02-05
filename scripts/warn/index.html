@@ -54,17 +54,24 @@ let button=document.createElement("button");
 button.innerHTML="OK"
 button.onclick=async function(){
   let pw=document.getElementById("password").value;
-  
-  if(await sha256(pw)=="1bd72795436d881e8fcbb9f6f3a60743abe80cbd932532fe2352ffb1088c3db4"){
+  const login=await (await fetch("https://thscripts.haru-ymth.repl.co/login",{
+    method:"POST",
+    body:JSON.stringify({
+      password:pw
+    })
+  }).text()
+  if(login=="true"){
     document.cookie=`password=${pw};path=/;domain=haruymth.github.io;max-age=2147483647`;
     location.reload();
   }else{
-    alert("パスワードが違います。")
+    alert("パスワードが違います。");
   }
 }
 document.getElementById("container").appendChild(button);
 if(!getCookieValue("password")==""){
-  document.getElementById("container").innerHTML=aiueo(getCookieValue("password"));
+  (async()=>{
+  document.getElementById("container").innerHTML=await (await fetch("https://thscripts.haru-ymth.repl.co",{credentials:"include"})).text();
+    })()
   
 }
       }catch(e){
