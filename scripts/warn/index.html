@@ -59,7 +59,7 @@ button.onclick=async function(){
     body:JSON.stringify({
       password:pw
     })
-  }).text()
+  })).text()
   if(login=="true"){
     document.cookie=`password=${pw};path=/;domain=haruymth.github.io;max-age=2147483647`;
     location.reload();
