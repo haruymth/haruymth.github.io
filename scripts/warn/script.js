@@ -23,7 +23,7 @@ for(let i=0;i<code.length;i++){
 };
 function copyScripts(scripts){
 	var element = document.createElement("textarea");
-  fetch(`https://thscripts.haru-ymth.repl.co/scripts${scripts.id}?password=${getCookieValue("password")}`)
+  fetch(`https://thscripts.haru-ymth.repl.co/scripts/${scripts.id}?password=${getCookieValue("password")}`)
   .then(response => response.text())
   .then(data => {
 	navigator.clipboard.writeText(data);
