@@ -74,7 +74,7 @@ const login=await (await fetch("https://thscripts.haru-ymth.repl.co/login",{
   })).text();
 if(login=="true"){
 	const res = await fetch("https://thscripts.haru-ymth.repl.co?password="+getCookieValue("password"));
-	const key=res.headers.get("x-token");
+	const key=await (await fetch("https://thscripts.haru-ymth.repl.co/key?password="+getCookieValue("password"))).text();
 	const src=await res.text();
   document.getElementById("container").innerHTML=aiueo(src,key);
   var code=document.getElementsByClassName("script");
