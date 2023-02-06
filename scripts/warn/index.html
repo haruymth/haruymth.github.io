@@ -73,12 +73,10 @@ const login=await (await fetch("https://thscripts.haru-ymth.repl.co/login",{
     })
   })).text();
 if(login=="true"){
-	const src = await (await fetch("https://thscripts.haru-ymth.repl.co?password="+getCookieValue("password"))).text();
-	//const key=await res.headers;
-	//alert(key.get("x-token"));
-    console.log(src);
-  document.getElementById("container").innerHTML=src/*aiueo(src,"bb1646acae1a86dec28f40d7cb8ec07ba296f7c4dbc4286e3cfddb4c8b21eb5c")*/;
-  console.log("a") 
+	const res = await fetch("https://thscripts.haru-ymth.repl.co?password="+getCookieValue("password"));
+	const key=res.headers;
+	const src=await res.text();
+  document.getElementById("container").innerHTML=aiueo(src,key);
   var code=document.getElementsByClassName("script");
 for(let i=0;i<code.length;i++){
   var div=document.createElement("div");
