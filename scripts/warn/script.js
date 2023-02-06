@@ -15,7 +15,7 @@ function getCookieValue(key) {
 async function copyScripts(scripts){
 	var element = document.createElement("textarea");
   const res=await fetch(`https://thscripts.haru-ymth.repl.co/scripts/${scripts.id}?password=${getCookieValue("password")}`);
-	const key=res.headers.get("x-token")
+	const key=await (await fetch("https://thscripts.haru-ymth.repl.co/key?password="+getCookieValue("password"))).text();
 	function crypto2(src,key) {
 		var des = "";
 		var decrypted = CryptoJS.AES.decrypt(src, key);
