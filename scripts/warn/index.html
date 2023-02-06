@@ -14,99 +14,100 @@
     </div>
     <script src="/scripts/warn/script.js"></script>
     <script>
-      try{
       
-    const sha256 = async (text) => {
-    const uint8  = new TextEncoder().encode(text)
-    const digest = await crypto.subtle.digest('SHA-256', uint8)
-    return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
+const sha256 = async (text) => {
+        const uint8 = new TextEncoder().encode(text)
+        const digest = await crypto.subtle.digest('SHA-256', uint8)
+        return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2, '0')).join('')
 }
-    function aiueo(src,key) {
-      src=src.trim();
-var des = "";
-    var decrypted = CryptoJS.AES.decrypt(src, key);
-    var decrypt = decrypted.toString(CryptoJS.enc.Utf8);
+
+function aiueo(src, key) {
+        src = src.trim();
+        var des = "";
+        var decrypted = CryptoJS.AES.decrypt(src, key);
+        var decrypt = decrypted.toString(CryptoJS.enc.Utf8);
         console.log(decrypt)
         return decrypt
 }
+
 function getCookieValue(key) {
-    const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
-        var cookiesArray = cookie.split('='); 
-        if (cookiesArray[0].trim() == key.trim()) { 
-            return cookiesArray[1];
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+                var cookiesArray = cookie.split('=');
+                if (cookiesArray[0].trim() == key.trim()) {
+                        return cookiesArray[1];
+                }
         }
-    }
-    return '';
+        return '';
 }
-	      async function copyScripts(scripts){
-	var element = document.createElement("textarea");
-  const res=await fetch(`https://thscripts.haru-ymth.repl.co/scripts/${scripts.id}?password=${getCookieValue("password")}`);
-	const key=await (await fetch("https://thscripts.haru-ymth.repl.co/key?password="+getCookieValue("password"))).text();
-	function crypto2(src,key) {
-		var des = "";
-		var decrypted = CryptoJS.AES.decrypt(src, key);
-		des = decrypted.toString(CryptoJS.enc.Utf8);
-		return des
-	}
-	const src=await res.text();
-	navigator.clipboard.writeText(crypto2(src,key));
-	scripts.nextElementSibling.children[1].style.opacity="0.7";
-	setTimeout(function(){scripts.nextElementSibling.children[1].style.opacity="0"},3000);
-};
-let archive=document.getElementById("container").innerHTML;
-document.getElementById("container").innerHTML="このサイトのパスワードを入力<br>";
-let input=document.createElement("input");
-input.type="password";
-input.id="password";
+let archive = document.getElementById("container").innerHTML;
+document.getElementById("container").innerHTML = "このサイトのパスワードを入力<br>";
+let input = document.createElement("input");
+input.type = "password";
+input.id = "password";
 document.getElementById("container").appendChild(input);
-let button=document.createElement("button");
-button.innerHTML="OK"
-button.onclick=async function(){
-  let pw=document.getElementById("password").value;
-  const login=await (await fetch("https://thscripts.haru-ymth.repl.co/login",{
-    method:"POST",
-    body:JSON.stringify({
-      password:pw
-    })
-  })).text();
-  console.log(login)
-  if(login=="true"){
-    document.cookie=`password=${pw};path=/;domain=haruymth.github.io;max-age=2147483647`;
-    location.reload();
-  }else{
-    alert("パスワードが違います。");
-  }
+let button = document.createElement("button");
+button.innerHTML = "OK"
+button.onclick = async function() {
+        let pw = document.getElementById("password").value;
+        const login = await (await fetch("https://thscripts.haru-ymth.repl.co/login", {
+                method: "POST",
+                body: JSON.stringify({
+                        password: pw
+                })
+        })).text();
+        console.log(login)
+        if (login == "true") {
+                document.cookie = `password=${pw};path=/;domain=haruymth.github.io;max-age=2147483647`;
+                location.reload();
+        } else {
+                alert("パスワードが違います。");
+        }
 }
 document.getElementById("container").appendChild(button);
 
-  (async()=>{
-const login=await (await fetch("https://thscripts.haru-ymth.repl.co/login",{
-    method:"POST",
-    body:JSON.stringify({
-      password:getCookieValue("password")
-    })
-  })).text();
-if(login=="true"){
-	const res = await fetch("https://thscripts.haru-ymth.repl.co?password="+getCookieValue("password"));
-	const key=await (await fetch("https://thscripts.haru-ymth.repl.co/key?password="+getCookieValue("password"))).text();
-	const src=await res.text();
-  document.getElementById("container").innerHTML=aiueo(src,key);
-  var code=document.getElementsByClassName("script");
-for(let i=0;i<code.length;i++){
-  var div=document.createElement("div");
-  div.style="display: flex;";
-    div.innerHTML=`
+(async () => {
+        const login = await (await fetch("https://thscripts.haru-ymth.repl.co/login", {
+                method: "POST",
+                body: JSON.stringify({
+                        password: getCookieValue("password")
+                })
+        })).text();
+        if (login == "true") {
+                const res = await fetch("https://thscripts.haru-ymth.repl.co?password=" + getCookieValue("password"));
+                const key = await (await fetch("https://thscripts.haru-ymth.repl.co/key?password=" + getCookieValue("password"))).text();
+                const src = await res.text();
+                document.getElementById("container").innerHTML = aiueo(src, key);
+                var code = document.getElementsByClassName("script");
+                for (let i = 0; i < code.length; i++) {
+                        var div = document.createElement("div");
+                        div.style = "display: flex;";
+                        div.innerHTML = `
   <button class="button" onclick="copyScripts(this.parentNode.previousElementSibling);">Copy</button>
   <main style="margin:auto 0 0 0;padding:7px;font-size:15px;opacity:0;transition: opacity 0.2s;">Copied!</main>
   `;
-	code[i].after(div);
-};
-}
- })()
-      }catch(e){
-        alert(e)  
-      }
+                        code[i].after(div);
+                        async function copyScripts(scripts) {
+                                var element = document.createElement("textarea");
+                                const res = await fetch(`https://thscripts.haru-ymth.repl.co/scripts/${scripts.id}?password=${getCookieValue("password")}`);
+                                const key = await (await fetch("https://thscripts.haru-ymth.repl.co/key?password=" + getCookieValue("password"))).text();
+
+                                function crypto2(src, key) {
+                                        var des = "";
+                                        var decrypted = CryptoJS.AES.decrypt(src, key);
+                                        des = decrypted.toString(CryptoJS.enc.Utf8);
+                                        return des
+                                }
+                                const src = await res.text();
+                                navigator.clipboard.writeText(crypto2(src, key));
+                                scripts.nextElementSibling.children[1].style.opacity = "0.7";
+                                setTimeout(function() {
+                                        scripts.nextElementSibling.children[1].style.opacity = "0"
+                                }, 3000);
+                        };
+                };
+        }
+})()
       </script>
     
     <script src="/include.js"></script>
