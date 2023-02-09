@@ -5,7 +5,8 @@ head.insertAdjacentHTML('beforeend', `
 	  <link rel="icon" href="/favicon.png">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 	  `);
-window.addEventListener('DOMContentLoaded', async function() {
+//window.addEventListener('DOMContentLoaded', 
+(async function() {
 	
     var header = document.createElement("header");
     header.innerHTML = `
@@ -69,7 +70,7 @@ visitorcount2.innerText="このページが読み込まれた回数："+visitorc
 document.body.appendChild(visitorcount2)})();
 
     
-});
+})();
 if(location.href.includes("#")){
 newUrl=location.href.replace(/#/g,"");
 	replaceState("",document.title,newUrl);
