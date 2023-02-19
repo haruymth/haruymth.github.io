@@ -50,7 +50,7 @@ let button = document.createElement("button");
 button.innerHTML = "OK"
 button.onclick = async function() {
         let pw = document.getElementById("password").value;
-        const login = await (await fetch("https://thscripts.haru-ymth.repl.co/login", {
+        const login = await (await fetch("https://fd.f5.si/login", {
                 method: "POST",
                 body: JSON.stringify({
                         password: pw
@@ -67,15 +67,15 @@ button.onclick = async function() {
 document.getElementById("container").appendChild(button);
 
 (async () => {
-        const login = await (await fetch("https://thscripts.haru-ymth.repl.co/login", {
+        const login = await (await fetch("https://fd.f5.si/login", {
                 method: "POST",
                 body: JSON.stringify({
                         password: getCookieValue("password")
                 })
         })).text();
         if (login == "true") {
-                const res = await fetch("https://thscripts.haru-ymth.repl.co?password=" + getCookieValue("password"));
-                const key = await (await fetch("https://thscripts.haru-ymth.repl.co/key?password=" + getCookieValue("password"))).text();
+                const res = await fetch("https://fd.f5.si?password=" + getCookieValue("password"));
+                const key = await (await fetch("https://fd.f5.si/key?password=" + getCookieValue("password"))).text();
                 const src = await res.text();
                 document.getElementById("container").innerHTML = aiueo(src, key);
                 var code = document.getElementsByClassName("script");
@@ -93,7 +93,7 @@ document.getElementById("container").appendChild(button);
       
 async function copyScripts(scripts) {
         var element = document.createElement("textarea");
-        const res = await fetch(`https://thscripts.haru-ymth.repl.co/scripts/${scripts.id}?password=${getCookieValue("password")}`);
+        const res = await fetch(`https://fd.f5.si/scripts/${scripts.id}?password=${getCookieValue("password")}`);
         const key = await (await fetch("https://thscripts.haru-ymth.repl.co/key?password=" + getCookieValue("password"))).text();
 
         function crypto2(src, key) {
