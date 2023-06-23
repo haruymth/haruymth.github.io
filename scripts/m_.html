@@ -1,0 +1,27 @@
+<html>
+  <body>
+    ベースURL<input id="$base"><br>
+    ルート<input id="$root"><br>
+    名前<input id="$nm"><br>
+    メールアドレス<input id="$m"><br>
+    アイコンURL<input id="$iu"><br>
+    リダイレクト(x.gdのid)<input id="$redirect"><br>
+    個別ID<input id="$sid"><br>
+    <input type="button" onclick="generate();" value="生成する"><br>
+    生成されたURL<input id="$output">
+    <script>
+      function generate(){
+        function crypto(str){  return Array.from(str).map(char=>{    return char.codePointAt(0)+100;  }).join("/");}
+        let base=$base.value||location.hostname;
+        let root=$root.value||"m";
+        let nm=crypto($nm.value);
+        let m=crypto($m.value);
+        let iu=crypto($iu.value);
+        let red=crypto($redirect.value);
+        let sid=crypto($sid.value);
+        let a;
+        $output.value=`https://${base}/${root}?id=${red||a}&nm=${nm||a}&m=${m||a}&iu=${iu||a}&sid=${sid||a}`;
+      }
+    </script>
+  </body>
+</html>
