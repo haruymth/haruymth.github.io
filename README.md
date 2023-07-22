@@ -1,6 +1,6 @@
-# haru-ymth.github.io
+# haruymth.github.io
 自分のWebサイトです。  
-[ここ](https://haru-ymth.github.io/ "ここ")です。
+[ここ](https://haruymth.github.io/ "ここ")です。
 # このWebサイトでやっていること
 ・HTML、CSS、JavaScriptの練習
 ・スクリプト配布
